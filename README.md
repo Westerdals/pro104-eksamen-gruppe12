@@ -1,1 +1,4 @@
-test - susanne
+ReadMe gruppe 12
+
+Gruppen består av:
+- Susanne Tønnessen
