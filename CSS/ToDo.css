@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;  
+    
+}
+
+body{
+    background-image: url(/img/backdrop-background-orange-rough-132197.jpg);
+    position: absolute;
+
+    
+}
+.wrapper{
+    display:flex;
+    position: relative;
+}
+
+.wrapper .sidebar{
+position: fixed;
+width: 200px;
+height: 100%;
+background: #292F36;
+padding: 30px 0;
+}
+
+
+.wrapper .sidebar h2{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.wrapper .sidebar ul li{
+border-bottom: 2px solid rgba(0,0,0,0.05) ;
+padding: 35px;
+border-top: 3px solid rgba(225,225,225,0.05);
+font-size: 17px;
+
+}
+
+.wrapper .sidebar a{
+    color: #fff;
+     display: block;
+}
+.wrapper .sidebar ul li a .fas .far .fal{
+    width: 45px;
+    
+}
+.wrapper .sidebar ul li:hover{
+    background: rgb(42, 42, 43);
+}
+.mainContent .header{
+    width: 20px;
+}
+/*.tdl{
+    right: 100px;
+    color: black;
+    position: relative;
+    left: 400px;
+}
+.tdl h1{
+    color: white;
+    position: relative;
+    left: 400px;
+    margin: 40px;
+    font-size: 50px;
+    text-align: center;} */
+button{
+    
+    left: 400px;
+    position: relative;
+}
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 200ms ease-in-out;
+        border: 1px solid black;
+        border-radius: 10px;
+        z-index: 10;
+        background-color: white;
+        width: 500px;
+        max-width: 80%;
+      }
+      
+      .modal.active {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      
+      .modal-header {
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid black;
+      }
+      
+      .modal-header .title {
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+      
+      .modal-header .close-button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+      
+      .modal-body {
+        padding: 10px 15px;
+      }
+      
+      #overlay {
+        position: fixed;
+        opacity: 0;
+        transition: 200ms ease-in-out;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .5);
+        pointer-events: none;
+      }
+      
+      #overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
