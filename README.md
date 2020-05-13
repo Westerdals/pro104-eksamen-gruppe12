@@ -1,12 +1,9 @@
-## Eksamensoppgave - Gruppe 12
+# PRO104 Webprosjekt 2020 - Gruppe 12 
 
-## PRO104 Webprosjekt 2020
-  
-  
+### Lag en webapplikasjon som dere selv ville hatt nytte av i arbeid med utvikling av programvare
 
-#### Lag en webapplikasjon som dere selv ville hatt nytte av i arbeid med utvikling av programvare
-  
 ---
+
 <br>
 
 
