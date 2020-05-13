@@ -4,3 +4,4 @@ Gruppen består av:
 - Susanne Tønnessen
 - Håvard Raknes
 - Shaheb Iqbal
+- Eskil Torset
