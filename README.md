@@ -5,3 +5,4 @@ Gruppen består av:
 - Håvard Raknes
 - Shaheb Iqbal
 - Eskil Torset
+- Sindre Helstad    
