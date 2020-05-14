@@ -11,8 +11,8 @@
     <link rel = "stylesheet" type = "text/css" href = "style_index.css"/>
     
     <!-- input og button for at bruker kan "logge inn" -->
-    <input type="text" value="Brukernavn" id="username-txt">
-    <input type="text" value="Passord" id="password-txt">
+    <input type="text" value="" id="username-txt">
+    <input type="text" value="" id="password-txt">
     <input type="button" value="Logg inn" id="register-btn">
     
     <!-- bilde til forsiden -->
@@ -46,15 +46,15 @@
                     
             var userInput = passwordTxt.value;
                     
-            if(userInput===" "){
+            if(userInput === ""){
                         
-            window.location.href = "homepage.html"}
+            window.location.href = "homepage.html"
                     
-            }else{
+            } else {
              
-                alert("du suger")
+                alert("feil passord");
             }    
-        };
+        }
         
     </script>
     
@@ -64,3 +64,14 @@
 
 
 </html>
+
+<!-- unction pasuser(form) {
+    if (form.id.value=="JavaScript") { 
+    if (form.pass.value=="Kit") {              
+    location="page2.html" 
+    } else {
+    alert("Invalid Password")
+    }
+    } else {  alert("Invalid UserID")
+    }
+    } -->
