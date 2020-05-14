@@ -1,36 +1,43 @@
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
-const overlay = document.getElementById('overlay')
+function addTodoItem() 
+  var todoItem = $("#new-todo-item").val();
+  $("#todo-list").append(
+    "<li><input type='checkbox'" +
+      " name='todo-item-done'" +
+      " class='todo-item-done'" +
+      " value='" +
+      todoItem +
+      "' /> " +
+      todoItem +
+      " <button class='todo-item-delete'>" +
+      "Delete</button></li>"
+  );
 
-openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-  })
-})
-
-overlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active')
-  modals.forEach(modal => {
-    closeModal(modal)
-  })
-})
-
-closeModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
-  })
-})
-
-function openModal(modal) {
-  if (modal == null) return
-  modal.classList.add('active')
-  overlay.classList.add('active')
+  $("#new-todo-item").val("");
 }
 
-function closeModal(modal) {
-  if (modal == null) return
-  modal.classList.remove('active')
-  overlay.classList.remove('active')
+function deleteTodoItem(e, item) { /* Delete function with a fade using jquery */
+  e.preventDefault();
+  $(item)
+    .parent()
+    .fadeOut("slow", function () {
+      $(item).parent().remove();
+    });
 }
+
+function completeTodoItem() { /* Completed function where the tasks who are finished is line-through */
+  $(this).parent().toggleClass("strike");
+}
+
+$(function () {
+  $("#add-todo-item").on("click", function (e) {
+    e.preventDefault();
+    addTodoItem();
+  });
+
+  $("#todo-list").on("click", ".todo-item-delete", function (e) {
+    var item = this;
+    deleteTodoItem(e, item);
+  });
+
+  $(document).on("click", ".todo-item-done", completeTodoItem);
+});

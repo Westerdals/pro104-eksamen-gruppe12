@@ -6,13 +6,14 @@
     text-decoration: none;  
     
 }
-
 body{
-    background-image: url(/img/backdrop-background-orange-rough-132197.jpg);
+    background-image: url(/img/backdrop-background-orange-rough-132197.jpg); 
     position: absolute;
+    min-height: 100vh;
 
-    
-}
+} 
+
+/* STARTEN AV SIDEBAR */
 .wrapper{
     display:flex;
     position: relative;
@@ -25,7 +26,6 @@ height: 100%;
 background: #292F36;
 padding: 30px 0;
 }
-
 
 .wrapper .sidebar h2{
     color: #fff;
@@ -40,7 +40,6 @@ border-top: 3px solid rgba(225,225,225,0.05);
 font-size: 17px;
 
 }
-
 .wrapper .sidebar a{
     color: #fff;
      display: block;
@@ -55,82 +54,21 @@ font-size: 17px;
 .mainContent .header{
     width: 20px;
 }
-/*.tdl{
-    right: 100px;
-    color: black;
-    position: relative;
+ 
+/* SLUTTEN AV SIDEBAR */
+
+/* STARTEN AV TO DO LIST */
+.tdl{
+    position: fixed;
     left: 400px;
+    margin: 50px;
+    left: 50vh;
+    border: 1px solid black;
 }
 .tdl h1{
-    color: white;
-    position: relative;
-    left: 400px;
-    margin: 40px;
-    font-size: 50px;
-    text-align: center;} */
-button{
-    
-    left: 400px;
-    position: relative;
+    font-size: 4rem;
+    text-decoration: underline;
 }
-    .modal {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        transition: 200ms ease-in-out;
-        border: 1px solid black;
-        border-radius: 10px;
-        z-index: 10;
-        background-color: white;
-        width: 500px;
-        max-width: 80%;
-      }
-      
-      .modal.active {
-        transform: translate(-50%, -50%) scale(1);
-      }
-      
-      .modal-header {
-        padding: 10px 15px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid black;
-      }
-      
-      .modal-header .title {
-        font-size: 1.25rem;
-        font-weight: bold;
-      }
-      
-      .modal-header .close-button {
-        cursor: pointer;
-        border: none;
-        outline: none;
-        background: none;
-        font-size: 1.25rem;
-        font-weight: bold;
-      }
-      
-      .modal-body {
-        padding: 10px 15px;
-      }
-      
-      #overlay {
-        position: fixed;
-        opacity: 0;
-        transition: 200ms ease-in-out;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, .5);
-        pointer-events: none;
-      }
-      
-      #overlay.active {
-        opacity: 1;
-        pointer-events: all;
-      }
-
+.strike {
+    text-decoration: line-through;
+  }
