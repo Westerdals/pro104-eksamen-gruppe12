@@ -50,7 +50,7 @@ body{
 }
 
 #cirkle{
-  position: absolute;
+  position: relative;
   margin-left: 390px;
   margin-top: 70px;
  
