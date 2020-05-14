@@ -1,4 +1,4 @@
-function addTodoItem() 
+function addTodoItem() {
   var todoItem = $("#new-todo-item").val();
   $("#todo-list").append(
     "<li><input type='checkbox'" +
