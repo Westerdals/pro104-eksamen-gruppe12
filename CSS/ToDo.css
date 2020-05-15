@@ -63,12 +63,26 @@ font-size: 17px;
     left: 400px;
     margin: 50px;
     left: 50vh;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
+    
 }
 .tdl h1{
-    font-size: 4rem;
-    text-decoration: underline;
+    font-size: 4.5rem;
+  
 }
 .strike {
     text-decoration: line-through;
+  }
+  #add-todo-item{
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #000;
+    background: none;
+    padding: 10px;
+    outline: none;
+    font-size: 18px;
+    position: relative;
+  }
+  #new-todo-item{
+border: 5px solid black;
   }
