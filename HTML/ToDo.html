@@ -2,51 +2,73 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Kanban</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- <!-- <script src="http://code.jqueery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIz3oi35EEoyE=" crossorigin="anonymous"></script>
- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script> <!-- Henter inn ikoner fra fontawesome.com-->
-    <link rel="stylesheet" media="screen" charset="utf-8" href="../CSS/ToDo.css">
-    <script src="../JS/ToDo.js" type="text/javascript"></script>
+    <title></title>
+    <link rel="stylesheet" href="/CSS/ToDo.css">
+    <script src="/JS/ToDo.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
   </head>
   <body>
 
-    <div class="wrapper"> -Sidebaren-->
-          <div class="sidebar">
-            <h2>Kanban</h2>
-            <ul>
-                <li><a href="/HTML/index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#"><i class="fal fa-project-diagram"></i> Project</a></li>
-                <li><a href="/HTML/ToDo.html"><i class="fas fa-list"></i> To-Do</a></li>
-                <li><a href="#"><i class="fas fa-calendar-day"></i> Calendar</a></li>
-                <li><a href="#"><i class="far fa-bell"></i> Reminders</a></li>
-                
-            </ul>
-         </div> 
-    
-        
-    </div> 
-<div class="tdl">
-    <h1>To-Do List</h1>
-    <form id="form-add-todo" class="form-add-todo">
-      <label for="todo">To do:</label>
-      <input type="text" id="task-name" class="new-todo-item" placeholder="Task Name" />
-      <input type="text" id="task-description" class="new-todo-item" placeholder="Task Description">
-      <input type="submit" id="add-todo-item" class="add-todo-item" value="Add a task" />
-    </form>
-    
-    <form id="form-todo-list">
-      <ul id="todo-list" class="todo-list">
-      </ul>
-    </form>
-  
+    <div class="container">
+      <input type="text" class="txtb" placeholder="Add a task">
+      <div class="notcomp">
+        <h3>Not Completed</h3>
 
 
+
+      </div>
+
+      <div class="comp">
+        <h3>Completed</h3>
+      </div>
+    </div>
+    <div class="wrapper"> <!--Sidebaren--> 
+      <div class="sidebar">
+        <h2>Kanban</h2>
+        <ul>
+            <li><a href="/HTML/index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fal fa-project-diagram"></i> Project</a></li>
+            <li><a href="/HTML/ToDo.html"><i class="fas fa-list"></i> To-Do</a></li>
+            <li><a href="#"><i class="fas fa-calendar-day"></i> Calendar</a></li>
+            <li><a href="#"><i class="far fa-bell"></i> Reminders</a></li>
+            
+        </ul>
+     </div> 
+
+    
 </div>
-   
+<!-- Javascripten er skrevet her fordi den funket ikke å kjøre i  en .js fil? så funker fint inni HTML filen -->
+    <script type="text/javascript">
+      $(".txtb").on("keyup",function(e){
+        //13  betyr å trykke på ENTER.
+        if(e.keyCode == 13 && $(".txtb").val() != "")
+        {
+          var task = $("<div class='task'></div>").text($(".txtb").val());
+          var del = $("<i class='fas fa-trash-alt'></i>").click(function(){
+            var p = $(this).parent();
+            p.fadeOut(function(){
+              p.remove();
+            });
+          });
+
+          var check = $("<i class='fas fa-check'></i>").click(function(){
+            var p = $(this).parent();
+            p.fadeOut(function(){
+              $(".comp").append(p);
+              p.fadeIn();
+            });
+            $(this).remove();
+          });
+
+          task.append(del,check);
+          $(".notcomp").append(task);
+            //to clear the input
+          $(".txtb").val("");
+        }
+      });
+    </script>
+
   </body>
 </html>
-

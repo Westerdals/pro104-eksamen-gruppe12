@@ -1,29 +1,29 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "montserrat",sans-serif;
     box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;  
-    
-}
-body{
-    
-    position: absolute;
+  }
+  
+  body{
+    background-color:darkcyan;
     min-height: 100vh;
-    background-color: red;
-
-} 
+  }
+  
 
 /* STARTEN AV SIDEBAR */
-.wrapper{
+ .wrapper{
     display:flex;
-    position: relative;
+    position: absolute;
+    left: 000px;
+    top: 0px;
+    
 }
 
 .wrapper .sidebar{
 position: fixed;
 width: 200px;
-height: 100%;
+height: 100vh;
 background: #292F36;
 padding: 30px 0;
 }
@@ -54,27 +54,23 @@ font-size: 17px;
 }
 .mainContent .header{
     width: 20px;
-}
- 
+} 
+  
 /* SLUTTEN AV SIDEBAR */
 
 /* STARTEN AV TO DO LIST */
-.tdl{
-    position: fixed;
-    left: 400px;
-    margin: 50px;
-    left: 50vh;
-    /*border: 1px solid black;*/
-    
-}
-.tdl h1{
-    font-size: 4.5rem;
+
   
-}
-.strike {
-    text-decoration: line-through;
+  .container{
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+    left: 200px;
+    top: 100px;
   }
-  #add-todo-item{
+  
+  .txtb{
     width: 100%;
     border: none;
     border-bottom: 2px solid #000;
@@ -82,8 +78,28 @@ font-size: 17px;
     padding: 10px;
     outline: none;
     font-size: 18px;
-    position: relative;
   }
-  #new-todo-item{
-border: 5px solid black;
+  
+  h3{
+    margin: 10px 0;
   }
+  
+  .task{
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+    padding: 18px;
+    margin: 6px 0;
+    overflow: hidden;
+  }
+  
+  .task i{
+    float: right;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  .comp .task{
+    background: rgba(0,0,0,.5);
+    color: #fff;
+  }
+  
