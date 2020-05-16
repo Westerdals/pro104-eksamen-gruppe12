@@ -1,0 +1,126 @@
+body {
+    background-image: linear-gradient(to right, #47b39d , #eb6b56);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+/* Drop-down menu. Usikker på om denne skal inkluderes */
+/*
+.dropbtn {
+    background-color: whitesmoke;
+    color: #47b39d;
+    padding: 16px;
+    width: 200px;
+    font-size: 16px;
+    border: none;
+    background-color: snow;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+   
+    
+}
+
+.dropdown-content {
+    font-family: sans-serif;
+    display: none;
+    position: absolute;
+    background-color: snow;
+    min-width: 170px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #47b39d;
+    padding: 17px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f6f6f6;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: snow;
+}
+*/
+
+
+/* Register form */
+* {
+    box-sizing: border-box;
+}
+
+
+.container {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 12px rgb(0, 0, 0, 0.3);
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-family: sans-serif
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+/* Labels are displayed inline by default. */
+/* display: block; positions them on their own line  */
+.form-control label {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Removes the default outline when the input field is targeted */
+.form-control input:focus {
+    outline: 0;
+    border-color: #D3D3D3;
+}
+
+
+
+#sumbit-btn {
+    cursor: pointer;
+    background: #eb6b56;
+    border: 2px solid #eb6b56;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
