@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/68fb369f5e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="/CSS/sidebar.css">
+    <title>Tasker</title>
+</head>
+
+<body>
+
+
+    <div class="menu">
+        <a href="#" class="fas fa-plus"></a>
+        <a href="#" class="text">NEW TASK</a>
+        <a href="#" class="fas fa-bars"></a>
+        <a href="#" class="text">TASKS</a>
+        <a href="#" class="fas fa-user"></a>
+        <a href="#" class="text">OVERVIEW</a>
+        <a href="#" class="fas fa-calendar"></a>
+        <a href="#" class="text">CALENDAR</a>
+
+    </div>
+
+    <div id="container">
+
+        <!-- MEMBERS -->
+
+        <div class="section section-member">
+            <h3>Registered Users</h3>
+            <div class="list-section">
+                <ul id="memberList">
+                </ul>
+            </div>
+            <div class="create-new new-user">
+
+                <!-- Button to trigget modal -->
+                <button id="open-member-modal" class="fas fa-plus-circle"><span>New member</span></button>
+
+                <!-- The Modal -->
+                <div id="member-modal" class="modal">
+
+                    <!-- Content inside the modal -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h3>New member</h3>
+                        <form onsubmit="newMember()">
+                            <input type="text" id="addMember" placeholder="First Name">
+                            <input type="submit" id="addBtn" href="#">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- TASKS -->
+        <div class="section section-task">
+            <h3>Tasks</h3>
+            <div class="list-section">
+                <ul id="taskList" class="myTaskList">
+                </ul>
+            </div>
+            <div class="create-new new-task">
+                <form onsubmit="newTask()">
+                    <input type="text" id="addTask" placeholder="New Task">
+                    <input type="submit" class="addBtn">
+                    <!-- <span onclick="newTask(event)" class="addBtn">Add</span> -->
+                </form>
+            </div>
+
+        </div>
+
+        <!-- OVERVIEW -->
+        <div class="section section-overview">
+            <h3>Overview</h3>
+            <div class="list-section">
+                <ul id="overviewList">
+                    <li class="checked">Task 1</li>
+                    <li>Task 2</li>
+                    <li>Task 3</li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="main.js"></script>
+        <script src="members.js"></script>
+        <script src="task.js"></script>
+</body>
+
+</html>
