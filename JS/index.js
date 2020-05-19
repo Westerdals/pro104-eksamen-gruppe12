@@ -4,7 +4,9 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-const btn = document.getElementById('submit-btn');
+const btn = document.getElementById('submitBtn');
+btn.onclick = registerWithUs;
+const Persons = [];
 
 
 // Show input error message 
@@ -82,4 +84,13 @@ form.addEventListener('submit',function (e) {
 });
 
 
+
+/*Local Storage */
+
+
+
+function registerWithUs(){
+   
+localStorage.setItem('PersonData',JSON.stringify("Username:" + username.value +  <br> + " Email: " + email.value +  <br> + " Password " + password.value));
+}
 
