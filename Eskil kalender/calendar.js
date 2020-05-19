@@ -94,11 +94,13 @@ function loadCalendarDays() {
 
         d.addEventListener('mousedown', function(e){
             e.preventDefault();
+            document.getElementById('container').className="show";
             mousedown = true;
         });
         
         d.addEventListener('mouseup', function(e){
             e.preventDefault();
+            document.getElementById('container').className="hide";
             mousedown = false;
         });
 
