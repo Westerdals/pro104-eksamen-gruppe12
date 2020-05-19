@@ -86,11 +86,14 @@ form.addEventListener('submit',function (e) {
 
 
 /*Local Storage */
-
-
-
 function registerWithUs(){
+let lsPerson = {
+    username: username.value,
+    email:  email.value,
+    password:  password.value
+
+};
    
-localStorage.setItem('PersonData',JSON.stringify("Username:" + username.value +  <br> + " Email: " + email.value +  <br> + " Password " + password.value));
+localStorage.setItem('PersonData',JSON.stringify(lsPerson));
 }
 
