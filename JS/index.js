@@ -64,7 +64,7 @@ function checkInputs() {
 	if(nextPage === false){
 		console.log(newSite);
 	}else if(nextPage === true){
-		newSite(newpage);
+		newSite();
 	}
 }
 

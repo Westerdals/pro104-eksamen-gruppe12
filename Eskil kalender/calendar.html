@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-
 <html>
-
 	<head>
-
 		<h1>Calender</h1>
 
 		<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js"> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,9 +39,24 @@
         
                     <div class="clear"></div>
                 </div>
+
+
+
+                <form>
+                    <div class="hide" id="container">
+                      <h3>Make appointment</h3>
+                    </br>
+                      <input type="text" placeholder="Enter Name" name="name" id="nameInput" required>
+                    </br>
+                    <input type="text" placeholder="Enter What To Do" name="textInput" id="textInput" required>
+                    </br>
+                        <button type="button" id="submitBtn">Submit</button>
+                    </div>
+                </form>
         
                 <div id="calendarDays" class="days">
                 </div>
+
             </div>
         </div>
                 
@@ -67,7 +76,7 @@
 			
 
 
-		</body>
+		</body> 
 
 </html>
 
