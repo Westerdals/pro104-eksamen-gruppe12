@@ -1,9 +1,15 @@
 
-  		body, *{
+          body {
+            background-color: lightgray;
+
+          }
+        
+        body, *{
             padding:0px;
             margin:0px;
             box-sizing: border-box;
         }
+
         .calendar
         {
             background-color: white;
@@ -16,7 +22,7 @@
             display: none;
             position: absolute;
             background-color: #fff;
-            color: #1caff6;
+            color: #FF5D73;
             text-align: center;
             font-size: 14pt;
             padding-top: 5px;
@@ -30,7 +36,7 @@
         
         .calendar .dropdown .dropdown-item
         {
-            cursor:pointer;
+            cursor: pointer;
             opacity: .7;
             transition: .5s opacity;
         }
@@ -42,19 +48,19 @@
         
         .calendar .years
         {
-            display:none;
+            display: none;
         }
         
         .calendar .title
         {
-            text-align:center;
-            font-size:20pt;
+            text-align: center;
+            font-size: 20pt;
         }
         
         .calendar .calendar-btn
         {
             float: left;
-            background-color: #24aeff;
+            background-color: #FF5D73;
             color: white;
             text-align: center;
             font-size: 14pt;
@@ -67,7 +73,7 @@
         }
         
         .calendar .calendar-btn:hover{
-            background-color:#1f71a1;
+            background-color:rgb(250, 166, 177);
         }
         
         .calendar .year-btn
@@ -95,7 +101,7 @@
         
         .calendar .calendar-dates .days .day.selected
         {
-            background-color: #1caff6;
+            background-color: #FF5D73;
             color: white;
             cursor:pointer;
             opacity: .5;
@@ -133,63 +139,90 @@
              
         .hide {
             display:none;
-          }
+        }
         
         .show {
             display:block;
         }
+
+        #form {
+            padding: 30px 40px;	
+            background-color: lightgray;
+            width: 50%;
+        }
         
-        #container {
-            padding: 16px;
-            height: 300px;
-            width: 300px;
-            border: 1px solid black;
-            text-align: center;
-            background-color: gray;
-          }
-          
-          #nameInput {
-            width: 250px;
-            padding: 15px;
-            margin: 5px 0 22px 0;
+        .form-control {
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        
+        .form-control label {
             display: inline-block;
-            border: none;
-            background: #f1f1f1;
-          }
+            margin-bottom: 5px;
+        }
         
-          #textInput {
-            width: 250px;
-            padding: 15px;
-            margin: 5px 0 5px 0;
-            display: inline-block;
-            border: none;
-            background: #f1f1f1;
-            height: 100px;
-          }
-          
-          input[type=text]:focus {
-            background-color: #ddd;
-            outline: none;
-          }
-          
-          hr {
-            border: 1px solid #f1f1f1;
-            margin-bottom: 25px;
-          }
-          
-          #submitBtn {
-            background-color: green;
-            color: white;
-            padding: 0px 0px;
-            margin: 10px 0;
-            border: none;
-            cursor: pointer;
-            opacity: 0.9;
-            width: 30%;
-            height: 35px;
+        .form-control input {
+            border: 2px solid #f0f0f0;
+            border-radius: 4px;
+            display: block;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 10px;
+            width: 100%;
+        }
         
-          }
-          
-          #submitBtn:hover {
-            opacity: 0.8;
-          }
+        .form-control input:focus {
+            outline: 0;
+            border-color: #777;
+        }
+        
+        .form-control.success input {
+            border-color: #2ecc71;
+        }
+        
+        .form-control.error input {
+            border-color: #e74c3c;
+        }
+        
+        .form-control i {
+            visibility: hidden;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+        }
+        
+        .form-control.success i.fa-check-circle {
+            color: #2ecc71;
+            visibility: visible;
+        }
+        
+        .form-control.error i.fa-exclamation-circle {
+            color: #e74c3c;
+            visibility: visible;
+        }
+        
+        .form-control small {
+            color: #e74c3c;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+        }
+        
+        .form-control.error small {
+            visibility: visible;
+        }
+        
+        #submit-btn {
+            background-color: #FF5D73;
+            border: 2px solid #FF5D73;
+            border-radius: 4px;
+            color: #fff;
+            display: block;
+            font-family: inherit;
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 20px;
+            width: 100%;
+        }

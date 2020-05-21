@@ -94,13 +94,13 @@ function loadCalendarDays() {
 
         d.addEventListener('mousedown', function(e){
             e.preventDefault();
-            document.getElementById('container').className="show";
+            document.getElementById('form').className="show";
             mousedown = true;
         });
         
         d.addEventListener('mouseup', function(e){
             e.preventDefault();
-            document.getElementById('container').className="hide";
+            document.getElementById('form').className="hide";
             mousedown = false;
         });
 
@@ -128,3 +128,12 @@ window.addEventListener('load', function () {
     loadCalendarYears();
     loadCalendarDays();
 });
+
+document.getElementById("submit-btn").value = storeData();
+var nameInput = document.getElementById("name").value;
+
+function storeData (){
+    window.localStorage.setItem('name', JSON.stringify(nameInput));
+}
+
+//JSON.parse(window.localStorage.getItem('name'));
