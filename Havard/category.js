@@ -1,21 +1,47 @@
 
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+const newCategory1 = document.getElementById('addCategory');
+const categoryModal = document.getElementById('category-modal');
+var categoryBtn = document.getElementById('open-category-modal');
+var categoryspan = document.getElementById('close1');
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+categoryBtn.onclick = function() 
+{
+  categoryModal.style.display = "block";
+}
+window.onclick = function(event){
+  if(event.targt == modal){
+    categoryModal.stylee.display = "none";
   }
 }
+
+function newCategory(){
+  event.preventDefault();
+
+  var categoryArray = ["Frontend", "Backend","Support","Service","Bug", "Annet"]  
+  const newCategoryTXT = document.getElementById('addCategorytxt');
+  var category = {'Categories': categoryArray + " " + newCategoryTXT};
+  categoryArray.push(newCategoryTXT.value);
+
+window.localStorage.setItem('Categories',JSON.stringify(category));
+document.getElementById('addCategorytxt').value = '';
+}
+   
+   function renderCategoryList(){
+     const categoryList = JSON.parse(window.localStorage.getItem('categoryList')) || [];
+     const list1 = document.getElementById('categoryList');
+     list1.innerHTML = '';
+
+     for(const i1 in categoryList){
+       const li1 = document.createElement('li');
+       li1.innerHTML += `${categoryList[i].category}`;
+       list1.appendChild(li1);
+     }
+   }
+   window.addEventListener("storage", function (event) {
+    if (event.key === "taskList") {
+        renderTaskList();
+    }
+});
 /*
 
 // Get the modal

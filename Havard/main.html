@@ -69,10 +69,37 @@
             </div>
 
             <div class="create-new new-task">
-                <form onsubmit="newTask()">
-                    <input type="text" id="addTask" placeholder="New Task">
-                    <input type="submit" class="addBtn">
-                    <!-- <span onclick="newTask(event)" class="addBtn">Add</span> -->
+        
+                    <!-- Button to trigget modal -->
+                <button id="open-category-modal" class="fas fa-plus-circle"><span>New Category</span></button>
+
+                <!-- The Modal -->
+                <div id="category-modal" class="modal">
+
+                    <!-- Content inside the modal -->
+                    <div class="modal-content">
+                        <span class="close1">&times;</span>
+        
+                        <form onsubmit="newCategory()">
+                            <ul id="categoryList">
+                                <!-- <li id="frontend">Frontend</li>
+                                <li id="backend">Backend</li>
+                                <li id="support">Support</li>
+                                <li id="service">Service</li>
+                                <li id="bug">Bug</li>
+                                <li id="annet"> Annet</li> -->
+                                <li id=""></li>
+                                <input type="text" id="addCategorytxt" placeholder="New Category">
+                                <input type="submit" id="addCategory" class="addBtn">
+                             
+                                 </ul>
+                            
+                        
+                        
+                        </form>
+                    </div>
+
+                </div>
                 </form>
             </div>
 
