@@ -85,6 +85,10 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 function newSite(){
-   const newpage = window.location.href="/HTML/index.html";
+   const btn = document.getElementsByTagName('button');
+   btn.onclick = changeSite;
+   changeSite(){
+	   window.location.href"";
+   }
 }
 

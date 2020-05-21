@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/68fb369f5e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="/Havard/style.css">
+    <link rel="stylesheet" href="/Havard/modal.css">
     <link rel="stylesheet" href="/CSS/sidebar.css">
     <title>Tasker</title>
 </head>
@@ -49,6 +49,10 @@
                         <h3>New member</h3>
                         <form onsubmit="newMember()">
                             <input type="text" id="addMember" placeholder="First Name">
+                            <input type="text" id="addLastName" placeholder="Last Name">
+                            <input type="text" id="addEmail" placeholder="Email">
+                            <input type="file" name="image">
+                            <div id="imagePreview"></div>
                             <input type="submit" id="addBtn" href="#">
                         </form>
                     </div>
@@ -57,13 +61,14 @@
             </div>
         </div>
 
-        <!-- CATEHORY -->
+        <!-- CATEGORY -->
         <div class="section section-task">
             <h3>Categories</h3>
             <div class="list-section">
                 <ul id="taskList" class="myTaskList">
                 </ul>
             </div>
+
             <div class="create-new new-task">
                 <form onsubmit="newTask()">
                     <input type="text" id="addTask" placeholder="New Task">
@@ -86,9 +91,10 @@
             </div>
         </div>
 
-        <script src="main.js"></script>
-        <script src="members.js"></script>
-        <script src="task.js"></script>
+        <!-- <script src="/main.js"></script> -->
+        <script src="/Havard/members.js"></script>
+        <!-- <script src="task.js"></script> -->
+        <script src="/Havard/category.js"></script>
 </body>
 
 </html>

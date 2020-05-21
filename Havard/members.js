@@ -34,8 +34,12 @@ function newMember() {
     event.preventDefault();
 
     const newMember = document.getElementById('addMember').value;
+    const lastName = document.getElementById('addLastName').value;
+    const email = document.getElementById('addEmail').value;
+    const img = document.querySelector("[name='image']").files[0].name;
 
-    const member = { 'member': newMember };
+    const member = {'member': newMember + "" + lastName + "" + email + " " + img };
+
 
     const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
     memberList.push(member);
@@ -44,6 +48,9 @@ function newMember() {
 
     // Clear the text field after submition
     document.getElementById('addMember').value = '';
+    document.getElementById('addLastName').value = '';
+    document.getElementById('addEmail').value = '';
+    document.getElementById('addImg').value = '';   
 }
 
 // Render the user input to the page
@@ -56,7 +63,7 @@ function renderMemberList() {
 
     for (const i in memberList) {
         const li = document.createElement('li');
-        li.innerHTML = `${memberList[i].member}`;
+        li.innerHTML += `${memberList[i].member}`;
         list.appendChild(li);
     }
 
