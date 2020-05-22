@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/68fb369f5e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="modal.css">
-    <link rel="stylesheet" href="/CSS/sidebar.css">
+    <link rel="stylesheet" href="/docs/CSS/sidebar.css">
+    <link rel="stylesheet" href="/docs/CSS/modal.css">
+    <link rel="stylesheet" href="/docs/CSS/main.css">
     <title>Tasker</title>
 </head>
 
 <body>
 
 
-    <div class="menu">
+    <!-- <div class="menu">
         <a href="#" class="fas fa-plus"></a>
         <a href="#" class="text">NEW TASK</a>
         <a href="#" class="fas fa-bars"></a>
@@ -23,14 +23,14 @@
         <a href="#" class="fas fa-calendar"></a>
         <a href="#" class="text">CALENDAR</a>
 
-    </div>
+    </div> -->
 
     <div id="container">
 
         <!-- MEMBERS -->
 
         <div class="section section-member">
-            <h3>Registered Users</h3>
+            <h3 class="box-header">Registered Users</h3>
             <div class="list-section">
                 <ul id="memberList">
                 </ul>
@@ -49,7 +49,10 @@
                         <h3>New member</h3>
                         <form onsubmit="newMember()">
                             <input type="text" id="addMember" placeholder="First Name">
-                            <input type="submit" id="addBtn" href="#">
+                            <input type="text" id="addLastName" placeholder="Last Name">
+                            <input type="text" id="addEmail" placeholder="Email">
+                            <input type="file" id="addImage">
+                            <input type="submit" class="addBtn" href="#">
                         </form>
                     </div>
 
@@ -57,18 +60,35 @@
             </div>
         </div>
 
-        <!-- TASKS -->
-        <div class="section section-task">
-            <h3>Tasks</h3>
+        <!-- CATEGORY -->
+        <div class="section section-category">
+            <h3>Categories</h3>
             <div class="list-section">
-                <ul id="taskList" class="myTaskList">
-                </ul>
-            </div>
-            <div class="create-new new-task">
-                <form onsubmit="newTask()">
-                    <input type="text" id="addTask" placeholder="New Task">
-                    <input type="submit" class="addBtn">
-                    <!-- <span onclick="newTask(event)" class="addBtn">Add</span> -->
+                <ul id="categoryList">
+            </ul>
+        </div>
+
+            <div class="create-new new-category">
+
+                <!-- Button to trigget modal -->
+                <button id="open-category-modal" class="fas fa-plus-circle"><span>New Category</span></button>
+
+                <!-- The Modal -->
+                <div id="category-modal" class="modal">
+
+                    <!-- Content inside the modal -->
+                    <div class="modal1-content">
+                        <span class="close1">&times;</span>
+
+                        <form onsubmit="newCategory()">
+                        
+                                <input type="text" id="addCategorytxt" placeholder="New Category">
+                                <input type="submit" id="addCategory" class="addBtn" href="#">
+
+                        </form>
+                    </div>
+
+                </div>
                 </form>
             </div>
 
@@ -85,10 +105,12 @@
                 </ul>
             </div>
         </div>
+    </div>
 
-        <script src="main.js"></script>
-        <script src="members.js"></script>
-        <script src="task.js"></script>
+        <!-- <script src="/main.js"></script> -->
+        <script src="/docs/JS/members.js"></script>
+        <!-- <script src="task.js"></script> -->
+        <script src="/docs/JS/category.js"></script>
 </body>
 
 </html>

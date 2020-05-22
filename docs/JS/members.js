@@ -24,18 +24,15 @@ window.onclick = function (event) {
     }
 }
 
-// Close modal on subit 
-// let submitbtn = document.getElementById('addBtn');
-// submitbtn.modal.style.display = "none";
-
-
-
 function newMember() {
-    event.preventDefault();
+    event.preventDefault()
 
     const newMember = document.getElementById('addMember').value;
+    const lastName = document.getElementById('addLastName').value;
+    const email = document.getElementById('addEmail').value;
+   
+     const member = {'member': newMember + " " + lastName + ", " + email};
 
-    const member = { 'member': newMember };
 
     const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
     memberList.push(member);
@@ -44,10 +41,17 @@ function newMember() {
 
     // Clear the text field after submition
     document.getElementById('addMember').value = '';
+    document.getElementById('addLastName').value = '';
+    document.getElementById('addEmail').value = '';
+       
+    
+    
 }
 
+
+
 // Render the user input to the page
-function renderMemberList() {
+function renderMemberList(){
 
     // Retrives the value of the localStorage item "memberList" as a string (text)
     const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
@@ -56,16 +60,16 @@ function renderMemberList() {
 
     for (const i in memberList) {
         const li = document.createElement('li');
-        li.innerHTML = `${memberList[i].member}`;
+        li.innerHTML += `${memberList[i].member}`;
         list.appendChild(li);
     }
-
 }
 renderMemberList();
 
+
 // When a window updates localStorage, other windows get notified through "addEventListener"
-window.addEventListener("storage", function (event) {
-    if (event.key === "taskList") {
-        renderTaskList();
-    }
-});
+// window.addEventListener("storage", function (event) {
+//     if (event.key === "categoryList") {
+//         renderTaskList();
+//     }
+// });
