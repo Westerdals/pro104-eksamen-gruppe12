@@ -145,7 +145,7 @@ ul li.active {
     border: 1px solid rgb(189, 189, 189);
     padding: 10px;
     margin-bottom: 5px;
-    background: red;
+    background: #ffff;
     box-shadow: 1px 1px rgba(9, 30, 66, .25);
     border-radius: 3px;
 }

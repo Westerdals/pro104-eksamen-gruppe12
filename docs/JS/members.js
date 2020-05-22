@@ -43,12 +43,8 @@ function newMember() {
     document.getElementById('addMember').value = '';
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
-       
-    
-    
+     
 }
-
-
 
 // Render the user input to the page
 function renderMemberList(){
@@ -67,9 +63,9 @@ function renderMemberList(){
 renderMemberList();
 
 
-// When a window updates localStorage, other windows get notified through "addEventListener"
-// window.addEventListener("storage", function (event) {
-//     if (event.key === "categoryList") {
-//         renderTaskList();
-//     }
-// });
+//When a window updates localStorage, other windows get notified through "addEventListener"
+window.addEventListener("storage", function (event) {
+    if (event.key === "categoryList") {
+        renderMemberList();
+    }
+});
