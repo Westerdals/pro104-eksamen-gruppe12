@@ -1,0 +1,43 @@
+* {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.menu {
+    height: 100vh;
+    width: 180px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #333333;
+    padding-top: 4%;
+}
+
+.menu .fas {
+    /* Make the links appear below each other instead of side-by-side */
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #666666;
+    margin: auto;
+    height: 40px;
+    width: 40px;
+    padding: 12px;
+    border-radius: 50%;
+    color: #fffffc;
+    font-size: 40px;
+}
+
+.menu .text {
+    /* Make the links appear below each other instead of side-by-side */
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 8px;
+    padding-bottom: 25px;
+    text-align: center;
+    background: #333333;
+    color: #fffffc;
+    font-size: 18px;
+
+}

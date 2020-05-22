@@ -1,28 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
-    <link rel="stylesheet" type="text/css" href="/CSS/index.css">
-    <script src="index.js"></script>
+<html>
+    
 <head>
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script> <!-- Henter inn ikoner fra fontawesome.com-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="/CSS/index.css" type="text/css">
+         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
+   
+    
 </head>
+    
 <body>
-<div class="wrapper"> <!---Sidebaren-->
-    <div class="sidebar">
-        <h2>Kanban</h2>
-        <ul>
-            <li><a href="/HTML/index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#"><i class="fal fa-project-diagram"></i> Project</a></li>
-            <li><a href="/HTML/ToDo.html"><i class="fas fa-list"></i> To-Do</a></li>
-            <li><a href="#"><i class="fas fa-calendar-day"></i> Calendar</a></li>
-            <li><a href="#"><i class="far fa-bell"></i> Reminders</a></li>
-            
-        </ul>
-     </div>
+     
 
+  <div class="container"> <!--INNLOGGING FORM -->
+        <form id="form" class="form">
+            <h2>Register with us</h2>
+            <div class="form-control">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter email">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password2" placeholder="Confirm password">
+                <small>Error message</small>
+            </div>
+
+  <button id="submitBtn" type="submit">Submit</button>
+
+            
+    </form>
     </div>
 
- 
 
-</body>
+    </body>
+
+
+    <script src="/JS/index.js" type="text/javascript"></script>
+    
+    
+    
+ 
 </html>

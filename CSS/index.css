@@ -1,71 +1,102 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;  
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+
+/* Custom properties */
+:root {
+    --success-color: #2ecc71;
+    --error-color: #e73e3c;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+    background: #2F426B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
     
 }
 
-body{
-    background: #798086;
-    position: absolute;
-
-    
+.container {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 12px rgb(0, 0, 0, 0.3);
+    width: 400px;
 }
-.wrapper{
-    display:flex;
+
+h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-family: Barrero Times Bold;
+}
+
+.form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
     position: relative;
 }
 
-.wrapper .sidebar{
-position: fixed;
-width: 200px;
-height: 100%;
-background: #292F36;
-padding: 30px 0;
+/* Labels are displayed inline by default. */
+/* display: block; positions them on their own line  */
+.form-control label {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
 }
 
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
 
-.wrapper .sidebar h2{
+/* Removes the default outline when the input field is targeted */
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: var(--success-color);
+}
+
+.form-control.error input {
+    border-color: var(--error-color);
+}
+
+.form-control small {
+    color: var(--error-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+#submitBtn{
+    cursor: pointer;
+    background: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
     color: #fff;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 50px;
-}
-.wrapper .sidebar ul li{
-border-bottom: 2px solid rgba(0,0,0,0.05) ;
-padding: 35px;
-border-top: 3px solid rgba(225,225,225,0.05);
-font-size: 17px;
-
-}
-
-.wrapper .sidebar a{
-    color: #fff;
-     display: block;
-}
-.wrapper .sidebar ul li a .fas .far .fal{
-    width: 45px;
-    
-}
-.wrapper .sidebar ul li:hover{
-    background: rgb(42, 42, 43);
-}
-.mainContent .header{
-    width: 20px;
-}
-.tdl{
-    right: 100px;
-    color: black;
-}
-.tdl h1{
-    color: white;
-    position: rel
-    left: 400px;
-    margin: 40px;
-    font-size: 50px;
-    text-align: center;
-    
-
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
 }
