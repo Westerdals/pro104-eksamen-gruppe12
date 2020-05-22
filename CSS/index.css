@@ -100,3 +100,29 @@ h2 {
     margin-top: 20px;
     width: 100%;
 }
+
+/*icon til placeholders */
+
+.inputWithIcon i{
+position: absolute;
+left: 0px;
+top: 30px;
+padding: 9px 8px;
+
+}
+
+#username{
+    padding-left: 40px;
+}
+
+#email{
+    padding-left: 40px;
+}
+
+#password{
+    padding-left: 40px;
+}
+
+#password2{
+    padding-left: 40px;
+}
