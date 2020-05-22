@@ -3,7 +3,25 @@
     padding: 0;
     font-family: "montserrat",sans-serif;
     box-sizing: border-box;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    list-style: none;
+    text-decoration: none;  
+    
+}
+body{
+    
+    position: relative;
+    min-height: 100vh;
+    background-image: linear-gradient(120deg,#0097e6,#f5f6fa);
+
+    
+
+} 
+=======
+=======
     text-decoration: none;
+>>>>>>> cb8fecff56145937d17d24724b77397fb54d8eb6
   }
   
   body{
@@ -11,6 +29,7 @@
     min-height: 100vh;
   }
   
+>>>>>>> ca42eecc918bf86263cd662b2833df279fb218dc
 
 /* STARTEN AV SIDEBAR */
  .wrapper{
@@ -59,6 +78,37 @@ font-size: 17px;
   
 /* SLUTTEN AV SIDEBAR */
 
+<<<<<<< HEAD
+.tdl{
+    position: fixed;
+    left: 400px;
+    margin: 50px;
+    left: 50vh;
+    border: 1px solid black;
+    background-color:navy;
+    color: white;
+    
+}
+.tdl h1{
+    font-size: 4rem;
+    text-decoration: underline;
+    
+}
+.strike {
+    text-decoration: line-through;
+  }
+
+#todo-list{
+width: 100%;
+background-color: rgb(255,255,255,0.5);
+padding: 18px;
+margin: 1px;
+overflow: hidden;
+    
+
+
+}
+=======
 /* STARTEN AV TO DO LIST */
 
   
@@ -104,3 +154,4 @@ font-size: 17px;
     color: #fff;
   }
   
+>>>>>>> ca42eecc918bf86263cd662b2833df279fb218dc
