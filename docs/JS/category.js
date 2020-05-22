@@ -1,48 +1,49 @@
 
-var categoryModal = document.getElementById("category-modal");
-var categoryBtn = document.getElementById("open-category-modal");
+var modal1 = document.getElementById("category-modal");
+var btn1 = document.getElementById("open-category-modal");
 var span1 = document.getElementsByClassName("close1")[0];
 
-categoryBtn.onclick = function() {
-  categoryModal.style.display = "block";
+btn1.onclick = function() {
+  modal1.style.display = "block";
 }
 span1.onclick = function(){
-  categoryModal.style.display = "none";
+  modal1.style.display = "none";
 }
 window.onclick = function(event){
-  if(event.targt == categoryModal){
-    categoryModal.style.display = "none";
+  if(event.targt == modal1){
+    modal1.style.display = "none";
   }
 }
 
 function newCategory(){
   event.preventDefault();
 
-  const categorytxt = document.getElementById('addCategorytxt').value;
+  const categorytxt = document.getElementById('txt').value;
 
    const category = {'Category':  categorytxt };
+   
 
-const categoryList = JSON.parse(window.localStorage.getItem('categoryList')) || [];
-categoryList.push(category);
-window.localStorage.setItem('CategoryList', JSON.stringify(categoryList));
-renderCategoryList();
+const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];
+ctlist.push(category);
+window.localStorage.setItem('CategoryList', JSON.stringify(ctlist));
+//renderCategoryList();
 
 //reset the text field after submitted
-document.getElementById('addCategorytxt').value = '';
+document.getElementById('txt').value = '';
 
 }
    
 // render the user input to the page
 function renderCategoryList(){
 
-  // Get`s the value of the localstorage item "categoryList as a string"
-  const categoryList = JSON.parse(window.localStorage.getItem('categoryList')) || [];
-  const list1 = document.getElementById('categoryList');
-  list1.innerHTML = '';
+  // Get`s the value of the localstorage item "ctlist as a string"
+  const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];
+  const list1 = document.getElementById('ctlist');
+  //list1.innerHTML = '';
 
-  for (const i in categoryList) {
-    const li1 = document.createElement('li');
-    li1.innerHTML += `${categoryList}`;
+  for (const i in ctlist) {
+    const li1 = document.createElement("li");
+    li1.innerHTML += `${ctlist[i].category}`;
     list1.appendChild(li1);
 }
 
