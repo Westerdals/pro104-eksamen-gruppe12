@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/68fb369f5e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Havard/style.css">
-    <link rel="stylesheet" href="/Havard/modal.css">
-    <link rel="stylesheet" href="/CSS/sidebar.css">
+    <link rel="stylesheet" href="/docs/CSS/sidebar.css">
+    <link rel="stylesheet" href="/docs/CSS/modal.css">
+    <link rel="stylesheet" href="/docs/CSS/main.css">
     <title>Tasker</title>
 </head>
 
 <body>
 
 
-    <div class="menu">
+    <!-- <div class="menu">
         <a href="#" class="fas fa-plus"></a>
         <a href="#" class="text">NEW TASK</a>
         <a href="#" class="fas fa-bars"></a>
@@ -23,7 +23,7 @@
         <a href="#" class="fas fa-calendar"></a>
         <a href="#" class="text">CALENDAR</a>
 
-    </div>
+    </div> -->
 
     <div id="container">
 
@@ -51,8 +51,8 @@
                             <input type="text" id="addMember" placeholder="First Name">
                             <input type="text" id="addLastName" placeholder="Last Name">
                             <input type="text" id="addEmail" placeholder="Email">
-                             <input type="file" id="addImage">
-                            <input type="submit" id="addBtn" href="#">
+                            <input type="file" id="addImage">
+                            <input type="submit" class="addBtn" href="#">
                         </form>
                     </div>
 
@@ -61,41 +61,30 @@
         </div>
 
         <!-- CATEGORY -->
-        <div class="section section-task">
+        <div class="section section-category">
             <h3>Categories</h3>
             <div class="list-section">
-                <ul id="taskList" class="myTaskList">
-                </ul>
-            </div>
+                <ul id="categoryList">
+            </ul>
+        </div>
 
-            <div class="create-new new-task">
-        
-                    <!-- Button to trigget modal -->
+            <div class="create-new new-category">
+
+                <!-- Button to trigget modal -->
                 <button id="open-category-modal" class="fas fa-plus-circle"><span>New Category</span></button>
 
                 <!-- The Modal -->
                 <div id="category-modal" class="modal">
 
                     <!-- Content inside the modal -->
-                    <div class="modal-content">
+                    <div class="modal1-content">
                         <span class="close1">&times;</span>
-        
+
                         <form onsubmit="newCategory()">
-                            <ul id="categoryList">
-                                <!-- <li id="frontend">Frontend</li>
-                                <li id="backend">Backend</li>
-                                <li id="support">Support</li>
-                                <li id="service">Service</li>
-                                <li id="bug">Bug</li>
-                                <li id="annet"> Annet</li> -->
-                                <li id=""></li>
+                        
                                 <input type="text" id="addCategorytxt" placeholder="New Category">
-                                <input type="submit" id="addCategory" class="addBtn">
-                             
-                                 </ul>
-                            
-                        
-                        
+                                <input type="submit" id="addCategory" class="addBtn" href="#">
+
                         </form>
                     </div>
 
@@ -116,11 +105,12 @@
                 </ul>
             </div>
         </div>
+    </div>
 
         <!-- <script src="/main.js"></script> -->
-        <script src="/Havard/members.js"></script>
+        <script src="/docs/JS/members.js"></script>
         <!-- <script src="task.js"></script> -->
-        <script src="/Havard/category.js"></script>
+        <script src="/docs/JS/category.js"></script>
 </body>
 
 </html>

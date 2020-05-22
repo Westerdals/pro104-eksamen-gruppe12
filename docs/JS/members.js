@@ -25,13 +25,13 @@ window.onclick = function (event) {
 }
 
 function newMember() {
-    event.preventDefault();
+    event.preventDefault()
 
     const newMember = document.getElementById('addMember').value;
     const lastName = document.getElementById('addLastName').value;
     const email = document.getElementById('addEmail').value;
    
-     const member = {'member': newMember + " " + lastName + " " + email};
+     const member = {'member': newMember + " " + lastName + ", " + email};
 
 
     const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
@@ -68,8 +68,8 @@ renderMemberList();
 
 
 // When a window updates localStorage, other windows get notified through "addEventListener"
-window.addEventListener("storage", function (event) {
-    if (event.key === "taskList") {
-        renderTaskList();
-    }
-});
+// window.addEventListener("storage", function (event) {
+//     if (event.key === "categoryList") {
+//         renderTaskList();
+//     }
+// });
