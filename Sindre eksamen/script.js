@@ -18,7 +18,7 @@ function onStatusChange(event, taskId) {
 }
 
 function buildStatusDropdwon(taskId) {
-    const statuses = ['','Severly Important', 'Very Important', 'Important', 'Not important', 'Almost no intrest'];
+    const statuses = ['Set status of Task','Severly Important', 'Very Important', 'Important', 'Not important', 'Almost no interest'];
     const options = statuses.map(status => `<option placeholder="hei">${status}</option>`);
     return `
         <select onchange="onStatusChange(event, ${taskId})">
@@ -122,7 +122,7 @@ function createNewTask(event){
     startDato: document.querySelector("[name='Dato1']").value,
     endDate: document.querySelector("[name='DatoEnd']").value,
     users: "none",
-    status: 0,
+    status: 'No current status.',
     message: document.querySelector("[name='taskMessage']").value,
     started: false
 };

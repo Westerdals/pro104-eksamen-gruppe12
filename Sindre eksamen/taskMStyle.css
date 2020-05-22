@@ -1,10 +1,14 @@
 body{
-    background-color: grey;
+    background: rgb(82,20,94);
+    background: linear-gradient(333deg, rgba(82,20,94,1) 0%, rgba(29,9,215,1) 70%, rgba(43,130,204,1) 84%);
 }
 
 .task-wrapper {
-    border: 2px solid black;
-    background-color: white;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid #568984;
+    border-bottom: 2px solid #568984;
+    background-color: #7e7683;
     margin-top: 20px;
     padding: 10px;
     max-width: 400px;
@@ -13,3 +17,6 @@ body{
 .task-wrapper > div, button, form > * {
     margin-top: 8px
 }
+input[type=text] {
+    border: 2px solid#000080;
+  }
