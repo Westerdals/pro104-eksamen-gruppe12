@@ -5,10 +5,11 @@
     <!DOCTYPE html>
     <html class="no-js">
 
-    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Calendar</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/docs/CSS/calendar.css">
@@ -41,26 +42,28 @@
                 <div class="clear"></div>
             </div>
 
-            <form id="form" class="hide">
-                <div class="form-control">
-                    <label for="name">Name</label>
-                    <input type="text" placeholder="Name" id="name" />
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>Error message</small>
-                </div>
-                <div class="form-control">
-                    <label for="to-do">What To Do</label>
-                    <input type="text" placeholder="What To Do" id="to-do" />
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>Error message</small>
-                </div>
-
-                <button type="submit" id="submit-btn">Submit</button>
-            </form>
-
-            <div id="calendarDays" class="days">
+            <div id="calendarDays" class="days"></div>
+           
+            <div class="popup" onclick="popUp()">
+                <form id="form" class="hide">
+                    <button id=close-btn onclick=closeForm()>X</button>
+                    <div class="form-control">
+                        <label for="name">Name</label>
+                        <input type="text" placeholder="Write your name ..." id="name" />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+                    <div class="form-control">
+                        <label for="to-do">What to do</label>
+                        <input type="text" placeholder="The task is ..." id="to-do" />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>Error message</small>
+                    </div>
+    
+                    <button type="submit" id="submit-btn">Submit</button>
+                </form>
             </div>
 
         </div>

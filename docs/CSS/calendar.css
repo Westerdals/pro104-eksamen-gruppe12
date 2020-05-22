@@ -15,6 +15,7 @@
             background-color: white;
             padding: 20px;
             box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
+            font-family: Source Sans Pro;
         }
         
         .calendar .dropdown
@@ -51,12 +52,6 @@
             display: none;
         }
         
-        .calendar .title
-        {
-            text-align: center;
-            font-size: 20pt;
-        }
-        
         .calendar .calendar-btn
         {
             float: left;
@@ -78,20 +73,26 @@
         
         .calendar .year-btn
         {
-            float:right;
+            float: right;
         }
         
         .calendar .calendar-dates .days .day
         {
             float:left;
-            width: 12%;
-            margin: 1%;
-            padding: 1%;
+            width: 13%;
+            margin: 0.5%;
+            padding: 3%;
             font-size:13pt;
             text-align:center;
             border-radius: 10px;
             border: solid 1px #ddd;
+            background-color: rgb(250, 166, 177);
         }
+
+        .calendar .calendar-dates .days .day:hover {
+            background-color: #FF5D73;
+        }
+
         
         .calendar .calendar-dates .days .day.blank
         {
@@ -147,8 +148,14 @@
 
         #form {
             padding: 30px 40px;	
-            background-color: lightgray;
+            background-color: white;
+            position: fixed; 
+            top: 25%;
+            left: 25%;
             width: 50%;
+            height: 50%;
+            box-shadow: 5px 5px 5px 5px gray;
+          }
         }
         
         .form-control {
@@ -160,13 +167,15 @@
         .form-control label {
             display: inline-block;
             margin-bottom: 5px;
+            margin-top: 40px;
+            font-family: Source Sans Pro;
         }
         
         .form-control input {
             border: 2px solid #f0f0f0;
             border-radius: 4px;
             display: block;
-            font-family: inherit;
+            font-family: Source Sans Pro;
             font-size: 14px;
             padding: 10px;
             width: 100%;
@@ -220,9 +229,34 @@
             border-radius: 4px;
             color: #fff;
             display: block;
-            font-family: inherit;
+            font-family: Source Sans Pro;
             font-size: 16px;
             padding: 10px;
-            margin-top: 20px;
+            margin-top: 50px;
             width: 100%;
+        }
+
+        #submit-btn:hover {
+            opacity: 0.8;
+        }
+
+        .popup .show {
+            visibility: visible;
+            z-index: 2;
+        }
+
+        #close-btn{
+            color: #FF5D73;
+            font-size: 1.2em;
+            position: absolute;
+            margin-top: -25px;
+            margin-left: -30px;
+            padding: 5px;
+            font-family: Source Sans Pro;
+            border: none;
+            background-color: white;
+        }
+
+        #close-btn:hover {
+            opacity: 0.8;
         }
