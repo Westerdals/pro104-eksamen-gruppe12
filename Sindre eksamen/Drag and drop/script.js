@@ -1,5 +1,16 @@
 const list_items = document.querySelectorAll('.list-item');
 const lists = document.querySelectorAll('.list');
+let listObj = {
+	taskName: "empty",
+	startdate: Date.now(),
+	endDate: Date.UTC(),
+	status: 0,
+	assigned: 0
+};
+localStorage.setItem('listObj', JSON.stringify(listObj));
+console.log(localStorage.getItem('listObj'));
+list_items.value = window.localStorage.getItem(JSON.stringify('listObj'));
+console.log(list_items);
 
 let draggedItem = null;
 
