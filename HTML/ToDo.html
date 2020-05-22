@@ -50,6 +50,7 @@
             var p = $(this).parent();
             p.fadeOut(function(){
               p.remove();
+              localStorage.setItem('PersonalTask',JSON.stringify(task));
             });
           });
 

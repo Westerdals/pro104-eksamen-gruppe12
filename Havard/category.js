@@ -2,7 +2,7 @@
 const newCategory1 = document.getElementById('addCategory');
 const categoryModal = document.getElementById('category-modal');
 var categoryBtn = document.getElementById('open-category-modal');
-var categoryspan = document.getElementById('close1');
+var Span = document.getElementsByClassName('close')[0];
 
 categoryBtn.onclick = function() 
 {
