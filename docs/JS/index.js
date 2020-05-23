@@ -3,29 +3,53 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-nextPage = true;
+nextPage = false;
 
 form.addEventListener('submit', e => {
 	e.preventDefault();
 
-	checkInputs();
-
-	//local storage object
+	newAccount();
+	
+//local storage object
 	var lsPerson = {
 		username: username.value,
 		email: email.value,
 		password: password.value
 	};
-	localStorage.setItem('PersonData', JSON.stringify(lsPerson));
+	localStorage.setItem('Bruker', JSON.stringify(lsPerson));
 
-});
 
-function checkInputs() {
+	console.log(username.value.toString().length);
+
+
+// checks if the value is greater than 0 and then check the next if-statement and so on. Newsite() will run when every statement is checked.
+	if(username.value.length > 0){
+	
+		if(email.value.length > 0){
+		
+		if(password.value.length > 0){
+		
+		 if(email.value.length > 0){
+			
+		if((password2.value === password.value)){
+				
+				newSite();
+	
+			}
+			}
+			
+}
+		}
+	}
+	
+});		
+
+function newAccount() {
 	// trim to remove the whitespaces
-	const usernameValue = username.value.trim();
-	const emailValue = email.value.trim();
-	const passwordValue = password.value.trim();
-	const password2Value = password2.value.trim();
+	let usernameValue = username.value.trim();
+	let emailValue = email.value.trim();
+	let passwordValue = password.value.trim();
+	let password2Value = password2.value.trim();
 
 	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
@@ -42,6 +66,7 @@ function checkInputs() {
 		nextPage = false;
 	} else {
 		setSuccessFor(email);
+		
 	}
 
 	if (passwordValue === '') {
@@ -59,11 +84,10 @@ function checkInputs() {
 		nextPage = false;
 	} else {
 		setSuccessFor(password2);
+		
 	}
-
-	if (nextPage === true) {
-newSite();
-	} 
+	
+	
 }
 
 
@@ -77,17 +101,14 @@ function setErrorFor(input, message) {
 function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form-control success';
+	
 }
 
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
-
+		
 function newSite() {
-	const btn = document.getElementsByTagName('button');
-	btn.onclick = changeSite;
-	function changeSite(){
-		window.location = '/docs/HTML/main.html';
-	}
-}
+	window.location = '/docs/HTML/main.html';
 
+}

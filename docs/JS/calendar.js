@@ -94,13 +94,12 @@ function loadCalendarDays() {
 
         d.addEventListener('mousedown', function(e){
             e.preventDefault();
-            document.getElementById('form').className="show";
+            popUp();
             mousedown = true;
-        });
+        }); 
         
         d.addEventListener('mouseup', function(e){
             e.preventDefault();
-            document.getElementById('form').className="hide";
             mousedown = false;
         });
 
@@ -137,3 +136,11 @@ function storeData (){
 }
 
 //JSON.parse(window.localStorage.getItem('name'));
+
+function popUp() {
+    document.getElementById("form").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("form").style.display = "none";
+  }
