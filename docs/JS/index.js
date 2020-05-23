@@ -22,17 +22,17 @@ form.addEventListener('submit', e => {
 	console.log(username.value.toString().length);
 
 
-// 
+// checks if the value is greater than 0 and then check the next if-statement and so on. Newsite() will run when every statement is checked.
 	if(username.value.length > 0){
-		console.log('test1');
+	
 		if(email.value.length > 0){
-		console.log('test2');
+		
 		if(password.value.length > 0){
-			console.log('test3');
+		
 		 if(email.value.length > 0){
-			console.log('test4');
+			
 		if((password2.value === password.value)){
-				console.log('test 5');
+				
 				newSite();
 	
 			}
@@ -44,17 +44,12 @@ form.addEventListener('submit', e => {
 	
 });		
 
-
-
 function newAccount() {
 	// trim to remove the whitespaces
 	let usernameValue = username.value.trim();
 	let emailValue = email.value.trim();
 	let passwordValue = password.value.trim();
 	let password2Value = password2.value.trim();
-
-	
-
 
 	if (usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
