@@ -1,14 +1,17 @@
 /* Import font  */
 @import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Poppins|Roboto+Condensed&display=swap');
 
-* {
+/* *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+ */
+body {
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #fff
-}
-
-body {
+    font-family: 'Open Sans', sans-serif;
+    background: #fffffc;
     width: 95vw;
     margin: auto;
 }
@@ -141,6 +144,7 @@ ul li.active {
     margin-left: 15px;
     font-size: 16px;
 }
+
 .list-section1 ul li {
     border: 1px solid rgb(189, 189, 189);
     padding: 10px;
