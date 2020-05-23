@@ -1,262 +1,251 @@
+body {
+    background-color: lightgray;
 
-          body {
-            background-color: lightgray;
+}
 
-          }
-        
-        body, *{
-            padding:0px;
-            margin:0px;
-            box-sizing: border-box;
-        }
+body,
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 
-        .calendar
-        {
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
-            font-family: Source Sans Pro;
-        }
-        
-        .calendar .dropdown
-        {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            color: #FF5D73;
-            text-align: center;
-            font-size: 14pt;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 30px;
-            padding-right: 30px;
-            width: 160px;
-            left: 0px;
-            z-index: 2000;
-        }
-        
-        .calendar .dropdown .dropdown-item
-        {
-            cursor: pointer;
-            opacity: .7;
-            transition: .5s opacity;
-        }
-        
-        .calendar .dropdown .dropdown-item:hover
-        {
-            opacity: 1;
-        }
-        
-        .calendar .years
-        {
-            display: none;
-        }
-        
-        .calendar .calendar-btn
-        {
-            float: left;
-            background-color: #FF5D73;
-            color: white;
-            text-align: center;
-            font-size: 14pt;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            position: relative;
-            width: 20%;
-            cursor: pointer;
-            transition: .5s background-color;
-        }
-        
-        .calendar .calendar-btn:hover{
-            background-color:rgb(250, 166, 177);
-        }
-        
-        .calendar .year-btn
-        {
-            float: right;
-        }
-        
-        .calendar .calendar-dates .days .day
-        {
-            float:left;
-            width: 13%;
-            margin: 0.5%;
-            padding: 3%;
-            font-size:13pt;
-            text-align:center;
-            border-radius: 10px;
-            border: solid 1px #ddd;
-            background-color: rgb(250, 166, 177);
-        }
+.calendar {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    font-family: Source Sans Pro;
+    z-index: 1;
+}
 
-        .calendar .calendar-dates .days .day:hover {
-            background-color: #FF5D73;
-        }
+.calendar .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    color: #FF5D73;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 160px;
+    left: 0px;
+    z-index: 2000;
+}
 
-        
-        .calendar .calendar-dates .days .day.blank
-        {
-            background-color: white;
-            border:none;
-        }
-        
-        .calendar .calendar-dates .days .day.selected
-        {
-            background-color: #FF5D73;
-            color: white;
-            cursor:pointer;
-            opacity: .5;
-            transition: .5s opacity;
-        }
-        
-        .calendar .calendar-dates .days .day.selected:hover
-        {
-            opacity: 1;
-        }
-        
-        .calendar .calendar-dates .days .day.label
-        {
-            height: 40px;
-            background-color: white;
-            color: black;
-            border:none;
-            font-weight:bold;
-        }
-        
-        .clear{
-            clear:both;
-        }
-        
-        @media only screen and (max-width: 960px) {
-            .calendar{
-                width: 100%;
-                margin: 0px;
-                margin: 0px;
-                box-sizing: border-box;
-                position: relative;
-                left: 0px;
-            }
-        }
-             
-        .hide {
-            display:none;
-        }
-        
-        .show {
-            display:block;
-        }
+.calendar .dropdown .dropdown-item {
+    cursor: pointer;
+    opacity: .7;
+    transition: .5s opacity;
+}
 
-        #form {
-            padding: 30px 40px;	
-            background-color: white;
-            position: fixed; 
-            top: 25%;
-            left: 25%;
-            width: 50%;
-            height: 50%;
-            box-shadow: 5px 5px 5px 5px gray;
-          }
-        }
-        
-        .form-control {
-            margin-bottom: 10px;
-            padding-bottom: 20px;
-            position: relative;
-        }
-        
-        .form-control label {
-            display: inline-block;
-            margin-bottom: 5px;
-            margin-top: 40px;
-            font-family: Source Sans Pro;
-        }
-        
-        .form-control input {
-            border: 2px solid #f0f0f0;
-            border-radius: 4px;
-            display: block;
-            font-family: Source Sans Pro;
-            font-size: 14px;
-            padding: 10px;
-            width: 100%;
-        }
-        
-        .form-control input:focus {
-            outline: 0;
-            border-color: #777;
-        }
-        
-        .form-control.success input {
-            border-color: #2ecc71;
-        }
-        
-        .form-control.error input {
-            border-color: #e74c3c;
-        }
-        
-        .form-control i {
-            visibility: hidden;
-            position: absolute;
-            top: 40px;
-            right: 10px;
-        }
-        
-        .form-control.success i.fa-check-circle {
-            color: #2ecc71;
-            visibility: visible;
-        }
-        
-        .form-control.error i.fa-exclamation-circle {
-            color: #e74c3c;
-            visibility: visible;
-        }
-        
-        .form-control small {
-            color: #e74c3c;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            visibility: hidden;
-        }
-        
-        .form-control.error small {
-            visibility: visible;
-        }
-        
-        #submit-btn {
-            background-color: #FF5D73;
-            border: 2px solid #FF5D73;
-            border-radius: 4px;
-            color: #fff;
-            display: block;
-            font-family: Source Sans Pro;
-            font-size: 16px;
-            padding: 10px;
-            margin-top: 50px;
-            width: 100%;
-        }
+.calendar .dropdown .dropdown-item:hover {
+    opacity: 1;
+}
 
-        #submit-btn:hover {
-            opacity: 0.8;
-        }
+.calendar .years {
+    display: none;
+}
 
-        .popup .show {
-            visibility: visible;
-            z-index: 2;
-        }
+.calendar .calendar-btn {
+    float: left;
+    background-color: #FF5D73;
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    width: 20%;
+    cursor: pointer;
+    transition: .5s background-color;
+}
 
-        #close-btn{
-            color: #FF5D73;
-            font-size: 1.2em;
-            position: absolute;
-            margin-top: -25px;
-            margin-left: -30px;
-            padding: 5px;
-            font-family: Source Sans Pro;
-            border: none;
-            background-color: white;
-        }
+.calendar .calendar-btn:hover {
+    background-color: rgb(250, 166, 177);
+}
 
-        #close-btn:hover {
-            opacity: 0.8;
-        }
+.calendar .year-btn {
+    float: right;
+}
+
+.calendar .calendar-dates .days .day {
+    float: left;
+    width: 13%;
+    margin: 0.5%;
+    padding: 3%;
+    font-size: 13pt;
+    text-align: center;
+    border-radius: 10px;
+    border: solid 1px #ddd;
+    background-color: rgb(250, 166, 177);
+}
+
+.calendar .calendar-dates .days .day:hover {
+    background-color: #FF5D73;
+}
+
+
+.calendar .calendar-dates .days .day.blank {
+    background-color: white;
+    border: none;
+}
+
+.calendar .calendar-dates .days .day.selected {
+    background-color: #FF5D73;
+    color: white;
+    cursor: pointer;
+    opacity: .5;
+    transition: .5s opacity;
+}
+
+.calendar .calendar-dates .days .day.selected:hover {
+    opacity: 1;
+}
+
+.calendar .calendar-dates .days .day.label {
+    height: 40px;
+    background-color: white;
+    color: black;
+    border: none;
+    font-weight: bold;
+}
+
+.clear {
+    clear: both;
+}
+
+@media only screen and (max-width: 960px) {
+    .calendar {
+        width: 100%;
+        margin: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        position: relative;
+        left: 0px;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#form {
+    padding: 30px 40px;
+    background-color: white;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    box-shadow: 5px 5px 5px 5px gray;
+}
+
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top: 40px;
+    font-family: Source Sans Pro;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-family: Source Sans Pro;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: #2ecc71;
+}
+
+.form-control.error input {
+    border-color: #e74c3c;
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.form-control.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.form-control small {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+#submit-btn {
+    background-color: #FF5D73;
+    border: 2px solid #FF5D73;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-family: Source Sans Pro;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 50px;
+    width: 100%;
+}
+
+#submit-btn:hover {
+    opacity: 0.8;
+}
+
+.popup .show {
+    visibility: visible;
+    z-index: 2;
+}
+
+#close-btn {
+    color: #FF5D73;
+    font-size: 1.2em;
+    position: absolute;
+    margin-top: -25px;
+    margin-left: -30px;
+    padding: 5px;
+    font-family: Source Sans Pro;
+    border: none;
+    background-color: white;
+}
+
+#close-btn:hover {
+    opacity: 0.8;
+}

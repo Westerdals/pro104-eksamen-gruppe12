@@ -5,17 +5,37 @@
     <!DOCTYPE html>
     <html class="no-js">
 
-        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Calendar</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/docs/CSS/calendar.css">
-    </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calendar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/docs/CSS/calendar.css">
+    <link rel="stylesheet" href="/docs/CSS/sidebar.css">
+
+    <nav>
+        <div class="nav">
+            <label for="toggle">&#9776;</label>
+            <input type="checkbox" id="toggle" />
+            <div class="menu">
+                <a href="#"><span><i class="fas fa-plus"></i></span>New Task</a>
+                <a href="/docs/HTML/taskM.html"><span><i class="fas fa-user"></i></span>Project</a>
+                <a href="/docs/HTML/calendar.html"><span><i class="fas fa-calendar-alt"></i></span> Calendar</a>
+                <a href="/docs/HTML/main.html"><span><i class="fas fa-archive"></i></span> Overview</a>
+            </div>
+        </div>
+    </nav>
+
+</head>
+
+
 
 <body>
+
+
+
     <div class="calendar" id="calendar">
         <div class="calendar-btn month-btn" onclick="$('#months').toggle('fast')">
             <span id="curMonth"></span>
@@ -43,7 +63,7 @@
             </div>
 
             <div id="calendarDays" class="days"></div>
-           
+
             <div class="popup" onclick="popUp()">
                 <form id="form" onsubmit="newTask()" class="hide">
                     <button id=close-btn onclick=closeForm()>X</button>
@@ -61,7 +81,7 @@
                         <i class="fas fa-exclamation-circle"></i>
                         <small>Error message</small>
                     </div>
-    
+
                     <button type="submit" id="submit-btn">Submit</button>
                 </form>
             </div>
