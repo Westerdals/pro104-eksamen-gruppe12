@@ -7,12 +7,17 @@
 
 body {
 	background: rgb(238, 174, 202);
-	background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+	background: linear-gradient(#5D4157,#2c3e50) ;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 
+}
+
+form{
+    text-align: center;
+ 
 }
 
 
@@ -36,18 +41,14 @@ div {
     text-align: center;
 }
 
-.date{
-    
-}
+
 
 .btn{
-    background-color: #EF476F;
-	border: 2px solid #EF476F;
+    background-color: #283048;
+	border: 2px solid #283048;
 	border-radius: 2px;
 	display: block;
-	font-family: inherit;
 	font-size: 16px;
-	font-weight: bold;
 	padding: 14px;
 	width: 100%;
 	color: #fffffc;
