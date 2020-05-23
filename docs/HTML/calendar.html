@@ -45,7 +45,7 @@
             <div id="calendarDays" class="days"></div>
            
             <div class="popup" onclick="popUp()">
-                <form id="form" class="hide">
+                <form id="form" onsubmit="newTask()" class="hide">
                     <button id=close-btn onclick=closeForm()>X</button>
                     <div class="form-control">
                         <label for="name">Name</label>
@@ -71,7 +71,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="/docs/JS/calendar.js" async defer></script>
+    <script src="/docs/JS/calendar.js"></script>
 </body>
 
 </html>

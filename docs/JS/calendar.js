@@ -6,6 +6,7 @@ var year = 0;
 var selectedDays = new Array();
 var mousedown = false;
 var mousemove = false;
+const calendarDivs = document.getElementById('calenderDays');
 
 function loadCalendarMonths() {
     for (var i = 0; i < months.length; i++) {
@@ -128,12 +129,12 @@ window.addEventListener('load', function () {
     loadCalendarDays();
 });
 
-document.getElementById("submit-btn").value = storeData();
-var nameInput = document.getElementById("name").value;
+// document.getElementById("submit-btn").value = storeData();
+// var nameInput = document.getElementById("name").value;
 
-function storeData (){
-    window.localStorage.setItem('name', JSON.stringify(nameInput));
-}
+// function storeData (){
+//     window.localStorage.setItem('na', JSON.stringify(nameInput));
+//}
 
 //JSON.parse(window.localStorage.getItem('name'));
 
@@ -144,3 +145,36 @@ function popUp() {
 function closeForm() {
     document.getElementById("form").style.display = "none";
   }
+
+  function newTask(){
+
+    const taskName = document.getElementById('name').value;
+    const taskDesc = document.getElementById('to-do').value;
+
+    const taskList = {'Task': taskName + " " + taskDesc  + " "  };
+
+    const calenderTask = JSON.parse(window.localStorage.getItem('calenderTask')) || [];
+    calenderTask.push(taskList);
+    window.localStorage.setItem('TasksListInCalendar', JSON.stringify(calenderTask));
+    renderTaskList();
+    //clear the text field after submition
+    document.getElementById('name').value = '';
+    document.getElementById('to-do').value = '';
+
+
+  }
+
+  function renderTaskList(){
+
+    const calenderTask = JSON.parse(window.localStorage.getItem('calenderTask')) || [];
+   
+    calendarDivs.innerHTML = '';
+
+    for (const i in calenderTask) 
+        d.innerHTML += `${calenderTask[i].taskList}`;
+        calendarDivs.appendChild(li);
+    }
+
+    
+
+  renderTaskList();

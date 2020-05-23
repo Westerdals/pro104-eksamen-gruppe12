@@ -34,7 +34,7 @@ function newMember() {
      const member = {'member': newMember + " " + lastName + ", " + email};
 
 
-    const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
+    const memberList = JSON.parse(window.localStorage.getItem('memberList')) 
     memberList.push(member);
     window.localStorage.setItem('memberList', JSON.stringify(memberList));
     renderMemberList();
