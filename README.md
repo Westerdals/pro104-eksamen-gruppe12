@@ -29,4 +29,5 @@
 - Håvard Raknes
 - Shaheb Iqbal
 - Eskil Torset
-- Sindre Helstad    
+- Sindre Helstad
+- Harald Sigvartsen
