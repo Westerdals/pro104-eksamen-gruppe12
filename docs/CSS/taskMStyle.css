@@ -1,12 +1,24 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #fff
+	background: #fff
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+
 }
 body{
-    padding:100px;
+	padding:100px;
+	background: rgb(238, 174, 202);
+	background: linear-gradient(#5D4157,#2c3e50) ;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+
     
+}
+.menu{
+	left: 20px;
 }
 
 .task-wrapper {
@@ -32,9 +44,9 @@ input[type=text] {
 
 }
 #AllTask {
-padding-left: 90px;
-
-}
+	padding-left: 90px;
+	
+	}
 
 #open-tasker-modal {
 cursor: pointer;
@@ -154,22 +166,7 @@ header {
 	transition: all 0.2s linear;
 }
 
-* {
-	box-sizing: border-box;
-	font-family: 'Open Sans', sans-serif;
-	margin: 0;
-	padding: 0;
-}
 
-body {
-	background: rgb(238, 174, 202);
-	background: linear-gradient(#5D4157,#2c3e50) ;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-
-}
 
 .grid{
     text-align: center;
@@ -210,7 +207,8 @@ body {
 
 #tasks-listing-banner{
     background-color: #f2f2f2;
-    width: 400px;
+	width: 800px;
+	height: 900px;
 }
 
 
