@@ -72,36 +72,35 @@
     </section>
 
     <!-- CATEGORY -->
+
     <section class="section-categories">
         <div>
-            <h3>Categories</h3>
+            <h3 class="box-header">Categories</h3>
             <div class="list-section1">
                 <ul id="ctlist">
                 </ul>
             </div>
-
-            <div class="create-new">
+            <div class="create-new new-category">
 
                 <!-- Button to trigget modal -->
                 <button id="open-category-modal" class="fas fa-plus-circle"><span>New Category</span></button>
 
                 <!-- The Modal -->
-                <div id="category-modal" class="modal1">
+                <div id="category-modal" class="modal">
 
                     <!-- Content inside the modal -->
-                    <div class="modal1-content">
-                        <span class="close1">&times;</span>
-
-                        <form onsubmit="newCategory()">
-
-                            <input type="text" id="txt" placeholder="New Category">
+                    <div class="modal-content">
+                        <span class="close-category-modal">&times;</span>
+                        <h3>New Category</h3>
+                        <form class="form" onsubmit="newCategory()">
+                            <div class="form-control">
+                                <input type="text" id="txt" placeholder="New Category">
+                            </div>
                             <input type="submit" class="addBtn" href="#">
-
                         </form>
                     </div>
 
                 </div>
-                </form>
             </div>
         </div>
     </section>
@@ -119,9 +118,9 @@
     </section>
 
     <footer></footer>
-    <script src="/members.js"></script>
+    <script src="/docs/members.js"></script>
     <script src="/docs/JS/taskM.js"></script>
-    <script src="/docs/JS/category.js"></script>
+    <script src="/docs/category.js"></script>
 </body>
 
 </html>

@@ -21,6 +21,8 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Close button for "add member" modal */
+
 .close {
     color: #aaaaaa;
     float: right;
@@ -34,6 +36,22 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Close button for "add category" modal */
+.close-category-modal {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-category-modal:hover,
+.close-category-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 /*  Styling of the content box */
 .modal-content {
@@ -104,5 +122,3 @@
     background-color: #fffffc;
     color: #EF476F;
 }
-
-/* Close button for modal */
