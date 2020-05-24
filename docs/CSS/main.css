@@ -95,6 +95,36 @@ section h3 {
     text-align: center;
 }
 
+/* Registered Users */
+
+/* .list-section ul li {
+    border: 1px solid #494949;
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #fff;
+    box-shadow: 1px 1px rgba(9, 30, 66, .25);
+    border-radius: 3px;
+} */
+
+.list-section ul li {}
+
+ul {
+    margin: 0;
+    padding: 10px;
+    background: #fff;
+    list-style: none;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+
+    list-style-type: none;
+    background: #eee;
+    font-size: 16px;
+}
+
+
 
 /*  Styling for the add new member and category "buttons" */
 
@@ -103,6 +133,7 @@ button {
 }
 
 .create-new {
+    padding: 10px;
     vertical-align: middle;
 }
 
