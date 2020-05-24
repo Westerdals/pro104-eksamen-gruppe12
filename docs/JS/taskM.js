@@ -66,7 +66,7 @@ for (let i = 0; i < list_items.length; i++) {
 
 		list.addEventListener('drop', function (e) {
 			console.log('drop');
-            this.append(task);
+            this.append(taskList);
             console.log(taskList[j]);
 			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
 		});
