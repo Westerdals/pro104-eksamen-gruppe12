@@ -31,19 +31,23 @@ function newMember() {
     const lastName = document.getElementById('addLastName').value;
     const email = document.getElementById('addEmail').value;
    
-     const member = {'member': newMember + " " + lastName + ", " + email};
+     const member = {
+         firstName:  newMember,
+         lastName: lastName,
+         email: email
+     };
 
     
     const memberList = JSON.parse(window.localStorage.getItem('memberList'))  || [];
     memberList.push(member);
     window.localStorage.setItem('memberList', JSON.stringify(memberList));
     renderMemberList();
-    console.log(memberList);
+    //console.log(memberList);
     // Clear the text field after submition
     document.getElementById('addMember').value = '';
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
-    console.log(member);
+    //console.log(member);
      
 }
 
@@ -57,7 +61,7 @@ function renderMemberList(){
 
     for (const i in memberList) {
         const li = document.createElement('li');
-        li.innerHTML += `${memberList[i].member}`;
+        li.innerHTML += `<h3>${memberList[i].firstName}</h3><p>${memberList[i].lastName}</p><p>${memberList[i].email}</p>`;
         list.appendChild(li);
     }
 }
