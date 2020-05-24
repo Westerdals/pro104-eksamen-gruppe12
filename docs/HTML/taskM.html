@@ -11,7 +11,7 @@
 
 <body>
 
-    <div id="task-manager" class="container">
+    <div id="task-manager" class="grid">
         <div id="header-banner">
             <h2 id="header">Task Manager</h2>
         </div>
@@ -38,7 +38,7 @@
         </div>   
     </div>
     
-    <div id="add-employee-box" class="container">
+    <div id="add-employee-box" class="grid">
         <form onsubmit="createNewEmployee(event)">
             <div>
                 <lable>
@@ -54,7 +54,7 @@
         </form>
     </div>
 
-    <div id="tasks-listing-banner" class="container">
+    <div id="tasks-listing-banner">
         <div id="AllTask">
             <h3 id="all-task-header"> All tasks </h3>
             <div id="taskList"></div>
@@ -67,10 +67,9 @@
     
 
 
-    <div id="overview-list-box">
+    <div id="overview-list-box" class="grid">
         
     <h2 id="AssignTask">Assign task to employee</h2>
-
 
         <form onsubmit="createNewAssign(event)">
             <label>
