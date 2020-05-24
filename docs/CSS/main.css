@@ -1,158 +1,123 @@
-/* Import font  */
-@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans|Poppins|Roboto+Condensed&display=swap');
-
-/* *,
-*::before,
-*::after {
-    box-sizing: border-box;
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #fffffc;
 }
- */
+
+body,
+html {
+    box-sizing: border-box;
+    height: 100vh;
+}
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: #fffffc;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
     margin: 0;
-    padding: 0;
-}
-
-
-h2 {
-    text-align: center;
-    font-size: 3.2em;
-    margin: 8vh 0;
-}
-
-h3 {
-    font-size: 1.6em;
-}
-
-/* .box-header {
-    background: blue;
-    padding: 25px;
-} */
-
-/* Divides the content to three sections */
-#container {
-    margin-left: 180px;
-    margin-top: 5vh;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-rows: 1; */
-    grid-column-gap: 4em;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: column;
-    box-sizing: border-box;
+    grid-template-columns: 100%;
+    grid-template-rows: 6% auto auto auto 4%;
+    grid-template-areas:
+        "sidebar"
+        "sect1"
+        "sect2"
+        "sect3"
+        "footer";
+}
+
+header {
+    grid-area: header;
+    background-color: #fffffc;
+}
+
+nav {
+    grid-area: sidebar;
+    background-color: #494949;
+    margin-right: 6px;
+    z-index: 1;
 
 }
 
-.section {
-    position: relative;
+section.section-users {
+    grid-area: sect1;
+    margin: 6px;
+
+}
+
+section.section-categories {
+    grid-area: sect2;
+    margin: 6px;
+
+
+}
+
+section.section-overview {
+    grid-area: sect3;
+    margin: 6px;
+}
+
+footer {
+    grid-area: footer;
+}
+
+@media only screen and (min-width: 800px) {
+
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto 30% 30% 30%;
+        grid-template-rows: 4% auto 4%;
+        grid-template-areas:
+            "sidebar header header header"
+            "sidebar sect1 sect2 sect3"
+            "sidebar footer footer footer";
+    }
+
+    nav {
+        padding-top: 70%;
+    }
+
+    section.section-overview {
+        grid-area: sect3;
+        margin: 6px 12px 6px 6px;
+    }
+}
+
+/* For styling each induvidual section */
+
+section {
     background: #fff;
     border: 2px solid #fffffc;
-    box-shadow: 0px 16px 24px rgba(9, 30, 66, .25);
-    border-radius: 12px;
+    box-shadow: 0px 16px 24px rgba(6, 12, 22, .25);
+    border-radius: 5px;
 }
 
-.addBtn {
-    cursor: pointer;
-    background-color: rgba(65, 206, 68, 0.7);
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    margin-left: 10px;
-    text-decoration: none;
-    font-size: 16px;
+section h3 {
+    padding: 20px;
+    font-size: 26px;
+    text-align: center;
 }
 
-.list-section ul li {
-    border: 1px solid rgb(189, 189, 189);
-    padding: 10px;
-    margin-bottom: 5px;
-    background: #fffffc;
-    box-shadow: 1px 1px rgba(9, 30, 66, .25);
-    border-radius: 3px;
-}
 
-ul {
+/*  Styling for the add new member and category "buttons" */
+
+button {
     margin: 0;
-    padding: 14px;
-    background: #fff;
-}
-
-ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-ul li:hover {
-    background: rgba(146, 206, 255, 0.74);
-}
-
-ul li.checked {
-    background: teal;
-    color: white;
-    text-decoration: line-through;
 }
 
 .create-new {
-    bottom: 0px;
-    padding: 20px 10px 10px 0px;
-}
-
-input,
-input[type='text'] {
-    padding: 12px;
-    border: 1px solid #999;
-    font-size: 15px;
-    box-shadow: 1px 1px rgba(9, 30, 66, .25);
-    border-radius: 3px;
-}
-
-input,
-input[type='text']::placeholder {
-    color: gray;
+    vertical-align: middle;
 }
 
 
-ul li.active {
-    background: red;
-}
-
-.fas {
+.fa-plus-circle {
     cursor: pointer;
     border: none;
     color: rgb(98, 255, 50);
-    margin-left: 10px;
     text-decoration: none;
-    font-size: 44px;
-    margin-bottom: 10px;
+    font-size: 30px;
 }
 
-.fas span {
+.fa-plus-circle span {
     vertical-align: middle;
-    color: rgb(78, 78, 78);
-    margin-left: 15px;
-    font-size: 16px;
-}
-
-.list-section1 ul li {
-    border: 1px solid rgb(189, 189, 189);
-    padding: 10px;
-    margin-bottom: 5px;
-    background: #ffff;
-    box-shadow: 1px 1px rgba(9, 30, 66, .25);
-    border-radius: 3px;
+    color: #494949;
+    margin-left: 12px;
+    font-size: 14px;
 }

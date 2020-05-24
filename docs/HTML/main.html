@@ -26,11 +26,12 @@
         </div>
     </nav>
 
-    <div id="container">
+    <header></header>
 
-        <!-- MEMBERS -->
+    <!-- MEMBERS -->
 
-        <div class="section section-member">
+    <section class="section section-users">
+        <div>
             <h3 class="box-header">Registered Users</h3>
             <div class="list-section">
                 <ul id="memberList">
@@ -48,11 +49,19 @@
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <h3>New member</h3>
-                        <form onsubmit="newMember()">
-                            <input type="text" id="addMember" placeholder="First Name">
-                            <input type="text" id="addLastName" placeholder="Last Name">
-                            <input type="text" id="addEmail" placeholder="Email">
-                            <input type="file" id="addImage">
+                        <form class="form" onsubmit="newMember()">
+                            <div class="form-control">
+                                <input type="text" id="addMember" placeholder="First Name">
+                            </div>
+                            <div class="form-control">
+                                <input type="text" id="addLastName" placeholder="Last Name">
+                            </div>
+                            <div class="form-control">
+                                <input type="text" id="addEmail" placeholder="Email">
+                            </div>
+                            <div class="form-control">
+                                <input type="file" id="addImage">
+                            </div>
                             <input type="submit" class="addBtn" href="#">
                         </form>
                     </div>
@@ -60,57 +69,65 @@
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- CATEGORY -->
-        <div class="section">
-            <h3>Categories</h3>
+    <!-- CATEGORY -->
+
+    <section class="section-categories">
+        <div>
+            <h3 class="box-header">Categories</h3>
             <div class="list-section1">
                 <ul id="ctlist">
                 </ul>
             </div>
-
-            <div class="create-new">
+            <div class="create-new new-category">
 
                 <!-- Button to trigget modal -->
                 <button id="open-category-modal" class="fas fa-plus-circle"><span>New Category</span></button>
 
                 <!-- The Modal -->
-                <div id="category-modal" class="modal1">
+                <div id="category-modal" class="modal">
 
                     <!-- Content inside the modal -->
-                    <div class="modal1-content">
-                        <span class="close1">&times;</span>
-
-                        <form onsubmit="newCategory()">
-
-                            <input type="text" id="txt" placeholder="New Category">
+                    <div class="modal-content">
+                        <span class="close-category-modal">&times;</span>
+                        <h3>New Category</h3>
+                        <form class="form" onsubmit="newCategory()">
+                            <div class="form-control">
+                                <input type="text" id="txt" placeholder="New Category">
+                            </div>
                             <input type="submit" class="addBtn" href="#">
-
                         </form>
                     </div>
 
                 </div>
-                </form>
             </div>
-
         </div>
+    </section>
 
-        <!-- OVERVIEW -->
-        <div class="section section-overview">
+    <!-- OVERVIEW -->
+    <section class="section-overview">
+        <div>
             <h3>Overview</h3>
-            <div class="list-section">
+            <div class=" list-section">
                 <ul id="overviewList">
 
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
 
-
+<<<<<<< HEAD
     <script src="/docs/JS/category.js"></script>
     <!-- <script src="/docs/JS/taskM.js"></script> -->
     <script src="/docs/JS/members.js"></script>
     <script src="/docs/JS/overview.js"></script>
+=======
+    <footer></footer>
+    <script src="/docs/members.js"></script>
+    <script src="/docs/JS/taskM.js"></script>
+    <script src="/docs/category.js"></script>
+>>>>>>> f588a7b16eced94c93f2fb017bcfb6a924dc32dc
 </body>
 
 </html>

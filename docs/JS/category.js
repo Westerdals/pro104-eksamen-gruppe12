@@ -5,7 +5,7 @@ var modal1 = document.getElementById("category-modal");
 var btn1 = document.getElementById("open-category-modal");
 
 // Get the <span> element that closes the modal
-var span1 = document.getElementsByClassName("close1")[0];
+var span1 = document.getElementsByClassName("close-category-modal")[0];
 
 // When the user clicks the button, open the modal 
 btn1.onclick = function () {
@@ -28,8 +28,8 @@ function newCategory() {
     event.preventDefault()
 
     const txt = document.getElementById('txt').value;
-    
-    const category = {'category': txt  };
+
+    const category = { 'category': txt };
 
 
     const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];
@@ -39,11 +39,14 @@ function newCategory() {
 
     // Clear the text field after submition
     document.getElementById('txt').value = '';
-    
+
+    // Legg inn en if else setning for å unngå at det sendes "tomme" kategorier til listen
+    modal1.style.display = "none";
+
 }
 
 // Render the user input to the page
-function renderCategoryList(){
+function renderCategoryList() {
 
     // Retrives the value of the localStorage item "ctlist" as a string (text)
     const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];
@@ -54,7 +57,7 @@ function renderCategoryList(){
         const li = document.createElement('li');
         li.innerHTML += `${ctlist[i].category}`;
         list.appendChild(li);
-        
+
     }
 }
 renderCategoryList();
