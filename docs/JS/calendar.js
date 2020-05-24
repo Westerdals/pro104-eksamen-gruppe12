@@ -12,6 +12,7 @@ const taskList = JSON.parse(window.localStorage.getItem("taskList"));
 console.log(taskList);
 console.log(taskList[0].endDate);
 
+
 function loadCalendarMonths() {
     for (var i = 0; i < months.length; i++) {
         var doc = document.createElement("div");
