@@ -1,4 +1,160 @@
 * {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff
+}
+body{
+    padding:100px;
+    
+}
+
+.task-wrapper {
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid #568984;
+    border-bottom: 2px solid #568984;
+    background-color: #7e7683;
+    margin-top: 20px;
+    padding: 10px;
+    max-width: 400px;
+}
+
+.task-wrapper > div, button, form > * {
+    margin-top: 8px
+}
+input[type=text] {
+    border: 2px solid#000080;
+  }
+#container {
+
+    padding-left: 90px;
+
+}
+#AllTask {
+padding-left: 90px;
+
+}
+
+#open-tasker-modal {
+cursor: pointer;
+background-color: rgba(65, 206, 68, 0.7);
+border: none;
+color: white;
+padding: 12px 20px;
+margin-left: 10px;
+text-decoration: none;
+font-size: 16px;
+}
+
+#editTaskBtn {
+    cursor: pointer;
+background-color: rgba(65, 206, 68, 0.7);
+border: none;
+color: white;
+padding: 12px 20px;
+margin-left: 10px;
+text-decoration: none;
+font-size: 16px;
+}
+
+#taskDropMenu {
+    cursor: pointer;
+background-color: rgba(65, 206, 68, 0.7);
+border: none;
+color: white;
+padding: 12px 20px;
+margin-left: 10px;
+text-decoration: none;
+font-size: 16px;
+}
+input,
+input[type='text'] {
+    padding: 12px;
+    border: 1px solid #999;
+    font-size: 15px;
+    box-shadow: 1px 1px rgba(9, 30, 66, .25);
+    border-radius: 3px;
+}input,
+input[type='text']::placeholder {
+    color: gray;
+}
+input[type='submit'] {
+    cursor: pointer;
+    background-color: rgba(65, 206, 68, 0.7);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
+
+}
+
+
+ul li.active {
+    background: red;
+}
+
+.fas {
+    cursor: pointer;
+    border: none;
+    color: rgb(98, 255, 50);
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 44px;
+    margin-bottom: 10px;
+}
+
+.fas span {
+    vertical-align: middle;
+    color: rgb(78, 78, 78);
+    margin-left: 15px;
+    font-size: 16px;
+}
+.app {
+	display: flex;
+	flex-flow: column;
+
+	width: 100vw;
+	height: 100vh;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+}
+
+.lists {
+    
+	display: flex;
+	flex: 1;
+	width: 100%;
+	overflow-x: scroll;
+}
+
+.lists .list {
+
+    
+	display: flex;
+	flex-flow: column;
+	flex: 1;
+
+	width: 100%;
+	min-width: 250px;
+	max-width: 350px;
+	height: 100%;
+	min-height: 150px;
+
+	background-color: rgba(0, 0, 0, 0.1);
+	margin: 0 15px;
+	padding: 8px;
+	transition: all 0.2s linear;
+}
+
+* {
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
