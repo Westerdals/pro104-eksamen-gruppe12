@@ -26,11 +26,12 @@
         </div>
     </nav>
 
-    <div id="container">
+    <header></header>
 
-        <!-- MEMBERS -->
+    <!-- MEMBERS -->
 
-        <div class="section section-member">
+    <section class="section section-users">
+        <div>
             <h3 class="box-header">Registered Users</h3>
             <div class="list-section">
                 <ul id="memberList">
@@ -48,11 +49,19 @@
                     <div class="modal-content">
                         <span class="close">&times;</span>
                         <h3>New member</h3>
-                        <form onsubmit="newMember()">
-                            <input type="text" id="addMember" placeholder="First Name">
-                            <input type="text" id="addLastName" placeholder="Last Name">
-                            <input type="text" id="addEmail" placeholder="Email">
-                            <input type="file" id="addImage">
+                        <form class="form" onsubmit="newMember()">
+                            <div class="form-control">
+                                <input type="text" id="addMember" placeholder="First Name">
+                            </div>
+                            <div class="form-control">
+                                <input type="text" id="addLastName" placeholder="Last Name">
+                            </div>
+                            <div class="form-control">
+                                <input type="text" id="addEmail" placeholder="Email">
+                            </div>
+                            <div class="form-control">
+                                <input type="file" id="addImage">
+                            </div>
                             <input type="submit" class="addBtn" href="#">
                         </form>
                     </div>
@@ -60,9 +69,11 @@
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- CATEGORY -->
-        <div class="section">
+    <!-- CATEGORY -->
+    <section class="section-categories">
+        <div>
             <h3>Categories</h3>
             <div class="list-section1">
                 <ul id="ctlist">
@@ -92,22 +103,23 @@
                 </div>
                 </form>
             </div>
-
         </div>
+    </section>
 
-        <!-- OVERVIEW -->
-        <div class="section section-overview">
+    <!-- OVERVIEW -->
+    <section class="section-overview">
+        <div>
             <h3>Overview</h3>
-            <div class="list-section">
+            <div class=" list-section">
                 <ul id="overviewList">
 
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
 
-
-    <script src="/docs/JS/members.js"></script>
+    <footer></footer>
+    <script src="/members.js"></script>
     <script src="/docs/JS/taskM.js"></script>
     <script src="/docs/JS/category.js"></script>
 </body>
