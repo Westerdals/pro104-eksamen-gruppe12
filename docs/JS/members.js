@@ -38,12 +38,12 @@ function newMember() {
     memberList.push(member);
     window.localStorage.setItem('memberList', JSON.stringify(memberList));
     renderMemberList();
-    console.log(memberList);
+    //console.log(memberList);
     // Clear the text field after submition
     document.getElementById('addMember').value = '';
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
-    console.log(member);
+    //console.log(member);
      
 }
 
