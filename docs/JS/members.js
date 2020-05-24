@@ -33,16 +33,17 @@ function newMember() {
    
      const member = {'member': newMember + " " + lastName + ", " + email};
 
-
-    const memberList = JSON.parse(window.localStorage.getItem('memberList')) 
+    
+    const memberList = JSON.parse(window.localStorage.getItem('memberList'))  || [];
     memberList.push(member);
     window.localStorage.setItem('memberList', JSON.stringify(memberList));
     renderMemberList();
-
+    console.log(memberList);
     // Clear the text field after submition
     document.getElementById('addMember').value = '';
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
+    console.log(member);
      
 }
 
