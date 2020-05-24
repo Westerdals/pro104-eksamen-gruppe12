@@ -1,3 +1,78 @@
+// The modal
+var modal = document.getElementById("tasker-modal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("open-tasker-modal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function (event) {
+    modal.style.display = "block";
+
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+const list_items = document.querySelectorAll('.list-item');
+const lists = document.querySelectorAll('.list');
+
+
+let draggedItem = null;
+
+for (let i = 0; i < list_items.length; i++) {
+	const item = list_items[i];
+
+	item.addEventListener('dragstart', function () {
+		draggedItem = item;
+		setTimeout(function () {
+            item.style.display = 'none';
+            console.log(item);
+		}, 0)
+	});
+
+	item.addEventListener('dragend', function () {
+		setTimeout(function () {
+			draggedItem.style.display = 'block';
+			draggedItem = null;
+		}, 0);
+	})
+
+	for (let j = 0; j < lists.length; j ++) {
+		const list = lists[j];
+
+		list.addEventListener('dragover', function (e) {
+			e.preventDefault();
+		});
+		
+		list.addEventListener('dragenter', function (e) {
+			e.preventDefault();
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+		});
+
+		list.addEventListener('dragleave', function (e) {
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+		});
+
+		list.addEventListener('drop', function (e) {
+			console.log('drop');
+            this.append(task);
+            console.log(taskList[j]);
+			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+		});
+	}
+}
+
 function changeTaskStatus(newStatus, taskId) {
     console.log("BYTTER STATUS");
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
@@ -21,7 +96,7 @@ function buildStatusDropdwon(taskId) {
     const statuses = ['Set status of Task','Severly Important', 'Very Important', 'Important', 'Not important', 'Almost no interest'];
     const options = statuses.map(status => `<option placeholder="hei">${status}</option>`);
     return `
-        <select onchange="onStatusChange(event, ${taskId})">
+        <select  id="taskDropMenu" onchange="onStatusChange(event, ${taskId})">
             ${options}
         </select>
     `;
@@ -47,6 +122,7 @@ function saveTask(event, taskId) {
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
     taskList[taskId] = newTask;
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
+    
 
     renderTaskList();
 }
@@ -77,7 +153,7 @@ function openTaskForm(taskId) {
 
 function buildTaskHtml(task, id) {
     return `
-    <div class="task-wrapper" id="${id}">
+    <div class="list-item" id="${id}" draggable="true">
         <div>ID: ${id}</div>
         <div>Navn: ${task.name}</div>
         <div>Started: ${task.started}</div>
@@ -86,7 +162,7 @@ function buildTaskHtml(task, id) {
         <div>Message: ${task.message}</div>
         <div>Status: ${task.status}</div>
         ${buildStatusDropdwon(id)}
-        <button onclick="openTaskForm(${id})">Edit</button>
+        <button id="editTaskBtn" onclick="openTaskForm(${id})">Edit</button>
     </div>
     `;
 }
