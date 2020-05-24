@@ -4,7 +4,7 @@
 renderOverviewList();
 function renderOverviewList(){
 
-    const overview = {'overview': " " };
+    const overview = [];
     
 
     const overviewList = JSON.parse(window.localStorage.getItem('taskList')) || [];
