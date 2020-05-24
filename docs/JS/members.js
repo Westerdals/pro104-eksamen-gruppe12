@@ -61,6 +61,7 @@ function renderMemberList(){
 
     for (const i in memberList) {
         const li = document.createElement('li');
+        li[i].style.borderColor = "1px solid red";
         li.innerHTML += `<h3>${memberList[i].firstName}</h3><p>${memberList[i].lastName}</p><p>${memberList[i].email}</p>`;
         list.appendChild(li);
     }
