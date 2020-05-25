@@ -1,4 +1,4 @@
-const AVAILABLE_WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const AVAILABLE_WEEK_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const localStorageName = 'calendar-events';
 
 class CALENDAR {
@@ -184,6 +184,7 @@ class CALENDAR {
 
 
     }
+
 
     updateTime(time) {
         this.date = +new Date(time);
