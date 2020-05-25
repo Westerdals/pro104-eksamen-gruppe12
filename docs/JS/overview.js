@@ -3,25 +3,45 @@
 
 // Render the user input to the page
 function renderOverviewList() {
+const ovList = JSON.parse(window.localStorage.getItem('taskList')) || [];
+const overviewArray = [];
+overviewArray.push(ovList);
+const list = document.getElementById('ovList');
+list.innerHTML = '';
 
-const overviewArray = []
+
+
+for (var i = 0; i < overviewArray[0].length; i++) {
+    console.log(overviewArray)
+    console.log(overviewArray[0][i].name);
+    let result = overviewArray[0].map(a => a.name);
+    let endDateResult = overviewArray[0].map(a => a.endDate);
+    let taskOverView = [];
+    taskOverView.push(result);
+    let dateOverView = [];
+    dateOverView.push(endDateResult);
+    const li = document.createElement('li');
+    li.innerHTML += `${taskOverView[0][i]}` + " " + `${dateOverView[0][i]}`;
+    list.appendChild(li);
+    
+    
+
+}
+
+
+
+
+
 
     // Retrives the value of the localStorage item "ovList" as a string (text)
-    const ovList = JSON.parse(window.localStorage.getItem('taskList')) || [];
-    overviewArray.push(ovList);
-    const list = document.getElementById('ovList');
-    list.innerHTML = '';
-var ovLength = overviewArray.length;
-  
     
-for (var i = 0; i < ovLength; i) {
-        const li = document.createElement('li');
-        li.innerHTML += ` ${overviewArray}`;
-        list.appendChild(li);
-        
+
+  
 
     }
-}
+
+
+
 renderOverviewList();
 
 

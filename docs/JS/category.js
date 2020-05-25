@@ -29,7 +29,6 @@ function newCategory() {
 
     const txt = document.getElementById('txt').value;
     const colorPicker = document.getElementById("category-color").value;
-    console.log(colorPicker);
 
     const category = {
         category: txt,
@@ -58,7 +57,6 @@ function renderCategoryList() {
     const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];
     const list = document.getElementById('ctlist');
     list.innerHTML = '';
-    console.log(ctlist);
 
     for (const i in ctlist) {
         const li = document.createElement('li');
