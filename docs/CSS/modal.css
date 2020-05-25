@@ -54,6 +54,14 @@
 
 
 /*  Styling of the content box */
+
+.modal-content h3 {
+    padding: 40px 0 10px 0;
+    text-align: center;
+    font-size: 28px;
+    color: #494949;
+}
+
 .modal-content {
     background-color: #fffffc;
     margin: auto;
@@ -90,13 +98,11 @@
     border-color: #B0AFAF;
 }
 
-
-.modal-content h3 {
-    padding: 40px 0 10px 0;
-    text-align: center;
-    font-size: 28px;
-    color: #494949;
+/* Color picker style */
+.form-control #category-color {
+    width: 20%;
 }
+
 
 /* Button */
 

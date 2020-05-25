@@ -28,8 +28,14 @@ function newCategory() {
     event.preventDefault()
 
     const txt = document.getElementById('txt').value;
+    const colorPicker = document.getElementById("category-color").value;
+    console.log(colorPicker);
 
-    const category = { 'category': txt };
+    const category = {
+        category: txt,
+        color: colorPicker
+
+    };
 
 
     const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];
@@ -52,10 +58,13 @@ function renderCategoryList() {
     const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];
     const list = document.getElementById('ctlist');
     list.innerHTML = '';
+    console.log(ctlist);
 
     for (const i in ctlist) {
         const li = document.createElement('li');
+        li.style.color = `${ctlist[i].color}`;
         li.innerHTML += `${ctlist[i].category}`;
+
         list.appendChild(li);
 
     }

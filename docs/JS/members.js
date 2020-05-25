@@ -30,11 +30,15 @@ function newMember() {
     const newMember = document.getElementById('addMember').value;
     const lastName = document.getElementById('addLastName').value;
     const email = document.getElementById('addEmail').value;
-   
-     const member = {'member': newMember + " " + lastName + ", " + email};
 
-    
-    const memberList = JSON.parse(window.localStorage.getItem('memberList'))  || [];
+    const member = {
+        firstName: newMember,
+        lastName: lastName,
+        email: email
+    };
+
+
+    const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
     memberList.push(member);
     window.localStorage.setItem('memberList', JSON.stringify(memberList));
     renderMemberList();
@@ -44,11 +48,11 @@ function newMember() {
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
     //console.log(member);
-     
+
 }
 
 // Render the user input to the page
-function renderMemberList(){
+function renderMemberList() {
 
     // Retrives the value of the localStorage item "memberList" as a string (text)
     const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
@@ -57,7 +61,8 @@ function renderMemberList(){
 
     for (const i in memberList) {
         const li = document.createElement('li');
-        li.innerHTML += `${memberList[i].member}`;
+
+        li.innerHTML += `<h4>${memberList[i].firstName}</h4><h4>${memberList[i].lastName}</h4><p>${memberList[i].email}</p>`;
         list.appendChild(li);
     }
 }

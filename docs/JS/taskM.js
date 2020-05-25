@@ -34,10 +34,10 @@ for (let i = 0; i < list_items.length; i++) {
 	const item = list_items[i];
 
 	item.addEventListener('dragstart', function () {
-		draggedItem = item;
+		draggedItem = item  ;
 		setTimeout(function () {
             item.style.display = 'none';
-            console.log(item);
+            console.log(draggedItem);
 		}, 0)
 	});
 
@@ -66,8 +66,8 @@ for (let i = 0; i < list_items.length; i++) {
 
 		list.addEventListener('drop', function (e) {
 			console.log('drop');
-            this.append(taskList);
-            console.log(taskList[j]);
+            this.append(draggeditem);
+            console.log(draggedItem);
 			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
 		});
 	}
@@ -153,7 +153,8 @@ function openTaskForm(taskId) {
 
 function buildTaskHtml(task, id) {
     return `
-    <div class="list-item" id="${id}" draggable="true">
+    <div class="list-item">
+    <li class="list-item" id="${id}" draggable="true">
         <div>ID: ${id}</div>
         <div>Navn: ${task.name}</div>
         <div>Started: ${task.started}</div>
@@ -163,6 +164,7 @@ function buildTaskHtml(task, id) {
         <div>Status: ${task.status}</div>
         ${buildStatusDropdwon(id)}
         <button id="editTaskBtn" onclick="openTaskForm(${id})">Edit</button>
+    </li>
     </div>
     `;
 }
