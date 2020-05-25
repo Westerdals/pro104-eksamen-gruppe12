@@ -102,7 +102,26 @@ function buildStatusDropdwon(taskId) {
         </select>
     `;
 }
+function pushIntocategory(){
+    const ctlist = JSON.parse(window.localStorage.getItem("ctlist")) || [];
+    const categoryDropdown = document.getElementById("categoryDropDown");
 
+let ctLength = ctlist.length;
+
+for(i = 0; i < ctLength; i++){
+    const categoryOption = document.createElement('option');
+    let categoryName = ctlist[i].category;
+    let categoryColor = ctlist[i].color;
+    //categoryOption.style.color = `${ctlist[i].color}`;
+    categoryOption.innerHTML = `${categoryName}`;
+    categoryDropdown.appendChild(categoryOption);
+
+    console.log(categoryOption);
+}
+
+
+}
+pushIntocategory();
 
 function saveTask(event, taskId) {
     event.preventDefault();
