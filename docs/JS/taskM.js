@@ -278,3 +278,40 @@ function createNewAssign(event){
    }
 }
 }
+
+// function renderOverviewList(){
+
+   
+
+//     const overviewList = JSON.parse(window.localStorage.getItem('taskList')) || [];
+//     overviewList.push(overview);
+//     const list = document.getElementById('ovList');
+//     list.innerHTML = '';
+   
+//   for(const i in taskList){
+//  const li = document.createElement('li');
+//     li.innerHTML += `
+//     <h1>${task.name}</h1>
+//     <p>${task.message}</p>
+//     <p>${task.status}</p>
+    
+//     `;
+//     list.appendChild(li);
+   
+// }
+
+// }
+
+// renderOverviewList();
+// >ID: ${id}</div>
+//         <div>Navn: ${task.name}</div>
+//         <div>Started: ${task.started}</div>
+//         <div>StartDate: ${task.startDato}</div>
+//         <div>EndDate: ${task.endDate}</div>
+//         <div>Message: ${task.message}</div>
+//         <div>Status: ${task.status}</div>
+//         ${buildStatusDropdwon(id)}
+//         <button id="editTaskBtn" onclick="openTaskForm(${id})">Edit</button>
+//     </li>
+//     </div>
+//     `;

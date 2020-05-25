@@ -1,50 +1,66 @@
 
-
-
-// Render the user input to the page
 function renderOverviewList() {
-
-const overviewArray = []
-
-    // Retrives the value of the localStorage item "ovList" as a string (text)
     const ovList = JSON.parse(window.localStorage.getItem('taskList')) || [];
+    const overviewArray = [];
     overviewArray.push(ovList);
     const list = document.getElementById('ovList');
     list.innerHTML = '';
-var ovLength = overviewArray.length;
-  
+    console.log(overviewArray);
     
-for (var i = 0; i < ovLength; i) {
+    
+    
+    for (var i = 0; i < overviewArray[0].length; i++) {
+    
+        console.log(overviewArray[0][i].name);
+        let result = overviewArray[i].map(a => a.name);
+        let endDateResult = overviewArray[i].map(a => a.endDate);
+        let taskOverView = [];
+        taskOverView.push(result);
+        let dateOverView = [];
+        dateOverView.push(endDateResult);
         const li = document.createElement('li');
-        li.innerHTML += ` ${overviewArray}`;
+        li.innerHTML += `
+        Task Name: ${taskOverView[0][i]}` 
+        + '<br></br>' + 
+        ` End Date: ${dateOverView[0][i]}`;
+        + "\n " +
         list.appendChild(li);
         
-
+        
+    
     }
-}
-renderOverviewList();
-
-
-//When a window updates localStorage, other windows get notified through "addEventListener"
-window.addEventListener("storage", function (event) {
-    if (event.key === "taskList") {
-        renderCategoryList();
+    
+    
+    
+    
+    
+    
+        // Retrives the value of the localStorage item "ovList" as a string (text)
     }
-});
+    
+    
+    
+    renderOverviewList();
 
+// function getOverviewList(){
+//     const taskListnotStringified = JSON.parse(window.localStorage.getItem('taskList')) || [];
+//     const taskList = JSON.stringify(taskListnotStringified);
+//     const ovList = document.getElementById('ovList');
+//     const li = document.createElement('li');
+//     taskList.toString();
 
-
-// function buildChangeTaskForm({name, startDato, status, started, message}, taskId) {
-//     return `
-//     <form onsubmit="saveTask(event, ${taskId})">
-//         <div>ID: ${taskId}</div>
-//         <div>Navn: <input value="${name}" name="name" type="text" /></div>
-//         <div>Started: <input type="checkbox" name="started"></div>
-//         <div>StartDate: <input  name="DatoEnd" type="date" data-date="" data-date-format="DD MM YYYY"
-//         value="2020-05-24"></div>
-//         <div>EndDate: <input name="DatoEnd" type="date" data-date="" data-date-format="DD MM YYYY"
-//         value="2020-05-09"></div>
-//         <div>Message: <input value="${message}" name="message" type="text" /></div>
-//         <input type="submit" value="Save">
-//     </form>
+// for(i = 0; i < taskList.length; i++){
+//     li.innerHTML += `
+//     ${taskList[i]}
 //     `;
+//     ovList.appendChild(li)
+//     console.log(taskList[i]);
+ 
+// }
+   
+
+
+// }
+
+
+// getOverviewList();

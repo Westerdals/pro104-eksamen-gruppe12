@@ -62,7 +62,9 @@ function renderMemberList() {
     for (const i in memberList) {
         const li = document.createElement('li');
 
-        li.innerHTML += `<h4>${memberList[i].firstName}</h4><h4>${memberList[i].lastName}</h4><p>${memberList[i].email}</p>`;
+        li.innerHTML += `
+        <h4>${memberList[i].firstName}</h4> <h4>${memberList[i].lastName}</h4>
+        <p>${memberList[i].email}</p>`;
         list.appendChild(li);
     }
 }

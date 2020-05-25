@@ -58,7 +58,7 @@ function renderCategoryList() {
     const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];
     const list = document.getElementById('ctlist');
     list.innerHTML = '';
-    console.log(ctlist);
+    //console.log(ctlist);
 
     for (const i in ctlist) {
         const li = document.createElement('li');
