@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+<link rel="stylesheet" type="type/css" href="../Haraldtester/task.css">
+    </body>
+
+    <div class="taskDiv">
+        <div class="create-new new-Task">
+
+            <!-- Button to trigget modal -->
+            <button id="openTask" class="fas fa-plus-circle"><span>New Task</span></button>
+
+            <!-- The Modal -->
+            <div id="task-modal" class="modal">
+
+                <!-- Content inside the modal -->
+                <div class="modal-content">
+                    <span class="close-task-modal">&times;</span>
+                    <h3>New Task</h3>
+                    <form onsubmit="createNewTask(event)">
+                        <div>
+                            <lable>
+                                Add task:
+                                <div id="moveTask">
+                                    <input id="taskInput" name="task" value="" placeholder="Write the name of the task">
+                                </div>
+                                <input id="Dato1" name="Dato1" type="date" data-date="" data-date-format="DD MM YYYY"
+                                    value="2020-07-09">
+                                <input id="Dato" name="DatoEnd" type="date" data-date="" data-date-format="DD MM YYYY"
+                                    value="2020-08-09">
+                                <input id="tMessage" name="taskMessage" placeholder="Write additional message for task">
+                                  <input type="submit" class="btn" id="taskSubmitBtn" value="Submit">
+        
+                        </div>
+                        </lable>
+                </div>
+                </form>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+<script src="/Haraldtester/task.js"></script>
+</html>

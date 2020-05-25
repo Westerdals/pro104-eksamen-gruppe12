@@ -103,6 +103,7 @@ function buildStatusDropdwon(taskId) {
     `;
 }
 
+
 function saveTask(event, taskId) {
     event.preventDefault();
     const newName = event.target[0].value;
