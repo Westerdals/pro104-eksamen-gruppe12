@@ -112,15 +112,34 @@ for(i = 0; i < ctLength; i++){
     const categoryOption = document.createElement('option');
     let categoryName = ctlist[i].category;
     let categoryColor = ctlist[i].color;
-    //categoryOption.style.color = `${ctlist[i].color}`;
+    categoryOption.style.color = `${categoryColor}`;
     categoryOption.innerHTML = `${categoryName}`;
     categoryDropdown.appendChild(categoryOption);
 
     console.log(categoryOption);
 }
+}
 
+
+function pushIntoMembers(){
+const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
+   const memberDropDown = document.getElementById('membersDropDown');
+let membLength = memberList.length;
+
+for(i = 0; i < membLength; i++){
+const memberOption = document.createElement('option');
+let memberFirstName = memberList[i].firstName;
+let memberLastName = memberList[i].lastName;
+let memberEmail = memberList[i].email;
+
+memberOption.innerHTML = `${memberFirstName}`;
+memberDropDown.appendChild(memberOption);
 
 }
+
+}
+
+pushIntoMembers();
 pushIntocategory();
 
 function saveTask(event, taskId) {
