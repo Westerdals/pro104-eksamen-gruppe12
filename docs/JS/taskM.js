@@ -24,6 +24,7 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 };
+
 const list_items = document.querySelectorAll('.list-item');
 const lists = document.querySelectorAll('.list');
 
