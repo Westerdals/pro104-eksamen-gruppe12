@@ -31,11 +31,11 @@ function newCategory() {
     const colorPicker = document.getElementById("category-color").value;
     console.log(colorPicker);
 
-    const category = { 
+    const category = {
         category: txt,
         color: colorPicker
 
-     };
+    };
 
 
     const ctlist = JSON.parse(window.localStorage.getItem('ctlist')) || [];

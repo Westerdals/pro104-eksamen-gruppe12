@@ -30,27 +30,26 @@ header {
 nav {
     grid-area: sidebar;
     background-color: #494949;
-    margin-right: 6px;
     z-index: 1;
 
 }
 
 section.section-users {
     grid-area: sect1;
-    margin: 6px;
+    margin: 4% 6%;
 
 }
 
 section.section-categories {
     grid-area: sect2;
-    margin: 6px;
+    margin: 4% 6%;
 
 
 }
 
 section.section-overview {
     grid-area: sect3;
-    margin: 6px;
+    margin: 4% 6%;
 }
 
 footer {
@@ -72,11 +71,12 @@ footer {
 
     nav {
         padding-top: 70%;
+        margin-right: 2%;
     }
 
     section.section-overview {
         grid-area: sect3;
-        margin: 6px 12px 6px 6px;
+        margin-right: 8%;
     }
 }
 
@@ -84,53 +84,96 @@ footer {
 
 section {
     background: #fff;
-    border: 2px solid #fffffc;
-    box-shadow: 0px 16px 24px rgba(6, 12, 22, .25);
-    border-radius: 5px;
+    box-shadow: 0px 16px 24px rgba(6, 12, 22, .2);
+    border-radius: 4px;
 }
 
+
 section h3 {
-    padding: 20px;
-    font-size: 26px;
+    padding: 22px;
+    font-size: 20px;
     text-align: center;
 }
 
-/* Registered Users */
+.section-users .box-header,
+.section-categories .box-header,
+.section-overview .box-header {
+    background-color: #41ead4;
+    color: #fffffc;
+    border-radius: 4px 4px 0 0;
+}
 
-/* .list-section ul li {
-    border: 1px solid #494949;
-    padding: 10px;
-    margin-bottom: 5px;
+.section-categories .box-header {
+    background-color: #ff7d00;
+}
+
+.section-overview .box-header {
+    background-color: #ff206e;
+}
+
+
+
+/* Registered Users and Categories */
+.list-section ul li,
+.list-section1 ul li,
+.list-section-overview ul li {
+    padding: 10px 12px;
     background: #fff;
-    box-shadow: 1px 1px rgba(9, 30, 66, .25);
     border-radius: 3px;
-} */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-.list-section ul li {}
+/* First and last name of members */
+.list-section ul li h4 {
+    display: inline;
+    padding-right: 5px;
+    font-size: 16px;
+}
 
+/* Email of members */
+.list-section ul li p {
+    padding-top: 4px;
+    font-size: 13px;
+    color: #494949;
+}
+
+/* Area around list items - expands /w more list items. Keep BG-color same as color of section */
 ul {
     margin: 0;
     padding: 10px;
-    background: #fff;
+    background: #fffffc;
     list-style: none;
 }
 
 ul li {
-    cursor: pointer;
-    position: relative;
-    border: 2px solid;
-
-    list-style-type: none;
+    margin: 10px;
+    list-style: none;
     background: #eee;
     font-size: 16px;
 }
 
+/* Color of the top-borders in members area  */
+.list-section ul li {
+    border-top: 5px solid #41ead4;
+}
+
+/* Blir fargesatt av bruker når det legges inn kategori */
+.list-section1 ul li {
+    border: 1px solid;
+    border-left: 22px solid;
+    margin-top: 14px;
+    padding: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
 
 
-/*  Styling for the add new member and category "buttons" */
 
+
+/*  Add new member and category buttons */
 button {
-    margin: 0;
+    margin-left: 10px;
 }
 
 .create-new {
@@ -144,7 +187,7 @@ button {
     border: none;
     color: rgb(98, 255, 50);
     text-decoration: none;
-    font-size: 30px;
+    font-size: 28px;
 }
 
 .fa-plus-circle span {
@@ -152,4 +195,5 @@ button {
     color: #494949;
     margin-left: 12px;
     font-size: 14px;
+    font-weight: 500;
 }
