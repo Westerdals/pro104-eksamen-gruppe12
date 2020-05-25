@@ -39,7 +39,6 @@ class CALENDAR {
         this.drawDays();
         this.drawYearAndCurrentDay();
         this.drawEvents();
-
     }
 
     drawEvents() {
@@ -157,8 +156,7 @@ class CALENDAR {
             this.updateTime(newMonth);
             this.drawAll()
         });
-
-
+        
         this.elements.days.addEventListener('click', e => {
             let element = e.srcElement;
             let day = element.getAttribute('data-day');
@@ -169,7 +167,6 @@ class CALENDAR {
             this.updateTime(strDate);
             this.drawAll()
         });
-
 
         this.elements.eventAddBtn.addEventListener('click', e => {
             let fieldValue = this.elements.eventField.value;
