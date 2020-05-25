@@ -31,46 +31,46 @@ const lists = document.querySelectorAll('.list');
 let draggedItem = null;
 
 for (let i = 0; i < list_items.length; i++) {
-	const item = list_items[i];
+    const item = list_items[i];
 
-	item.addEventListener('dragstart', function () {
-		draggedItem = item  ;
-		setTimeout(function () {
+    item.addEventListener('dragstart', function () {
+        draggedItem = item;
+        setTimeout(function () {
             item.style.display = 'none';
             console.log(draggedItem);
-		}, 0)
-	});
+        }, 0)
+    });
 
-	item.addEventListener('dragend', function () {
-		setTimeout(function () {
-			draggedItem.style.display = 'block';
-			draggedItem = null;
-		}, 0);
-	})
+    item.addEventListener('dragend', function () {
+        setTimeout(function () {
+            draggedItem.style.display = 'block';
+            draggedItem = null;
+        }, 0);
+    })
 
-	for (let j = 0; j < lists.length; j ++) {
-		const list = lists[j];
+    for (let j = 0; j < lists.length; j++) {
+        const list = lists[j];
 
-		list.addEventListener('dragover', function (e) {
-			e.preventDefault();
-		});
-		
-		list.addEventListener('dragenter', function (e) {
-			e.preventDefault();
-			this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
-		});
+        list.addEventListener('dragover', function (e) {
+            e.preventDefault();
+        });
 
-		list.addEventListener('dragleave', function (e) {
-			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-		});
+        list.addEventListener('dragenter', function (e) {
+            e.preventDefault();
+            this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+        });
 
-		list.addEventListener('drop', function (e) {
-			console.log('drop');
+        list.addEventListener('dragleave', function (e) {
+            this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+        });
+
+        list.addEventListener('drop', function (e) {
+            console.log('drop');
             this.append(draggeditem);
             console.log(draggedItem);
-			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-		});
-	}
+            this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+        });
+    }
 }
 
 function changeTaskStatus(newStatus, taskId) {
@@ -81,10 +81,10 @@ function changeTaskStatus(newStatus, taskId) {
     newTask.status = newStatus;
     taskList[taskId] = newTask;
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
-    if (taskList[taskId].status === 'Severly Important'){
-    document.getElementById(taskId).style.borderColor = "red";
-    console.log(newTask.status);
-}
+    if (taskList[taskId].status === 'Severly Important') {
+        document.getElementById(taskId).style.borderColor = "red";
+        console.log(newTask.status);
+    }
 }
 
 function onStatusChange(event, taskId) {
@@ -93,7 +93,7 @@ function onStatusChange(event, taskId) {
 }
 
 function buildStatusDropdwon(taskId) {
-    const statuses = ['Set status of Task','Severly Important', 'Very Important', 'Important', 'Not important', 'Almost no interest'];
+    const statuses = ['Set status of Task', 'Severly Important', 'Very Important', 'Important', 'Not important', 'Almost no interest'];
     const options = statuses.map(status => `<option placeholder="hei">${status}</option>`);
     return `
         <select  id="taskDropMenu" onchange="onStatusChange(event, ${taskId})">
@@ -122,12 +122,18 @@ function saveTask(event, taskId) {
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
     taskList[taskId] = newTask;
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
-    
+
 
     renderTaskList();
 }
 
-function buildChangeTaskForm({name, startDato, status, started, message}, taskId) {
+function buildChangeTaskForm({
+    name,
+    startDato,
+    status,
+    started,
+    message
+}, taskId) {
     return `
     <form onsubmit="saveTask(event, ${taskId})">
         <div>ID: ${taskId}</div>
@@ -153,27 +159,26 @@ function openTaskForm(taskId) {
 
 function buildTaskHtml(task, id) {
     return `
-    <div class="list-item">
-    <li class="list-item" id="${id}" draggable="true">
-        <div>ID: ${id}</div>
-        <div>Navn: ${task.name}</div>
-        <div>Started: ${task.started}</div>
-        <div>StartDate: ${task.startDato}</div>
-        <div>EndDate: ${task.endDate}</div>
-        <div>Message: ${task.message}</div>
-        <div>Status: ${task.status}</div>
+    <div class="list-item" draggable="true">
+        id="${id}"
+        ID: ${id}
+        Navn: ${task.name}
+        Started: ${task.started}
+        StartDate: ${task.startDato}
+        EndDate: ${task.endDate}
+        Message: ${task.message}
+        Status: ${task.status}
         ${buildStatusDropdwon(id)}
         <button id="editTaskBtn" onclick="openTaskForm(${id})">Edit</button>
-    </li>
     </div>
     `;
 }
 
-function renderTaskList(){
+function renderTaskList() {
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
     const taskListUl = document.getElementById("taskList");
     taskListUl.innerHTML = "";
-  
+
     taskList.forEach((task, index) => {
         const taskUl = document.createElement("div");
 
@@ -181,100 +186,104 @@ function renderTaskList(){
         taskListUl.appendChild(taskUl);
     });
 }
-   document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     renderTaskList();
-  });
+});
 
 
-function createNewTask(event){
-   //Stops the URL to be updated
-   event.preventDefault();
-
-   const task = document.querySelector("[name='task']").value;
-   if (task === ""){
-       alert("You have to write something");
-   } else {
-   const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
-   const taskListInfo = {
-    name: document.querySelector("[name='task']").value,
-    startDato: document.querySelector("[name='Dato1']").value,
-    endDate: document.querySelector("[name='DatoEnd']").value,
-    users: "none",
-    status: 'No current status.',
-    message: document.querySelector("[name='taskMessage']").value,
-    started: false
-};
-    
-   
-   taskList.push(taskListInfo);
-   window.localStorage.setItem("taskList", JSON.stringify(taskList));
-   
-   renderTaskList();
-   console.log(taskList);
-
-   event.target.reset();
-   } 
-
-function renderEmployeeList(){
-    const employeeList = JSON.parse(window.localStorage.getItem("employeeList")) || [];
-    const employeeListUl = document.getElementById("employeeList");
-    employeeListUl.innerHTML = "";
-  
-    for (const employee of employeeList){
-        const employeeUl = document.createElement("ul");
-
-        employeeUl.innerHTML = `<li>${employee}</li>`;
-        employeeListUl.appendChild(employeeUl);
-    }
-   }
-function createNewEmployee(event){
-   //Stops the URL to be updated
-   event.preventDefault();
-
-   const employee = document.querySelector("[name='employee']").value;
-   if (employee === ""){
-       alert("You have to write something");
-   } else {
-   const employeeList = JSON.parse(window.localStorage.getItem("employeeList")) || [];
-   employeeList.push(employee);
-   window.localStorage.setItem("employeeList", JSON.stringify(employeeList));
-   
-   renderEmployeeList();
-
-   event.target.reset();
-   }
-}
-
-function renderAssignList(){
-    const assignList = JSON.parse(window.localStorage.getItem("assignList")) || [];
-    const assignListUl = document.getElementById("overviewList");
-    assignListUl.innerHTML = "";
-    
-    for (const whoAndWhat of assignList){
-        const assignUl = document.createElement("div");
-
-        assignUl.innerHTML = `<div>${whoAndWhat.who} skal gjøre ${whoAndWhat.what}</div>`;
-        assignListUl.appendChild(assignUl);
-        
-    }
-}
-
-function createNewAssign(event){
+function createNewTask(event) {
+    //Stops the URL to be updated
     event.preventDefault();
-    const mellom = "skal gjøre"
-    const who = document.querySelector("[name='employee2']").value;
-    const what = document.querySelector("[name='task2']").value;
-    const whoAndWhat = {who: who, what: what};
-    if (who === "" || what === ""){
-       alert("You have to write something");
-   } else {
-    const assignList = JSON.parse(window.localStorage.getItem("assignList")) || [];
-    assignList.push(whoAndWhat);
-    window.localStorage.setItem("assignList", JSON.stringify(assignList));
-    console.log(window.localStorage.getItem(JSON.stringify(overviewList)));
-    
-    renderAssignList();
-    event.target.reset();
-   }
-}
+
+    const task = document.querySelector("[name='task']").value;
+    if (task === "") {
+        alert("You have to write something");
+    } else {
+        const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
+        const taskListInfo = {
+            name: document.querySelector("[name='task']").value,
+            startDato: document.querySelector("[name='Dato1']").value,
+            endDate: document.querySelector("[name='DatoEnd']").value,
+            users: "none",
+            status: 'No current status.',
+            message: document.querySelector("[name='taskMessage']").value,
+            started: false
+        };
+
+
+        taskList.push(taskListInfo);
+        window.localStorage.setItem("taskList", JSON.stringify(taskList));
+
+        renderTaskList();
+        console.log(taskList);
+
+        event.target.reset();
+    }
+
+    function renderEmployeeList() {
+        const employeeList = JSON.parse(window.localStorage.getItem("employeeList")) || [];
+        const employeeListUl = document.getElementById("employeeList");
+        employeeListUl.innerHTML = "";
+
+        for (const employee of employeeList) {
+            const employeeUl = document.createElement("ul");
+
+            employeeUl.innerHTML = `<li>${employee}</li>`;
+            employeeListUl.appendChild(employeeUl);
+        }
+    }
+
+    function createNewEmployee(event) {
+        //Stops the URL to be updated
+        event.preventDefault();
+
+        const employee = document.querySelector("[name='employee']").value;
+        if (employee === "") {
+            alert("You have to write something");
+        } else {
+            const employeeList = JSON.parse(window.localStorage.getItem("employeeList")) || [];
+            employeeList.push(employee);
+            window.localStorage.setItem("employeeList", JSON.stringify(employeeList));
+
+            renderEmployeeList();
+
+            event.target.reset();
+        }
+    }
+
+    function renderAssignList() {
+        const assignList = JSON.parse(window.localStorage.getItem("assignList")) || [];
+        const assignListUl = document.getElementById("overviewList");
+        assignListUl.innerHTML = "";
+
+        for (const whoAndWhat of assignList) {
+            const assignUl = document.createElement("div");
+
+            assignUl.innerHTML = `<div>${whoAndWhat.who} skal gjøre ${whoAndWhat.what}</div>`;
+            assignListUl.appendChild(assignUl);
+
+        }
+    }
+
+    function createNewAssign(event) {
+        event.preventDefault();
+        const mellom = "skal gjøre"
+        const who = document.querySelector("[name='employee2']").value;
+        const what = document.querySelector("[name='task2']").value;
+        const whoAndWhat = {
+            who: who,
+            what: what
+        };
+        if (who === "" || what === "") {
+            alert("You have to write something");
+        } else {
+            const assignList = JSON.parse(window.localStorage.getItem("assignList")) || [];
+            assignList.push(whoAndWhat);
+            window.localStorage.setItem("assignList", JSON.stringify(assignList));
+            console.log(window.localStorage.getItem(JSON.stringify(overviewList)));
+
+            renderAssignList();
+            event.target.reset();
+        }
+    }
 }
