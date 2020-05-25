@@ -161,8 +161,8 @@ body {
   .calendar .calendar-days li.active-day:after {
     color: white;
     background: #ec364f; }
-  .calendar .calendar-week {
 
+  .calendar .calendar-week {
     margin-bottom: 30px;
     font-weight: 600;
     color: #737373;
@@ -172,4 +172,5 @@ body {
     width: calc(460px / 7);
     height: 30px;
     line-height: 30px; }
+
 
