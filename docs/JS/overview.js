@@ -1,32 +1,38 @@
 
 
 
-renderOverviewList();
-function renderOverviewList(){
+// Render the user input to the page
+function renderOverviewList() {
 
-    const overview = {'overview': " " };
-    
+const overviewArray = []
 
-    const overviewList = JSON.parse(window.localStorage.getItem('taskList')) || [];
-    overviewList.push(overview);
-    const list = document.getElementById('overviewList');
+    // Retrives the value of the localStorage item "ovList" as a string (text)
+    const ovList = JSON.parse(window.localStorage.getItem('taskList')) || [];
+    overviewArray.push(ovList);
+    const list = document.getElementById('ovList');
     list.innerHTML = '';
-   
-  for(const i in overview){
- const li = document.createElement('li');
-    li.innerHTML += `<p>${overview}</p>`;
-    list.appendChild(li);
-   
-}
+var ovLength = overviewArray.length;
+  
+    
+for (var i = 0; i < ovLength; i) {
+        const li = document.createElement('li');
+        li.innerHTML += ` ${overviewArray}`;
+        list.appendChild(li);
+        
 
+    }
 }
 renderOverviewList();
 
+
+//When a window updates localStorage, other windows get notified through "addEventListener"
 window.addEventListener("storage", function (event) {
     if (event.key === "taskList") {
-        renderMemberList();
+        renderCategoryList();
     }
 });
+
+
 
 // function buildChangeTaskForm({name, startDato, status, started, message}, taskId) {
 //     return `
