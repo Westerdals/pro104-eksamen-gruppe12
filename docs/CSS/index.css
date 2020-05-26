@@ -106,8 +106,8 @@ body {
 }
 
 .form button {
-	background-color: #EF476F;
-	border: 2px solid #EF476F;
+	background-color: #f72585;
+	border: 2px solid #f72585;
 	border-radius: 2px;
 	display: block;
 	font-family: inherit;
@@ -125,5 +125,5 @@ body {
 
 .form button:hover {
 	background-color: #fffffc;
-	color: #EF476F;
+	color: #f72585;
 }

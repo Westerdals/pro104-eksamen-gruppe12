@@ -39,7 +39,7 @@ body {
 }
 
 .menu a span i:hover {
-    color: #FF5D73;
+    color: #f72585;
 }
 
 
@@ -65,7 +65,7 @@ label {
 
     .nav {
         padding: 2%;
-        text-align: right;
+        text-align: left;
         height: 40px;
         line-height: 40px;
     }

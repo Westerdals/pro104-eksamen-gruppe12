@@ -1,0 +1,851 @@
+commit 77980bf5a3ed613c8f6e86fde30a08fc8d82be75
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 26 05:07:01 2020 +0200
+
+    Styling
+    
+    Styling av taskM.html og alle modal
+
+commit eb360df8c1e99010800f028ec2ee70a6cabaa7ac
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Mon May 25 23:29:38 2020 +0200
+
+    header til overview
+
+commit 72f772b8e1820e34ea3921db9deab48bf5276792
+Merge: b863391 3549e8d
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Mon May 25 23:01:29 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit b8633915bb106aed1ecf808bd4a8cbfc56f8134b
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Mon May 25 23:01:23 2020 +0200
+
+    Mindre endring css
+
+commit 3549e8d39cc9804fb443e288504225dd127e8240
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 22:58:06 2020 +0200
+
+    fått fikset pull-down-menyene
+
+commit fbf11d87ea6c2044e0c01418f6f6b1c8a370b283
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 22:36:23 2020 +0200
+
+    fått fikset en pulldown hvor man kan velge kategori som er hentet inn fra main.html
+
+commit 6f39d4aa4cf42787452d5b0125a65e7a95731efc
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 21:28:38 2020 +0200
+
+    endret dato på task.html
+
+commit 1c430f4d09050062db3890dafa055b6377d31cc3
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 21:27:19 2020 +0200
+
+    fikset overview.js
+
+commit bd945564197376727fc21bd4fd4e534798516f84
+Merge: 23dfb10 725cf9b
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Mon May 25 20:02:51 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 23dfb1020066154b040d12a458166931ac330a43
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Mon May 25 19:57:09 2020 +0200
+
+    Fikset bugs med siden
+
+commit 725cf9bbf8d808d9b9ab85c0c76688b98d3a9c39
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 19:31:56 2020 +0200
+
+    JS: fikset overview.js
+
+commit 32d60b5aa02ce3ac912ef69cf22c1e9d42dbd674
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Mon May 25 18:52:36 2020 +0200
+
+    formatering av koden
+
+commit e02d642b2dfc37ae7c3316a97a3528c9c5b2af1c
+Merge: ba80ea1 6a02644
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 18:30:40 2020 +0200
+
+    merger fordi jeg og sindre har gjort noe på overview
+
+commit ba80ea171a7d5d6c45a660912fb5a7147167aed1
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 18:29:50 2020 +0200
+
+    tester diverse ting på overview
+
+commit 6a02644e05596d92629e338bf6012398a570afad
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Mon May 25 17:58:01 2020 +0200
+
+    Submit knappen fungerer
+
+commit 213dc4f5a0914430a12b152c89a26c3712aaeef4
+Merge: d764f94 6a45030
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Mon May 25 17:37:46 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit d764f94e716243c47ec01814539868d025f3bd80
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Mon May 25 17:35:42 2020 +0200
+
+    Gjort endringer i overview.js
+
+commit 6a45030de81e24cb9ad2165fa503df32e7252414
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Mon May 25 15:38:43 2020 +0200
+
+    små endringer
+
+commit d2c44da8e3ef0a5aad1fa65f2d852c8ff713cfb1
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Mon May 25 15:02:37 2020 +0200
+
+    rydda opp i koden - men event button synes ikke
+
+commit 61e06c8eed51435a64bc2e89d8b1e512ad8c2f13
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Mon May 25 14:37:13 2020 +0200
+
+    lagt til kalender 2
+
+commit 6a45c5603da7875570b69887f6bb38b3edbd25f7
+Merge: 1aca80a 55b6c66
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Mon May 25 11:54:23 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 1aca80aeeacfdff016311d9703e0194948ef654e
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Mon May 25 11:54:20 2020 +0200
+
+    mytask css
+
+commit 55b6c66d6ee37f47892e22da68f21ef39ebfb010
+Merge: dd48b59 c4aa38f
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 11:39:53 2020 +0200
+
+    litt usikkert hva jeg gjorde endringer på igår
+
+commit dd48b59a2e81726cbd061312176ed46331acdc2b
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 25 11:35:39 2020 +0200
+
+    gjorde endringer igår på overview.js
+
+commit 7275e474b1e68836392e2762b2c4ad9e7965a9ba
+Merge: 66d6ad4 c4aa38f
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Mon May 25 10:45:10 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 66d6ad469cb695baef5bfd58eeaa7a6cf2df4ede
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Mon May 25 10:45:06 2020 +0200
+
+    Lagt til en ny css fil
+    
+    slik at Sindre sin CSS til myTask ikke blir slettet
+
+commit c4aa38fe5a733070d0c80d169f23af56f52ae8f4
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Mon May 25 03:48:21 2020 +0200
+
+    styling av main
+
+commit d4aec6129571f5606113890410a4bb85dc1c9bcd
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Sun May 24 23:14:44 2020 +0200
+
+    sindre
+
+commit 61530b3de5166b1aab57ea8e7f2cf6a602614eef
+Merge: 3852733 dd91e7c
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sun May 24 22:25:18 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 3852733fe5ad563377c4b3b74f07101f126d087c
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sun May 24 22:25:14 2020 +0200
+
+    Mindre endringer
+
+commit dd91e7c5aad954aee5023af27b0bd2d363a392ff
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Sun May 24 22:21:06 2020 +0200
+
+    sindre
+
+commit 69627a1cfaf6eac1fb59f2e7c2396440fc4f0247
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sun May 24 19:38:35 2020 +0200
+
+    prøvd å fikse på task.js, men får ikke det til
+
+commit 9ad8c2d0aa6bc6762ec6eb880fdea4dba041168b
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sun May 24 18:08:39 2020 +0200
+
+    fikset members.js
+
+commit 23ab68d309ee4986273063cd3558fe5bc5a003db
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sun May 24 18:00:45 2020 +0200
+
+    lagt til overview.js for å hente info fra task.html
+
+commit 31388ab53300315761c3f30b9d3f960e673f06c2
+Merge: 3cc21a2 f588a7b
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sun May 24 17:56:39 2020 +0200
+
+    får ikke pullet
+
+commit 3cc21a22d79f841ac2ca3515639234376852a5ac
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sun May 24 17:56:13 2020 +0200
+
+    fikset litt på kalender siden
+
+commit f588a7b16eced94c93f2fb017bcfb6a924dc32dc
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sun May 24 17:55:28 2020 +0200
+
+    Fikset så category modal kan lukkes ved å trykke på X
+
+commit 951c9d7d31e8eace3792f540fb6e30815572b96a
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sun May 24 16:20:24 2020 +0200
+
+    Mainpage responsive layout + modal
+    
+    Har satt opp layout til main page, lagt inn responsive meny og styling på new member modal. Gjenstår fortsatt mye styling
+
+commit 2f629266ec8528bcfc12a6d7a7ee86323fbeb7e1
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Sun May 24 13:02:17 2020 +0200
+
+    C:/Program Files/Git/Sindre, endret litt i css til taskM
+
+commit 73eac0884ac20c09fe962c765599565733fff731
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Sun May 24 12:54:41 2020 +0200
+
+    C:/Program Files/Git/Sindre, la til mere i css filen til TaskM
+
+commit ed08faec602dcac33870f6654560f3203df2455e
+Merge: f15fe87 78fb8f3
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Sun May 24 12:28:58 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit f15fe870b8c965a4d9bb4ddd41f3829060f53bb7
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Sun May 24 12:28:12 2020 +0200
+
+    C:/Program Files/Git/sindre, lagt til og fjernet noen elementer samt jobbet litt på drag and drop funksjonen
+
+commit 5e03611b1378042470943c8c16faeb9cc60d63fa
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Sun May 24 12:25:24 2020 +0200
+
+    Sindre
+
+commit 78fb8f3e579b18713e8dc1f1d388ffc2aba1feb3
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sun May 24 12:21:44 2020 +0200
+
+    endring css mytask
+
+commit c4a51c327c081be1aa378ae697ec4e470d175b60
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sun May 24 12:02:59 2020 +0200
+
+    css style my.task
+
+commit c8f037e45b5955a1b4381eb13f6973ee450ea078
+Merge: 69f5f19 c8d1731
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sat May 23 23:17:07 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 69f5f194c82799aa08bbc45722256287633bac76
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sat May 23 23:17:01 2020 +0200
+
+    Lagt inn ny responsiv meny
+    
+    Mangler fortsatt litt styling og må fikse noe posisjonering så mobilmenyen ikke kommer bak content
+
+commit c8d173163472d514df8178c41fbe54843f943756
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 23 22:26:27 2020 +0200
+
+    design css
+
+commit d4b9689f15035f91785a0c4430170a000764d00f
+Merge: 8599626 a9ae6fc
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 23 22:18:56 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 8599626cf02aa716bbffc28150e145c26527813c
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 23 22:17:46 2020 +0200
+
+    Design på myTask
+    
+    Ikke ferdig.
+
+commit a9ae6fcdef90ce461a6670b009fa412823feeb80
+Merge: 5d9333c 5493b2d
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sat May 23 21:15:45 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 5d9333cbd504bceb8810b6603102ee5a255e0c02
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sat May 23 21:15:42 2020 +0200
+
+    byttet font
+
+commit 5493b2d3507bcdca030d4ff73b6f245d01b410d4
+Merge: 8ff6ba7 6065caf
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sat May 23 20:26:30 2020 +0200
+
+    hei
+
+commit 8ff6ba729082c6f39b26b9a05484152a1b6b8403
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sat May 23 20:26:01 2020 +0200
+
+    lagt til formen på calender inn i localstorage
+
+commit 6065caf1c5e01150d624ec1f7355e71070fc4758
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 23 17:52:04 2020 +0200
+
+    Update README.md
+
+commit 95c4797c16548a629f7879a63e22ff3448385ad9
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 23 17:51:01 2020 +0200
+
+    Delete .gitignore
+
+commit f71e45b9f9cc013e01e353218e46292c74d13db9
+Merge: 6b4e769 a06f282
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 23 17:49:17 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 6b4e769c3e949cbccc6efe0ed5d6cf607561dc7c
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 23 17:49:12 2020 +0200
+
+    git ignore
+
+commit a06f282ff26122e0e62c2541f438aedbc9b93ad1
+Merge: dc86ef2 a483ae0
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sat May 23 17:07:10 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit dc86ef26fe001b66ef7c10ec2f1f9077e060328c
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Sat May 23 17:07:06 2020 +0200
+
+    Liten endring CSS
+    
+    Endret possisjon på feilmedling ved feil feil info i felt
+
+commit fc2ac6fe6cf6261e77e663ee363290d53b019847
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 23 16:41:28 2020 +0200
+
+    Update .DS_Store
+
+commit a483ae0acbc23400601ab9f14418aaf3a986dc4e
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sat May 23 15:30:37 2020 +0200
+
+    kommentert det jeg gjordee
+
+commit ba683ce00a2fcc2287021b370b43e5fee33808e1
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sat May 23 15:22:48 2020 +0200
+
+    fått fikset knappen
+
+commit e451edfaf3d09ada7a901962e20b3a023d1cac49
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Fri May 22 23:47:09 2020 +0200
+
+    endret font og layout + popup window
+
+commit b5af953d406c7903335ef073b6d596b5f1357a4a
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Fri May 22 17:14:38 2020 +0200
+
+    fått fikset kategorier
+
+commit 16846100e9e432424b457b23e61df391480a28db
+Merge: 40b31c3 7cab3eb
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Fri May 22 16:28:54 2020 +0200
+
+    ^
+
+commit 40b31c36bb9dbe208a6e853a61892dc3196ad780
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Fri May 22 16:28:33 2020 +0200
+
+    trenger litt hjelp til å gå over koden og se etter feil
+
+commit 7cab3ebbea81c93f98f6caa45cb95435ac1c3244
+Merge: db9d2bd c4b0dbd
+Author: shaheb786 <56352670+shaheb786@users.noreply.github.com>
+Date:   Fri May 22 16:15:30 2020 +0200
+
+    har fikset ikoner for placeholder for registreringssiden
+
+commit db9d2bd7feb118810d0aa94f9bcbd46ef6f12300
+Author: shaheb786 <56352670+shaheb786@users.noreply.github.com>
+Date:   Fri May 22 16:09:14 2020 +0200
+
+    fikset på ikoner for placeholder i registreringssiden
+
+commit c4b0dbdc437ac3b33e9497dae6ca811209c7f9fa
+Merge: 96006b5 50ead53
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Fri May 22 15:51:02 2020 +0200
+
+    fikset på categories, trenger at noen ser over
+
+commit 0af19827fd45683d59f79622aa4204a3f1ab158d
+Merge: b7e1b10 cb8fecf
+Author: shaheb786 <56352670+shaheb786@users.noreply.github.com>
+Date:   Fri May 22 15:44:46 2020 +0200
+
+    fikset ikoner for placeholder
+
+commit 96006b5fddef0b2e4b2da5a359e83145ec55db8e
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Fri May 22 13:09:59 2020 +0200
+
+    små endringer på category.js
+
+commit 50ead5302012903fd6effda04c3d431f7c99584e
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Fri May 22 13:08:05 2020 +0200
+
+    endret navn på css fil
+
+commit f813f06ed63a0d48d8691f439e4713008150ebd9
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Fri May 22 13:01:10 2020 +0200
+
+    Linket JS på main.html siden
+
+commit 91003d762a9c54313b7542e85e8cc80de40e7470
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Fri May 22 12:54:01 2020 +0200
+
+    samlet alt i en mappe
+
+commit fa7bd9164fba7f0c04beb889c156451a817d17ae
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Fri May 22 12:14:18 2020 +0200
+
+    sindre, endringer av navn på script fil
+
+commit a72295db1ff6fc9b6afb595fb546cb661a36b556
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Fri May 22 12:04:12 2020 +0200
+
+    sindre
+
+commit 6cf7a0f317e8000476e24d7f2ab43c52c907ec48
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Fri May 22 08:50:27 2020 +0200
+
+    Sindre jobbet med endringer og oppretting av oppgaver i loacalstorage samt litt jobb på html siden for å få drag and drop til å fungere.
+
+commit 93bd62c8c63fe47302eec563d9b0b31a01d57789
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Fri May 22 06:59:40 2020 +0200
+
+    Oprettet mapper og stylet logginside
+    
+    Oprettet mapper de endelige filene kan legges inn så vi får begynne å sette sammen alt
+
+commit e963b00e60116196de43a6d582eb65830be1c346
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Thu May 21 23:18:30 2020 +0200
+
+    holder på med en funksjon der du kan velge en kategori eller legge til en selv
+
+commit 59eb95296493eba92e8ff1c977af22181db69657
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Thu May 21 22:31:12 2020 +0200
+
+    lagt inn de siste endringene
+
+commit f5b15e642e253124445c2d1799c2e5b727a99bb5
+Merge: 862e673 9f4ecbb
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Thu May 21 22:30:46 2020 +0200
+
+    oppdatert main.html blant annet
+
+commit 9f4ecbba792c8be57ff9c2a5ea4b020b9abd5ce4
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Thu May 21 21:12:11 2020 +0200
+
+    endret layout på <form>
+
+commit ca1188c9d48bfce940bde708e8e03b40ae04b331
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Thu May 21 17:39:00 2020 +0200
+
+    Update .DS_Store
+
+commit 862e6739354cd0fefba8d89915f684ccc96db062
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Thu May 21 14:36:10 2020 +0200
+
+    lagt inn etternavn,email og bilde, men får ikke til at bildet vises.
+
+commit 36070be117ef872523e2a6e0e3ac55ff5ca79c02
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Thu May 21 11:11:06 2020 +0200
+
+    Slettet min mappe
+    
+    Den er ikke nødvendig å ha med lengre.
+
+commit a767f2bf55f9f15d7a81364bead64b507ed82f41
+Merge: e0f05c7 661eaf6
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Wed May 20 13:08:08 2020 +0200
+
+    prøvd mye forskjellig, men får det ikke til å funke
+
+commit e0f05c728d420447c9e7091246e91152700c2042
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Wed May 20 12:55:12 2020 +0200
+
+    prøvd mye forskjellig med å få til at alle funksjoner kjører før newSite(), men får det ikke til
+
+commit 661eaf6668c81e1f3f436f704cd05dee501c1dc2
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Wed May 20 11:04:02 2020 +0200
+
+    testet media query
+    
+    Testet media query
+
+commit c2a11f5478dae1748d9a1ff6e565eaeff27306c5
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Tue May 19 21:08:16 2020 +0200
+
+    Lagt til en form når man trykker på en dato (ikke komplett)
+
+commit a8a798a9c280e0156d5b6e03a18e06041231b5f7
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 19 18:27:22 2020 +0200
+
+    Små endringer på navn
+
+commit cb8fecff56145937d17d24724b77397fb54d8eb6
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Tue May 19 16:18:48 2020 +0200
+
+    fikset at det lagres i localStorage, trenger å tilpasse etter styleguiden
+
+commit ad7a99fcfa5ad923475c944899dfd71fce448f6d
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Tue May 19 12:58:30 2020 +0200
+
+    fikset localstorage, skal endres litt mer på og få til å kunne enkelt gjenbruke info på andre sider
+
+commit a6cf686bc5133834e70e8add700291d1d89c8d2d
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 19 00:53:20 2020 +0200
+
+    Mainpage
+    
+    Laget en versjon av main page med modals for add member. Kan brukes når vi implementerer hele member seksjon og tasks
+
+commit be3a95a4e37b539d4b54a9352fb7fff0af5b3ff8
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 18 19:17:01 2020 +0200
+
+    slettet susanne sin mappe og lagt inn ny forum. jobber med å få det inn i localstorage så vi kan bruke det senere.
+
+commit ad8c33467f41511e0981c8edcf0045fc843bd07d
+Merge: b5db898 926060a
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Mon May 18 14:33:06 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-Rullvard
+
+commit b5db898fdb933202467c796ddac1e0ee0c0fd131
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Mon May 18 14:30:58 2020 +0200
+
+    Oppdatert sidebar
+
+commit 926060ad9deadff5a921b3fcd3b499cbf4b4555c
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Mon May 18 14:26:08 2020 +0200
+
+    slettet img/ mappen siden den var tom
+
+commit b7e1b10567fd23332b77ddc8919f112e16d046f1
+Merge: 2623489 ca42eec
+Author: shaheb786 <56352670+shaheb786@users.noreply.github.com>
+Date:   Mon May 18 13:31:22 2020 +0200
+
+    redigert bakgrunnsfarge og tittel på todolist
+
+commit 26234893af945c442197f5f0b42152e2e234d17a
+Author: shaheb786 <56352670+shaheb786@users.noreply.github.com>
+Date:   Sat May 16 21:05:10 2020 +0200
+
+    har forandret css og html for ToDO
+
+commit ca42eecc918bf86263cd662b2833df279fb218dc
+Merge: b636585 9e0720a
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sat May 16 19:37:15 2020 +0200
+
+    oppdatert to-do-listen
+
+commit b636585cf2ebfff05766238742f5aad044f9b25c
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Sat May 16 19:35:18 2020 +0200
+
+    har fikset på to-do-listen, lar shaheb drive med css delen
+
+commit 9e0720ae01d3bc426961f4df694ac6e31173fd0f
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Sat May 16 19:21:01 2020 +0200
+
+    Kalender (folder Eskil)
+    
+    Gjort et grovt utkast på kalenderen.
+
+commit 37df24b380a381e4b1d91e5e11ce7ced16f16617
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 16 15:01:21 2020 +0200
+
+    Endring i js
+
+commit 9271b8007f95ceaa971dc77a4444941688f13e84
+Merge: 72a3f8a 14c3e50
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 16 14:58:21 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 72a3f8a05221141466b98789bf2f28d2a5915390
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Sat May 16 14:58:02 2020 +0200
+
+    Forside
+
+commit 14c3e50bac3fc6271413d2127f713881a625b3f0
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Sat May 16 11:15:25 2020 +0200
+
+    sindre Helstad
+
+commit 84a8bf6fa6774d47e72a544dcf560bfe8519fd2f
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Fri May 15 22:32:49 2020 +0200
+
+    Kalender
+    
+    Starta på kalender
+
+commit 24525516947bbf2bedc27d39718a91d8b92dba86
+Merge: 1ab4d79 fb22429
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Fri May 15 21:17:05 2020 +0200
+
+    lagt til en ny versjon som ikke funker av to-do-list
+
+commit 1ab4d794332046c512f0d288ac5e90ff58ec6346
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Fri May 15 21:14:41 2020 +0200
+
+    prøvd en ny funksjon for å få til overskrift på en en task og description
+
+commit fb2242919664fd0b865b69203ed932916deea7d1
+Author: shaheb786 <56352670+shaheb786@users.noreply.github.com>
+Date:   Fri May 15 11:50:40 2020 +0200
+
+    har endret bakgrunnsfargen på todo.css
+
+commit 1ac5dbb5c2be76d466df98a21756ef0351f54af2
+Merge: 7ad4fa4 f4862cc
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Fri May 15 10:51:31 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 7ad4fa47a4dd086a530e319b68ab03f0c035d30a
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Fri May 15 10:50:35 2020 +0200
+
+    Sindre
+
+commit f4862cc71fac47fec444a8acd6f8887a504db08f
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Thu May 14 23:19:12 2020 +0200
+
+    fikset på input boksene
+
+commit 6102bbba3ea54c5d5ee36a5b6521221f87f86032
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Thu May 14 23:11:39 2020 +0200
+
+    fikset in-logging
+
+commit f2ca279bd7f643d2b0704da2c7a5c421920069df
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Thu May 14 21:29:39 2020 +0200
+
+    Create .DS_Store
+
+commit f59a6042815a389ad98b266e942b4b199e1e1bae
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Thu May 14 21:29:13 2020 +0200
+
+    slettet unødvendig script
+
+commit 6ca26274b99d88cc9bdcec18505a87455aff324b
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Thu May 14 21:28:01 2020 +0200
+
+    Min kode
+    
+    La inn min kode så jeg kan få hjelp til js'en
+
+commit a25a8f65d120ea6767ae08a5140038c445eefc6b
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Thu May 14 21:03:33 2020 +0200
+
+    lagt til de siste endringer, mangler bare CSS
+
+commit 34c78f9f92632ef11c448970b9263a79c5c39522
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Thu May 14 13:22:14 2020 +0200
+
+    lagt inn to do list! utseendet er stygt, men tar ikk så lang tid å fikses på.
+
+commit ea1c71679eccbc2548623a7c54206c9a9d48e0e9
+Author: Håvard <37316117+Rullvard@users.noreply.github.com>
+Date:   Wed May 13 23:10:50 2020 +0200
+
+    Endret formatering
+
+commit fb907be5be059a2abf576953e4660955dd034cc9
+Author: Håvard <37316117+Rullvard@users.noreply.github.com>
+Date:   Wed May 13 22:54:32 2020 +0200
+
+    Oppdatert README
+    
+    Lagt inn checklist over hvilke funksjoner som må lages
+
+commit 6a9ae2ff009ce1177fbe246f8a8e66bdec5fa348
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Wed May 13 19:42:35 2020 +0200
+
+    prøvd meg på en funksjon der man kan lage post-it-lapper. er ikke ferdig, mangler å debuge litt.
+
+commit e9be8aaf6abaf434ec6227ae8c5d63523b7daf8a
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Wed May 13 15:27:00 2020 +0200
+
+    testet meg litt på design
+
+commit 876a0e6ee1b5d93ec4dd74d3b5fb68fede3cb8b7
+Author: Sindre-git <sindre-hel@hotmail.no>
+Date:   Wed May 13 12:27:52 2020 +0200
+
+    Sindre Helstad
+
+commit a6e1bd8711b55e0e97f7c25e6b7304b71ad1b809
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Wed May 13 12:21:14 2020 +0200
+
+    Update README.md
+
+commit 66ec3c61bd0c34e58a30e498132720e18d154202
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Wed May 13 12:04:21 2020 +0200
+
+    lagt inn mapper
+
+commit 1abcbd74d7f78467ba717990499f96de262d7fae
+Author: shaheb786 <56352670+shaheb786@users.noreply.github.com>
+Date:   Wed May 13 11:56:16 2020 +0200
+
+    Update README.md
+
+commit 32c7fcb679ac63771f942c37192bf394ee7d4c12
+Author: Håvard <37316117+Rullvard@users.noreply.github.com>
+Date:   Wed May 13 11:53:19 2020 +0200
+
+    Update README.md
+
+commit 9a7a0000169f016ab07a17176efb10878179d5ce
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Wed May 13 11:52:03 2020 +0200
+
+    Oppdatert ReadMe
+    
+    Susanne
+
+commit d317c85e5788f7f0551890e7d1eeee1e6b1335ca
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Wed May 13 11:50:07 2020 +0200
+
+    susanne
+    
+    test
+
+commit 555c8c62e2f961358f95d40102d6d89d4b2cf0a9
+Author: Håvard <37316117+Rullvard@users.noreply.github.com>
+Date:   Wed May 13 11:42:39 2020 +0200
+
+    Create README.md

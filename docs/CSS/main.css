@@ -97,17 +97,17 @@ section h3 {
 .section-users .box-header,
 .section-categories .box-header,
 .section-overview .box-header {
-    background-color: #41ead4;
+    background-color: #f72585;
     color: #fffffc;
     border-radius: 4px 4px 0 0;
 }
 
 .section-categories .box-header {
-    background-color: #ff7d00;
+    background-color: #7209b7;
 }
 
 .section-overview .box-header {
-    background-color: #ff206e;
+    background-color: #3a0ca3;
 }
 
 /* Registered Users and Categories */
@@ -192,7 +192,7 @@ button {
 .fa-plus-circle {
     cursor: pointer;
     border: none;
-    color: rgb(98, 255, 50);
+    color: #f72585;
     text-decoration: none;
     font-size: 28px;
 }
@@ -203,4 +203,18 @@ button {
     margin-left: 12px;
     font-size: 14px;
     font-weight: 500;
+}
+#imagePrev{
+    height: 20px;
+    width: 20px;
+   position: relative;
+   left: 300px;
+   
+}
+img{
+    height: 20px;
+    width: 20px;
+   position: relative;
+   left: 300px;
+   
 }
