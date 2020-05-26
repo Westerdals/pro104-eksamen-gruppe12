@@ -56,7 +56,7 @@
 /*  Styling of the content box */
 
 .modal-content h3 {
-    padding: 40px 0 10px 0;
+    padding: 15px 0px 40px 0px;
     text-align: center;
     font-size: 28px;
     color: #494949;
@@ -65,24 +65,32 @@
 .modal-content {
     background-color: #fffffc;
     margin: auto;
-    padding: 20px;
+    padding: 40px;
     border-radius: 5px;
     overflow: hidden;
     width: 400px;
     max-width: 100%;
 }
 
-.modal-content .form {
-    padding: 20px 40px;
+.tasker-modal {
+    width: 500px;
 }
 
-.modal-content .form-control {
+
+
+.modal-content .form-control,
+.modal-content .date-picker {
     margin-bottom: 10px;
     padding-bottom: 12px;
     position: relative;
 }
 
-.modal-content input {
+/* User input areas inside modal */
+.modal-content input,
+.form-control select,
+.form-control select,
+.form-control #Dato1,
+.form-control #Dato {
     border: 2px solid #E5E4E4;
     background-color: #E5E4E4;
     border-radius: 2px;
@@ -103,10 +111,35 @@
     width: 20%;
 }
 
+/* Projects page */
+
+
+.dropdown-section .form-control,
+.date-picker .form-control {
+    display: inline;
+}
+
+/*  Overrides display and width from style line 85 */
+.form-control select,
+.form-control select,
+.form-control #Dato1,
+.form-control #Dato {
+    display: inline-block;
+    width: 45%;
+}
+
+.form-control #Dato1,
+.form-control #membersDropDown {
+    float: right;
+}
+
+
+
 
 /* Button */
 
-.modal-content .addBtn {
+.modal-content .addBtn,
+.modal-content .btn {
     background-color: #EF476F;
     border: 2px solid #EF476F;
     border-radius: 2px;
@@ -118,13 +151,14 @@
     width: 100%;
     color: #fffffc;
     display: block;
-    margin: 35px 0 25px 0;
+    margin: 40px 0 25px 0;
     width: 100%;
     text-decoration: none;
     text-transform: uppercase;
 }
 
-.modal-content .addBtn:hover {
+.modal-content .addBtn:hover,
+.modal-content .btn:hover {
     background-color: #fffffc;
     color: #EF476F;
 }

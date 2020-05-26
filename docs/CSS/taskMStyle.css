@@ -1,13 +1,154 @@
 * {
-    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #fffffc;
+}
+
+body,
+html {
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+
+body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #fff
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 6% auto auto auto 4%;
+    grid-template-areas:
+        "sidebar"
+        "sect1"
+        "sect2"
+        "sect3"
+        "footer";
 }
-body{
-    padding:100px;
-    
+
+header {
+    grid-area: header;
+    background-color: #fffffc;
 }
+
+nav {
+    grid-area: sidebar;
+    background-color: #494949;
+    z-index: 1;
+
+}
+
+section.section-not-started {
+    grid-area: sect1;
+    margin: 4% 6%;
+
+}
+
+section.section-started {
+    grid-area: sect2;
+    margin: 4% 6%;
+
+
+}
+
+section.section-finished {
+    grid-area: sect3;
+    margin: 4% 6%;
+}
+
+footer {
+    grid-area: footer;
+}
+
+@media only screen and (min-width: 800px) {
+
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto 30% 30% 30%;
+        grid-template-rows: 4% auto 4%;
+        grid-template-areas:
+            "sidebar header header header"
+            "sidebar sect1 sect2 sect3"
+            "sidebar footer footer footer";
+    }
+
+    nav {
+        padding-top: 70%;
+        margin-right: 2%;
+    }
+
+    section.section-overview {
+        grid-area: sect3;
+        margin-right: 8%;
+    }
+}
+
+/* For styling each induvidual section */
+section {
+    background: #fff;
+    box-shadow: 0px 16px 24px rgba(6, 12, 22, .2);
+    border-radius: 4px;
+}
+
+
+section h3 {
+    padding: 22px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.section-started .box-header,
+.section-finished .box-header {
+    background-color: #ee582a;
+    color: #fffffc;
+    border-radius: 4px 4px 0 0;
+}
+
+.section-started .box-header {
+    background-color: #eff306;
+}
+
+.section-finished .box-header {
+    background-color: #45ff20;
+}
+
+/* Registered Users and Categories */
+.list-section ul li,
+.list-started ul li,
+.list-finished ul li {
+    padding: 10px 12px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+button {
+    margin-left: 10px;
+}
+
+.create-new {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+
+.fa-plus-circle {
+    cursor: pointer;
+    border: none;
+    color: rgb(98, 255, 50);
+    text-decoration: none;
+    font-size: 28px;
+}
+
+.fa-plus-circle span {
+    vertical-align: middle;
+    color: #494949;
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* 
 
 .task-wrapper {
     border-top: 2px solid black;
@@ -20,54 +161,62 @@ body{
     max-width: 400px;
 }
 
-.task-wrapper > div, button, form > * {
+
+.task-wrapper>div,
+button,
+form>* {
     margin-top: 8px
 }
+
 input[type=text] {
     border: 2px solid#000080;
-  }
+}
+
 #container {
 
     padding-left: 90px;
 
-}
+} */
+
+/* 
 #AllTask {
-padding-left: 90px;
+    padding-left: 90px;
 
 }
 
 #open-tasker-modal {
-cursor: pointer;
-background-color: rgba(65, 206, 68, 0.7);
-border: none;
-color: white;
-padding: 12px 20px;
-margin-left: 10px;
-text-decoration: none;
-font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(65, 206, 68, 0.7);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 #editTaskBtn {
     cursor: pointer;
-background-color: rgba(65, 206, 68, 0.7);
-border: none;
-color: white;
-padding: 12px 20px;
-margin-left: 10px;
-text-decoration: none;
-font-size: 16px;
+    background-color: rgba(65, 206, 68, 0.7);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 #taskDropMenu {
     cursor: pointer;
-background-color: rgba(65, 206, 68, 0.7);
-border: none;
-color: white;
-padding: 12px 20px;
-margin-left: 10px;
-text-decoration: none;
-font-size: 16px;
+    background-color: rgba(65, 206, 68, 0.7);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    font-size: 16px;
 }
+
 input,
 input[type='text'] {
     padding: 12px;
@@ -75,10 +224,13 @@ input[type='text'] {
     font-size: 15px;
     box-shadow: 1px 1px rgba(9, 30, 66, .25);
     border-radius: 3px;
-}input,
+}
+
+input,
 input[type='text']::placeholder {
     color: gray;
 }
+
 input[type='submit'] {
     cursor: pointer;
     background-color: rgba(65, 206, 68, 0.7);
@@ -112,44 +264,45 @@ ul li.active {
     margin-left: 15px;
     font-size: 16px;
 }
-.app {
-	display: flex;
-	flex-flow: column;
 
-	width: 100vw;
-	height: 100vh;
+.app {
+    display: flex;
+    flex-flow: column;
+
+    width: 100vw;
+    height: 100vh;
 }
 
 header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
 }
 
 .lists {
-    
-	display: flex;
-	flex: 1;
-	width: 100%;
-	overflow-x: scroll;
+
+    display: flex;
+    flex: 1;
+    width: 100%;
+    overflow-x: scroll;
 }
 
 .lists .list {
 
-    
-	display: flex;
-	flex-flow: column;
-	flex: 1;
 
-	width: 100%;
-	min-width: 250px;
-	max-width: 350px;
-	height: 100%;
-	min-height: 150px;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
 
-	background-color: rgba(0, 0, 0, 0.1);
-	margin: 0 15px;
-	padding: 8px;
-	transition: all 0.2s linear;
-}
+    width: 100%;
+    min-width: 250px;
+    max-width: 350px;
+    height: 100%;
+    min-height: 150px;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0 15px;
+    padding: 8px;
+    transition: all 0.2s linear;
+} */

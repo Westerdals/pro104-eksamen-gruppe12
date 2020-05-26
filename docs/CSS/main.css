@@ -81,7 +81,6 @@ footer {
 }
 
 /* For styling each induvidual section */
-
 section {
     background: #fff;
     box-shadow: 0px 16px 24px rgba(6, 12, 22, .2);
@@ -110,8 +109,6 @@ section h3 {
 .section-overview .box-header {
     background-color: #ff206e;
 }
-
-
 
 /* Registered Users and Categories */
 .list-section ul li,
@@ -164,13 +161,20 @@ ul li {
     margin-top: 14px;
     padding: 16px;
     font-size: 18px;
-    font-weight: bold;
-    color: #fff;
+    font-weight: 600;
 }
 
-/* Overview section     ->    Funker ikke foreløpig */
-#ovList ul li {
+/* Overview section  */
+.list-section-overview ul li {
     border-top: 5px solid yellow;
+}
+
+#ovList li {
+    font-size: 14px;
+}
+
+#ovList li h1 {
+    font-size: 18px;
 }
 
 
