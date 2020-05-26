@@ -20,7 +20,7 @@
             <label for="toggle">&#9776;</label>
             <input type="checkbox" id="toggle" />
             <div class="menu">
-                <a href="#"><span><i class="fas fa-plus"></i></span>New Task</a>
+                <a href="#"><span><i id="open-tasker-modal" class="fas fa-plus"></i></span>New Task</a>
                 <a href="/docs/HTML/taskM.html"><span><i class="fas fa-user"></i></span>Project</a>
                 <a href="/docs/HTML/calendar.html"><span><i class="fas fa-calendar-alt"></i></span> Calendar</a>
                 <a href="/docs/HTML/main.html"><span><i class="fas fa-archive"></i></span> Overview</a>
@@ -82,14 +82,16 @@
                             <!-- Select categories and member -->
                             <div class="dropdown-section">
                                 <div class="form-control">
-                                    <select id="categoryDropDown">
+                                    <select name ="categoryDrop" id="categoryDropDown">
                                         <option>Categories</option>
                                     </select>
                                 </div>
                                 <div class="form-control">
-                                    <select id="membersDropDown">
+                                    <select name="membersDrop" id="membersDropDown">
                                         <option>Members</option>
                                     </select>
+                                    <button id="addMoreMembers" onclick="addMemberTo(event)">Add more members</button>
+                                    <ul id="addedMembersUl"></ul>
                                 </div>
                             </div>
 

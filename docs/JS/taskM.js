@@ -10,22 +10,29 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function (event) {
     modal.style.display = "block";
-
+    localStorage.removeItem("assignedMembers");
+    document.getElementById('addedMembersUl').innerHTML = "";
+    
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
+    localStorage.removeItem("assignedMembers");
+    document.getElementById('addedMembersUl').innerHTML = "";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        localStorage.removeItem("assignedMembers");
+        document.getElementById('addedMembersUl').innerHTML = "";
     }
 };
 
-const list_items = document.querySelectorAll('.list-item');
+function addDraggableEventListers() {
+    const list_items = document.querySelectorAll('.list-item');
 const lists = document.querySelectorAll('.list');
 
 
@@ -66,12 +73,15 @@ for (let i = 0; i < list_items.length; i++) {
 		});
 
 		list.addEventListener('drop', function (e) {
-			console.log('drop');
-            this.append(task);
-            console.log(taskList[j]);
+            console.log('drop');
+            if(draggedItem) {
+                this.append(draggedItem);
+            }
+            console.log(draggedItem);
 			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
 		});
 	}
+}
 }
 
 function changeTaskStatus(newStatus, taskId) {
@@ -116,7 +126,7 @@ for(i = 0; i < ctLength; i++){
     categoryOption.innerHTML = `${categoryName}`;
     categoryDropdown.appendChild(categoryOption);
 
-    console.log(categoryOption);
+    console.log(categoryColor);
 }
 }
 
@@ -142,6 +152,20 @@ memberDropDown.appendChild(memberOption);
 pushIntoMembers();
 pushIntocategory();
 
+
+function addMemberTo(event) {
+    event.preventDefault();
+    const oldMembersList = JSON.parse(localStorage.getItem('assignedMembers')) || [];
+    let newMember = document.querySelector("[name='membersDrop']").value;
+    const addedMembersUl = document.getElementById('addedMembersUl');
+    oldMembersList.push(newMember); 
+    console.log(oldMembersList);
+    addedMembersUl.innerHTML = `${oldMembersList}` + "  ";
+
+    localStorage.setItem('assignedMembers', JSON.stringify(oldMembersList));
+   
+}
+
 function saveTask(event, taskId) {
     event.preventDefault();
     const newName = event.target[0].value;
@@ -166,6 +190,13 @@ function saveTask(event, taskId) {
 
     renderTaskList();
 }
+function deleteTask(taskId) {
+    const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
+    taskList.splice(taskId, 1);
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+    renderTaskList();
+
+}
 
 function buildChangeTaskForm({name, startDato, status, started, message}, taskId) {
     return `
@@ -178,6 +209,8 @@ function buildChangeTaskForm({name, startDato, status, started, message}, taskId
         <div>EndDate: <input name="DatoEnd" type="date" data-date="" data-date-format="DD MM YYYY"
         value="2015-08-09"></div>
         <div>Message: <input value="${message}" name="message" type="text" /></div>
+        <select name="addMoreMembers"></select>
+        ${buildStatusDropdwon()}
         <input type="submit" value="Save">
     </form>
     `;
@@ -193,7 +226,7 @@ function openTaskForm(taskId) {
 
 function buildTaskHtml(task, id) {
     return `
-    <div class="list-item" id="${id}" draggable="true">
+    <div class="list-item" id="${id}" draggable="true" ondragstart="">
         <div>ID: ${id}</div>
         <div>Navn: ${task.name}</div>
         <div>Started: ${task.started}</div>
@@ -201,10 +234,14 @@ function buildTaskHtml(task, id) {
         <div>EndDate: ${task.endDate}</div>
         <div>Message: ${task.message}</div>
         <div>Status: ${task.status}</div>
+        <div>Users: ${task.users}</div>
+        <div>Catogory: ${task.cat}</div>
         ${buildStatusDropdwon(id)}
         <button id="editTaskBtn" onclick="openTaskForm(${id})">Edit</button>
+        <button id="deleteTaskBtn" onclick="deleteTask(${id})" >Delete</button>
     </div>
     `;
+    console.log(`${task.cat}`)
 }
 
 function renderTaskList(){
@@ -217,6 +254,7 @@ function renderTaskList(){
 
         taskUl.innerHTML = buildTaskHtml(task, index);
         taskListUl.appendChild(taskUl);
+        addDraggableEventListers();
     });
 }
    document.addEventListener('DOMContentLoaded', () => {
@@ -237,16 +275,17 @@ function createNewTask(event){
     name: document.querySelector("[name='task']").value,
     startDato: document.querySelector("[name='Dato1']").value,
     endDate: document.querySelector("[name='DatoEnd']").value,
-    users: "none",
+    users: JSON.parse(localStorage.getItem("assignedMembers")) || [],
     status: 'No current status.',
     message: document.querySelector("[name='taskMessage']").value,
+    cat: document.querySelector("[name='categoryDrop']").value,
     started: false
 };
-    
+    document.getElementById('addedMembersUl').innerHTML = "";
+    localStorage.removeItem("assignedMembers");
    
    taskList.push(taskListInfo);
    window.localStorage.setItem("taskList", JSON.stringify(taskList));
-   
    renderTaskList();
    console.log(taskList);
 
@@ -316,40 +355,3 @@ function createNewAssign(event){
    }
 }
 }
-
-// function renderOverviewList(){
-
-   
-
-//     const overviewList = JSON.parse(window.localStorage.getItem('taskList')) || [];
-//     overviewList.push(overview);
-//     const list = document.getElementById('ovList');
-//     list.innerHTML = '';
-   
-//   for(const i in taskList){
-//  const li = document.createElement('li');
-//     li.innerHTML += `
-//     <h1>${task.name}</h1>
-//     <p>${task.message}</p>
-//     <p>${task.status}</p>
-    
-//     `;
-//     list.appendChild(li);
-   
-// }
-
-// }
-
-// renderOverviewList();
-// >ID: ${id}</div>
-//         <div>Navn: ${task.name}</div>
-//         <div>Started: ${task.started}</div>
-//         <div>StartDate: ${task.startDato}</div>
-//         <div>EndDate: ${task.endDate}</div>
-//         <div>Message: ${task.message}</div>
-//         <div>Status: ${task.status}</div>
-//         ${buildStatusDropdwon(id)}
-//         <button id="editTaskBtn" onclick="openTaskForm(${id})">Edit</button>
-//     </li>
-//     </div>
-//     `;
