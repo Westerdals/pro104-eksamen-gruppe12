@@ -204,3 +204,9 @@ button {
     font-size: 14px;
     font-weight: 500;
 }
+#membersImage{
+    height: 10px;
+    width: 10px;
+    text-align: center;
+    vertical-align: middle;
+}

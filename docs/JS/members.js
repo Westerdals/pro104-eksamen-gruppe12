@@ -30,11 +30,16 @@ function newMember() {
     const newMember = document.getElementById('addMember').value;
     const lastName = document.getElementById('addLastName').value;
     const email = document.getElementById('addEmail').value;
+    let  imgFile = document.getElementById('addImage').value;
+  
 
+    
+    
     const member = {
         firstName: newMember,
         lastName: lastName,
-        email: email
+        email: email,
+        image: imgFile
     };
 
 
@@ -47,6 +52,8 @@ function newMember() {
     document.getElementById('addMember').value = '';
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
+    document.getElementById('addImage').value = '';
+    
     //console.log(member);
 
 }
@@ -57,6 +64,7 @@ function renderMemberList() {
     // Retrives the value of the localStorage item "memberList" as a string (text)
     const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
     const list = document.getElementById('memberList');
+    
     list.innerHTML = '';
 
     for (const i in memberList) {
@@ -64,8 +72,16 @@ function renderMemberList() {
 
         li.innerHTML += `
         <h4>${memberList[i].firstName}</h4> <h4>${memberList[i].lastName}</h4>
-        <p>${memberList[i].email}</p>`;
+        <p>${memberList[i].email}</p> 
+        <div id="membersImage"> <img alt="${memberList[i].firstName}" src="${memberList[i].image}.jpg"   </div>
+        
+        `;
+       
+        
         list.appendChild(li);
+       
+
+        
     }
 }
 renderMemberList();
