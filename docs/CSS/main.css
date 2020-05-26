@@ -61,7 +61,7 @@ footer {
     body {
         margin: 0;
         display: grid;
-        grid-template-columns: auto 30% 30% 30%;
+        grid-template-columns: auto 30% 24% 36%;
         grid-template-rows: 4% auto 4%;
         grid-template-areas:
             "sidebar header header header"
@@ -206,17 +206,19 @@ button {
     font-size: 14px;
     font-weight: 500;
 }
-#imagePrev{
+
+#imagePrev {
     height: 20px;
     width: 20px;
-   position: relative;
-   left: 300px;
-   
+    position: relative;
+    left: 300px;
+
 }
-img{
+
+img {
     height: 20px;
     width: 20px;
-   position: relative;
-   left: 300px;
-   
+    position: relative;
+    left: 300px;
+
 }

@@ -32,7 +32,7 @@ function newMember() {
     const email = document.getElementById('addEmail').value;
     const imgFile = document.getElementById('addImage').value;
     const imageDiv = document.getElementById('imagePrev');
-  
+
 
 
     const member = {
@@ -47,13 +47,13 @@ function newMember() {
     memberList.push(member);
     window.localStorage.setItem('memberList', JSON.stringify(memberList));
     renderMemberList();
-   
+
     // Clear the text field after submition
     document.getElementById('addMember').value = '';
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
     //document.getElementById('addImage').value = '';
-    
+
     //console.log(member);
 
 }
@@ -64,8 +64,8 @@ function renderMemberList() {
     // Retrives the value of the localStorage item "memberList" as a string (text)
     const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
     const list = document.getElementById('memberList');
-    
-    
+
+
     list.innerHTML = '';
 
     for (const i in memberList) {
@@ -73,23 +73,22 @@ function renderMemberList() {
         const src = document.createElement('src');
         imageDiv = memberList[i].image;
         src.append(imageDiv);
-        
-        
-    
-    
-    li.innerHTML += `
+
+
+
+
+        li.innerHTML += `
         <h4>${memberList[i].firstName}</h4> <h4>${memberList[i].lastName}</h4>
         <p>${memberList[i].email}</p> 
         ${memberList[i].image}
-        <img src= "/docs/img/img1.png">
        
         
         `;
-    
+
         console.log(memberList[i].image);
         list.appendChild(li);
 
-        
+
     }
 }
 renderMemberList();

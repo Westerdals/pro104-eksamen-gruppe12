@@ -59,7 +59,7 @@ label {
     label {
         display: block;
         cursor: pointer;
-    
+
     }
 
     .nav {
@@ -76,11 +76,11 @@ label {
         margin: 40px 20px;
         height: 70%;
         /* width: 100%; */
-        display: none; 
+        display: none;
         position: absolute;
-        min-height: 500px; 
+        min-height: 500px;
         border-radius: 3px;
-    
+
     }
 
     .menu a {
