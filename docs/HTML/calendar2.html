@@ -1,17 +1,19 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Calendar - Speed coding, Neat Developer</title>
+    <title>Calendar</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/docs/CSS/calendar2.css">
-    <!--<link rel="stylesheet" type="text/css" href="/docs/CSS/sidebar.css">-->
+    <link rel="stylesheet" type="text/css" href="/docs/CSS/sidebar.css">
 
 </head>
+
 <body>
 
-   <!-- <nav>
-        <div class="nav">
+    <nav>
+        <div class="nav calendar-nav">
             <label for="toggle">&#9776;</label>
             <input type="checkbox" id="toggle" />
             <div class="menu">
@@ -21,44 +23,55 @@
                 <a href="/docs/HTML/main.html"><span><i class="fas fa-archive"></i></span> Overview</a>
             </div>
         </div>
-    </nav>-->
+    </nav>
 
-<div class="calendar disable-selection" id="calendar">
-    <div class="left-side">
-        <div class="current-day text-center">
-            <h1 class="calendar-left-side-day"></h1>
-            <div class="calendar-left-side-day-of-week"></div>
-        </div>
-        <div class="current-day-events">
-            <div>Current Events:</div>
-            <ul class="current-day-events-list"></ul>
-        </div>
-        <div class="add-event-day">
-            <input type="text" class="add-event-day-field" placeholder="Create an Event">
-            <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn">Submit</span>
+    <!-- Header area for grid-area -->
+    <header></header>
 
-        </div>
-    </div>
-    <div class="right-side">
-        <div class="text-right calendar-change-year">
-            <div class="calendar-change-year-slider">
-                <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
-                <span class="calendar-current-year"></span>
-                <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
+    <!-- CALENDAR  -->
+
+    <div class="calendar disable-selection" id="calendar">
+        <section class="section-left">
+            <div class="left-side">
+                <div class="current-day text-center">
+                    <h1 class="calendar-left-side-day"></h1>
+                    <div class="calendar-left-side-day-of-week"></div>
+                </div>
+                <div class="current-day-events">
+                    <div>Current Events:</div>
+                    <ul class="current-day-events-list"></ul>
+                </div>
+                <div class="add-event-day">
+                    <input type="text" class="add-event-day-field" placeholder="Create an Event">
+                    <span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn">Submit</span>
+
+                </div>
+            </div>
+        </section>
+        </section class="section-right">
+        <div class="right-side">
+            <div class="text-right calendar-change-year">
+                <div class="calendar-change-year-slider">
+                    <span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"></span>
+                    <span class="calendar-current-year"></span>
+                    <span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"></span>
+                </div>
+            </div>
+            <div class="calendar-month-list">
+                <ul class="calendar-month"></ul>
+            </div>
+            <div class="calendar-week-list">
+                <ul class="calendar-week"></ul>
+            </div>
+            <div class="calendar-day-list">
+                <ul class="calendar-days"></ul>
             </div>
         </div>
-        <div class="calendar-month-list">
-            <ul class="calendar-month"></ul>
-        </div>
-        <div class="calendar-week-list">
-            <ul class="calendar-week"></ul>
-        </div>
-        <div class="calendar-day-list">
-            <ul class="calendar-days"></ul>
-        </div>
     </div>
-</div>
+    </section>
 
-<script async src="/docs/JS/calendar2.js"></script>
+    <script async src="/docs/JS/calendar2.js"></script>
+    <script src="https://kit.fontawesome.com/68fb369f5e.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
