@@ -98,17 +98,23 @@ section h3 {
 
 .section-started .box-header,
 .section-finished .box-header {
-    background-color: #ee582a;
+    background-color: #3a0ca3;
     color: #fffffc;
     border-radius: 4px 4px 0 0;
 }
 
 .section-started .box-header {
-    background-color: #eff306;
+    background-color: #4361ee;
 }
 
 .section-finished .box-header {
-    background-color: #45ff20;
+    background-color: #4cc9f0;
+}
+
+#all-task-header{
+    background-color: #788bff;
+    color: #fff;
+    
 }
 
 /* Registered Users and Categories */
@@ -135,7 +141,7 @@ button {
 .fa-plus-circle {
     cursor: pointer;
     border: none;
-    color: rgb(98, 255, 50);
+    color: #ff499e;
     text-decoration: none;
     font-size: 28px;
 }
