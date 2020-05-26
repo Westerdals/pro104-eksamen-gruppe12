@@ -204,3 +204,10 @@ button {
     font-size: 14px;
     font-weight: 500;
 }
+img{
+    height: 20px;
+    width: 20px;
+   position: relative;
+   background-size: 10px;
+   left: 300px;
+}
