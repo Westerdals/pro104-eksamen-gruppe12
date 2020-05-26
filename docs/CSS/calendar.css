@@ -1,237 +1,235 @@
-body {
-    background-color: lightgray;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body,
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+body {
+  background: #dcdcdc;
+  font-family: Source Sans Pro;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: #777;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.calendar,
+.calendar .add-event-day .add-event-day-field-btn,
+.calendar .calendar-days li:after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .calendar {
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
-    font-family: Source Sans Pro;
-    z-index: 1;
-    position: relative;
-    left: 150px;
-    height: 500px;
-    width: 800px;
+  background: white;
+  width: 840px;
+  height: 490px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.calendar .dropdown {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    color: #FF5D73;
-    text-align: center;
-    font-size: 14pt;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 160px;
-    left: 0px;
-    z-index: 2000;
+.calendar .calendar-left-side-day-of-week,
+.calendar .current-day-events ul,
+.calendar .add-event-day,
+.calendar .calendar-change-year,
+.calendar .calendar-days li {
+  position: relative;
 }
 
-.calendar .dropdown .dropdown-item {
-    cursor: pointer;
-    opacity: .7;
-    transition: .5s opacity;
+.calendar .calendar-left-side-day,
+.calendar .calendar-left-side-day-of-week,
+.calendar .current-day-events,
+.calendar .add-event-day-field-btn,
+.calendar .add-event-day-field {
+  color: white;
 }
 
-.calendar .dropdown .dropdown-item:hover {
-    opacity: 1;
+.calendar .calendar-left-side-day-of-week,
+.calendar .calendar-week {
+  text-transform: uppercase;
 }
 
-.calendar .years {
-    display: none;
+.calendar .right-side,
+.calendar .left-side {
+  padding: 30px;
+  height: 100%;
 }
 
-.calendar .calendar-btn {
-    float: left;
-    background-color: #FF5D73;
-    color: black;
-    text-align: center;
-    font-size: 14pt;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    position: relative;
-    width: 20%;
-    cursor: pointer;
-    transition: .5s background-color;
+.calendar .left-side {
+  width: 320px;
+  background: #FF5D73;
+  float: left;
 }
 
-.calendar .calendar-btn:hover {
-    background-color: rgb(250, 166, 177);
+.calendar .current-day,
+.calendar .current-day-events {
+  padding-top: 40px;
 }
 
-.calendar .year-btn {
-    float: right;
+.calendar .current-day-events {
+  height: 215px;
 }
 
-.calendar .calendar-dates .days .day {
-    float: left;
-    width: 13%;
-    margin: 0.5%;
-    padding: 3%;
-    font-size: 13pt;
-    text-align: center;
-    border-radius: 10px;
-    border: solid 1px #ddd;
-    background-color: rgb(250, 166, 177);
+.calendar .current-day-events ul {
+  padding-left: 30px;
+  list-style: none;
 }
 
-.calendar .calendar-dates .days .day:hover {
-    background-color: #FF5D73;
+.calendar .current-day-events ul li::before {
+  content: '-';
+  position: absolute;
+  left: 3px;
 }
 
-
-.calendar .calendar-dates .days .day.blank {
-    background-color: white;
-    border: none;
+.calendar h1.calendar-left-side-day {
+  font-size: 92px;
 }
 
-.calendar .calendar-dates .days .day.selected {
-    background-color: #FF5D73;
-    color: white;
-    cursor: pointer;
-    opacity: .5;
-    transition: .5s opacity;
+.calendar .add-event-day {
+  border-bottom: 1px solid white;
 }
 
-.calendar .calendar-dates .days .day.selected:hover {
-    opacity: 1;
+.calendar .add-event-day .add-event-day-field {
+  border: none;
+  background: transparent;
+  height: 34px;
+  width: 100%;
+  font-size: 16px;
+  padding-right: 30px;
 }
 
-.calendar .calendar-dates .days .day.label {
-    height: 40px;
-    background-color: white;
-    color: black;
-    border: none;
-    font-weight: bold;
+.calendar .add-event-day .add-event-day-field:focus {
+  outline: none;
 }
 
-.clear {
-    clear: both;
+.calendar .add-event-day .add-event-day-field::placeholder {
+  color: white;
 }
 
-@media only screen and (max-width: 960px) {
-    .calendar {
-        width: 100%;
-        margin: 0px;
-        margin: 0px;
-        box-sizing: border-box;
-        position: relative;
-        left: 0px;
-    }
+.calendar .add-event-day .add-event-day-field-btn {
+  left: inherit;
+  line-height: 34px;
 }
 
-.hide {
-    display: none;
+.calendar .right-side {
+  width: 520px;
+  float: right;
 }
 
-.show {
-    display: block;
+.calendar .calendar-change-year {
+  font-size: 20px;
 }
 
-#form{
-    padding: 10px 10px;
-    background-color: white;
-    position: fixed;
-    top: 20%;
-    left: 20%;
-    width: 50%;
-    height: 50%;
-    box-shadow: 5px 5px 5px 5px gray;
+.calendar .calendar-change-year .calendar-change-year-slider {
+  margin: 15px 0;
+  color: #737373;
 }
 
-.form-control {
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-    position: relative;
+.calendar .calendar-change-year .calendar-change-year-slider .fa:hover {
+  color: #404040;
 }
 
-.form-control label {
-     /* display: inline-block; */
-    margin-bottom: 5px;
-    margin-top: 40px;
-    font-family: Source Sans Pro;
+.calendar .calendar-days,
+.calendar .calendar-week,
+.calendar .calendar-month {
+  list-style: none;
+  font-size: 0;
 }
 
-.form-control input {
-    border: 2px solid #f0f0f0;
-    border-radius: 4px;
-    display: block;
-    font-family: Source Sans Pro;
-    font-size: 14px;
-    padding: 10px;
-    width: 100%;
+.calendar .calendar-days li,
+.calendar .calendar-week li,
+.calendar .calendar-month li {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.form-control input:focus {
-    outline: 0;
-    border-color: #777;
+.calendar .calendar-month li {
+  width: calc(460px / 12);
+  height: 30px;
+  line-height: 30px;
+  color: #868686;
+  font-size: 13px;
 }
 
-
-.form-control i {
-    visibility: hidden;
-    position: absolute;
-    top: 40px;
-    right: 10px;
+.calendar .calendar-month li.active {
+  color: #171717;
+  font-weight: 600;
 }
 
-.form-control.success i.fa-check-circle {
-    color: #2ecc71;
-    visibility: visible;
+.calendar .calendar-days li {
+  width: calc(460px / 7);
+  height: 50px;
+  line-height: 50px;
 }
 
-.form-control.error i.fa-exclamation-circle {
-    color: #e74c3c;
-    visibility: visible;
-}
-#submit-btn {
-    background-color: #FF5D73;
-    border: 2px solid #FF5D73;
-    border-radius: 4px;
-    color: #fff;
-    display: block;
-    font-family: Source Sans Pro;
-    font-size: 16px;
-    padding: 10px;
-    margin-top: 50px;
-    width: 100%;
+.calendar .calendar-days li:after {
+  content: attr(data-day);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  color: #959595;
 }
 
-#submit-btn:hover {
-    opacity: 0.8;
+.calendar .calendar-days li.another-month:after {
+  color: #ccc;
 }
 
-.popup .show {
-    visibility: visible;
-    z-index: 2;
+.calendar .calendar-days li:hover:after,
+.calendar .calendar-days li.selected-day:after,
+.calendar .calendar-days li.event-day:before,
+.calendar .calendar-days li.active-day:after {
+  border-radius: 50%;
 }
 
-#close-btn {
-    color: #FF5D73;
-    font-size: 1.2em;
-    position: absolute;
-    margin-top: -25px;
-    margin-left: -30px;
-    padding: 5px;
-    font-family: Source Sans Pro;
-    border: none;
-    background-color: white;
-    left: 575px;
-    top: 25px;
-    z-index: 1000;
+.calendar .calendar-days li:hover:after,
+.calendar .calendar-days li.selected-day:after {
+  background: #ccc;
+  color: white;
 }
 
-#close-btn:hover {
-    opacity: 0.8;
+.calendar .calendar-days li.event-day:before {
+  content: ' ';
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  background: #1400c7;
+}
+
+.calendar .calendar-days li.active-day:after {
+  color: white;
+  background: #ec364f;
+}
+
+.calendar .calendar-week {
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: #737373;
+  border-top: 1px solid #ccc;
+}
+
+.calendar .calendar-week li {
+  width: calc(460px / 7);
+  height: 30px;
+  line-height: 30px;
 }

@@ -1,189 +1,258 @@
+// ARRAY OF WEEKDAYS
+const AVAILABLE_WEEK_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-// GLOBAL VARIABLES DECLARED
-var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-var startYear = 2000;
-var endYear = 2020;
-var month = 0;
-var year = 0;
-var selectedDays = new Array();
-var mousedown = false;
-var mousemove = false;
-const calendarDivs = document.getElementById('calenderDays');
+// VARIABLE FOR LOCALSTORAGE DECLARED
+const localStorageName = 'calendar-events';
 
-const taskList = JSON.parse(window.localStorage.getItem("taskList")); 
-console.log(taskList);
-console.log(taskList[0].endDate);
+// DECLARES OBJECTS WITHIN THE CLASS
+class CALENDAR {
+    constructor(options) {
+        this.options = options;
+        this.elements = {
+            days: this.getFirstElementInsideIdByClassName('calendar-days'),
+            week: this.getFirstElementInsideIdByClassName('calendar-week'),
+            month: this.getFirstElementInsideIdByClassName('calendar-month'),
+            year: this.getFirstElementInsideIdByClassName('calendar-current-year'),
+            eventList: this.getFirstElementInsideIdByClassName('current-day-events-list'),
+            eventField: this.getFirstElementInsideIdByClassName('add-event-day-field'),
+            eventAddBtn: this.getFirstElementInsideIdByClassName('add-event-day-field-btn'),
+            currentDay: this.getFirstElementInsideIdByClassName('calendar-left-side-day'),
+            currentWeekDay: this.getFirstElementInsideIdByClassName('calendar-left-side-day-of-week'),
+            prevYear: this.getFirstElementInsideIdByClassName('calendar-change-year-slider-prev'),
+            nextYear: this.getFirstElementInsideIdByClassName('calendar-change-year-slider-next')
+        };
 
-// LOADS THE CALENDAR MONTHS
-function loadCalendarMonths() {
-    for (var i = 0; i < months.length; i++) {
-        var doc = document.createElement("div");
-        doc.innerHTML = months[i];
-        doc.classList.add("dropdown-item");
+        this.eventList = JSON.parse(localStorage.getItem(localStorageName)) || {};
 
-        doc.onclick = (function () {
-            var selectedMonth = i;
-            return function () {
-                month = selectedMonth;
-                document.getElementById("curMonth").innerHTML = months[month];
-                loadCalendarDays();
-                return month;
-            }
-        })();
-
-        document.getElementById("months").appendChild(doc);
-    }
-}
-
-// LOADS THE CALENDAR YEARS
-function loadCalendarYears() {
-    document.getElementById("years").innerHTML = "";
-
-    for (var i = startYear; i <= endYear; i++) {
-        var doc = document.createElement("div");
-        doc.innerHTML = i;
-        doc.classList.add("dropdown-item");
-
-        doc.onclick = (function () {
-            var selectedYear = i;
-            return function () {
-                year = selectedYear;
-                document.getElementById("curYear").innerHTML = year;
-                loadCalendarDays();
-                return year;
-            }
-        })();
-
-        document.getElementById("years").appendChild(doc);
-    }
-}
-
-// LOADS THE CALENDAR DAYS
-function loadCalendarDays() {
-    document.getElementById("calendarDays").innerHTML = "";
-
-    var tmpDate = new Date(year, month, 0);
-    var num = daysInMonth(month, year);
-    var dayofweek = tmpDate.getDay();       // find where to start calendar day of week
-
-    for (var i = 0; i <= dayofweek - 1; i++) {
-        var d = document.createElement("div");
-        d.classList.add("day");
-        d.classList.add("blank");
-        document.getElementById("calendarDays").appendChild(d);
+        this.date = +new Date();
+        this.options.maxDays = 37;
+        this.init();
     }
 
-    for (var i = 0; i < num; i++) {
-        var tmp = i + 1;
-        var d = document.createElement("div");
-        d.id = "calendarday_" + tmp;
-        d.className = "day";
-        d.innerHTML = tmp;
-        d.dataset.day = tmp;
+    // APP METHODS
+    init() {
+        if (!this.options.id) return false;
+        this.eventsTrigger();
+        this.drawAll();
+    }
 
-        d.addEventListener('click', function(){
-            this.classList.toggle('selected');
+    // DRAW METHODS
+    drawAll() {
+        this.drawWeekDays();
+        this.drawMonths();
+        this.drawDays();
+        this.drawYearAndCurrentDay();
+        this.drawEvents();
+    }
 
-            if (!selectedDays.includes(this.dataset.day))
-                selectedDays.push(this.dataset.day);
-
-            else
-                selectedDays.splice(selectedDays.indexOf(this.dataset.day), 1);
+    // DRAWS THE EVENT (LEFT) SIDE OF THE CALENDAR
+    drawEvents() {
+        let calendar = this.getCalendar();
+        let eventList = this.eventList[calendar.active.formatted] || ['There is not any events'];
+        let eventTemplate = "";
+        eventList.forEach(item => {
+            eventTemplate += `<li>${item}</li>`;
         });
 
-        d.addEventListener('mousemove', function(e){
-           e.preventDefault();
-            if (mousedown)
-            {
-                this.classList.add('selected');
+        this.elements.eventList.innerHTML = eventTemplate;
+    }
+    // DRAWS THE CURRENT DAY, MONTH AND YEAR
+    drawYearAndCurrentDay() {
+        let calendar = this.getCalendar();
+        this.elements.year.innerHTML = calendar.active.year;
+        this.elements.currentDay.innerHTML = calendar.active.day;
+        this.elements.currentWeekDay.innerHTML = AVAILABLE_WEEK_DAYS[calendar.active.week];
+    }
 
-                if (!selectedDays.includes(this.dataset.day))
-                    selectedDays.push(this.dataset.day);
+    // DRAWS THE DAYS
+    drawDays() {
+        let calendar = this.getCalendar();
+
+        let latestDaysInPrevMonth = this.range(calendar.active.startWeek).map((day, idx) => {
+            return {
+                dayNumber: this.countOfDaysInMonth(calendar.pMonth) - idx,
+                month: new Date(calendar.pMonth).getMonth(),
+                year: new Date(calendar.pMonth).getFullYear(),
+                currentMonth: false
+            }
+        }).reverse();
+
+        // DRAWS AMOUNT OF DAYS IN THE ACTIVE MONTH
+        let daysInActiveMonth = this.range(calendar.active.days).map((day, idx) => {
+            let dayNumber = idx + 1;
+            let today = new Date();
+            return {
+                dayNumber,
+                today: today.getDate() === dayNumber && today.getFullYear() === calendar.active.year && today.getMonth() === calendar.active.month,
+                month: calendar.active.month,
+                year: calendar.active.year,
+                selected: calendar.active.day === dayNumber,
+                currentMonth: true
             }
         });
 
-        d.addEventListener('mousedown', function(e){
-            e.preventDefault();
-            popUp();
-            mousedown = true;
-        }); 
+
+        let countOfDays = this.options.maxDays - (latestDaysInPrevMonth.length + daysInActiveMonth.length);
+        let daysInNextMonth = this.range(countOfDays).map((day, idx) => {
+            return {
+                dayNumber: idx + 1,
+                month: new Date(calendar.nMonth).getMonth(),
+                year: new Date(calendar.nMonth).getFullYear(),
+                currentMonth: false
+            }
+        });
+
+        // DRAWS THE LAST AND FIRST FEW DAYS IN THE PREVIOUS AND NEXT MONTH TOGETHER WITH THE ACTIVE MONTH
+        let days = [...latestDaysInPrevMonth, ...daysInActiveMonth, ...daysInNextMonth];
+
+        days = days.map(day => {
+            let newDayParams = day;
+            let formatted = this.getFormattedDate(new Date(`${Number(day.month) + 1}/${day.dayNumber}/${day.year}`));
+            newDayParams.hasEvent = this.eventList[formatted];
+            return newDayParams;
+        });
+
+        let daysTemplate = "";
+        days.forEach(day => {
+            daysTemplate += `<li class="${day.currentMonth ? '' : 'another-month'}${day.today ? ' active-day ' : ''}${day.selected ? 'selected-day' : ''}${day.hasEvent ? ' event-day' : ''}" data-day="${day.dayNumber}" data-month="${day.month}" data-year="${day.year}"></li>`
+        });
+
+        this.elements.days.innerHTML = daysTemplate;
+    }
+
+    // DRAWS THE MONTHS
+    drawMonths() {
+        let availableMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let monthTemplate = "";
+        let calendar = this.getCalendar();
+        availableMonths.forEach((month, idx) => {
+            monthTemplate += `<li class="${idx === calendar.active.month ? 'active' : ''}" data-month="${idx}">${month}</li>`
+        });
+
+        this.elements.month.innerHTML = monthTemplate;
+    }
+
+    // DRAW THE WEEKDAYS
+    drawWeekDays() {
+        let weekTemplate = "";
+        AVAILABLE_WEEK_DAYS.forEach(week => {
+            weekTemplate += `<li>${week.slice(0, 3)}</li>`
+        });
+
+        this.elements.week.innerHTML = weekTemplate;
+    }
+
+    // SERVICE METHODS
+    eventsTrigger() {
+        this.elements.prevYear.addEventListener('click', e => {
+            let calendar = this.getCalendar();
+            this.updateTime(calendar.pYear);
+            this.drawAll()
+        });
+
+        this.elements.nextYear.addEventListener('click', e => {
+            let calendar = this.getCalendar();
+            this.updateTime(calendar.nYear);
+            this.drawAll()
+        });
+
+        this.elements.month.addEventListener('click', e => {
+            let calendar = this.getCalendar();
+            let month = e.srcElement.getAttribute('data-month');
+            if (!month || calendar.active.month == month) return false;
+
+            let newMonth = new Date(calendar.active.tm).setMonth(month);
+            this.updateTime(newMonth);
+            this.drawAll()
+        });
         
-        d.addEventListener('mouseup', function(e){
-            e.preventDefault();
-            mousedown = false;
+        this.elements.days.addEventListener('click', e => {
+            let element = e.srcElement;
+            let day = element.getAttribute('data-day');
+            let month = element.getAttribute('data-month');
+            let year = element.getAttribute('data-year');
+            if (!day) return false;
+            let strDate = `${Number(month) + 1}/${day}/${year}`;
+            this.updateTime(strDate);
+            this.drawAll()
         });
 
-        document.getElementById("calendarDays").appendChild(d);
+        // WHEN SUBMIT BUTTON IS CLICKED - THIS HAPPENS ...
+        this.elements.eventAddBtn.addEventListener('click', e => {
+            let fieldValue = this.elements.eventField.value;
+            if (!fieldValue) return false;
+            let dateFormatted = this.getFormattedDate(new Date(this.date));
+            if (!this.eventList[dateFormatted]) this.eventList[dateFormatted] = [];
+            this.eventList[dateFormatted].push(fieldValue);
+            localStorage.setItem(localStorageName, JSON.stringify(this.eventList));
+            this.elements.eventField.value = '';
+            this.drawAll()
+        });
     }
 
-    var clear = document.createElement("div");
-    clear.className = "clear";
-    document.getElementById("calendarDays").appendChild(clear);
-}
-
-function daysInMonth(month, year)
-{
-    var d = new Date(year, month+1, 0);
-    return d.getDate();
-}
-
-window.addEventListener('load', function () {
-    var date = new Date();
-    month = date.getMonth();
-    year = date.getFullYear();
-    document.getElementById("curMonth").innerHTML = months[month];
-    document.getElementById("curYear").innerHTML = year;
-    loadCalendarMonths();
-    loadCalendarYears();
-    loadCalendarDays();
-});
-
-// document.getElementById("submit-btn").value = storeData();
-// var nameInput = document.getElementById("name").value;
-
-// function storeData (){
-//     window.localStorage.setItem('na', JSON.stringify(nameInput));
-//}
-
-//JSON.parse(window.localStorage.getItem('name'));
-
-function popUp() {
-    document.getElementById("form").style.display = "block";
-}
-
-function closeForm() {
-    document.getElementById("form").style.display = "none";
-  }
-
-  function newTask(){
-
-    const taskName = document.getElementById('name').value;
-    const taskDesc = document.getElementById('to-do').value;
-
-    const taskList = {'Task': taskName + " " + taskDesc  + " "  };
-
-    const calenderTask = JSON.parse(window.localStorage.getItem('calenderTask')) || [];
-    calenderTask.push(taskList);
-    window.localStorage.setItem('TasksListInCalendar', JSON.stringify(calenderTask));
-    renderTaskList();
-    //clear the text field after submition
-    document.getElementById('name').value = '';
-    document.getElementById('to-do').value = '';
-
-
-  }
-
-  function renderTaskList(){
-
-    const calenderTask = JSON.parse(window.localStorage.getItem('calenderTask')) || [];
-   
-    calendarDivs.innerHTML = '';
-
-    for (const i in calenderTask) 
-        d.innerHTML += `${calenderTask[i].taskList}`;
-        calendarDivs.appendChild(li);
+    updateTime(time) {
+        this.date = +new Date(time);
     }
 
-    
+    // GETS THE FULL CALENDAR INCLUDING ALL THE ELEMENTS (DAYS, MONTHS AND YEARS)
+    getCalendar() {
+        let time = new Date(this.date);
 
-  renderTaskList();
+        return {
+            active: {
+                days: this.countOfDaysInMonth(time),
+                startWeek: this.getStartedDayOfWeekByTime(time),
+                day: time.getDate(),
+                week: time.getDay(),
+                month: time.getMonth(),
+                year: time.getFullYear(),
+                formatted: this.getFormattedDate(time),
+                tm: +time
+            },
+            pMonth: new Date(time.getFullYear(), time.getMonth() - 1, 1),
+            nMonth: new Date(time.getFullYear(), time.getMonth() + 1, 1),
+            pYear: new Date(new Date(time).getFullYear() - 1, 0, 1),
+            nYear: new Date(new Date(time).getFullYear() + 1, 0, 1)
+        }
+    }
+
+    // GETS AMOUNT OF DAYS IN MONTH
+    countOfDaysInMonth(time) {
+        let date = this.getMonthAndYear(time);
+        return new Date(date.year, date.month + 1, 0).getDate();
+    }
+
+    getStartedDayOfWeekByTime(time) {
+        let date = this.getMonthAndYear(time);
+        return new Date(date.year, date.month, 1).getDay();
+    }
+
+    // GETS MONTH AND YEAR
+    getMonthAndYear(time) {
+        let date = new Date(time);
+        return {
+            year: date.getFullYear(),
+            month: date.getMonth()
+        }
+    }
+
+    getFormattedDate(date) {
+        return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+    }
+
+    range(number) {
+        return new Array(number).fill().map((e, i) => i);
+    }
+
+    // GETS FIRST ELEMENT INSIDE THE CLASS
+    getFirstElementInsideIdByClassName(className) {
+        return document.getElementById(this.options.id).getElementsByClassName(className)[0];
+    }
+}
+
+// RUNS THE CALENDAR CLASS
+(function () {
+    new CALENDAR({
+        id: "calendar"
+    })
+})();
