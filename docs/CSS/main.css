@@ -151,7 +151,7 @@ ul li {
 
 /* Color of the top-borders in members area  */
 .list-section ul li {
-    border-top: 5px solid #41ead4;
+    border-top: 5px solid #ff6f97;
 }
 
 /* Blir fargesatt av bruker når det legges inn kategori */
@@ -166,8 +166,10 @@ ul li {
 
 /* Overview section  */
 .list-section-overview ul li {
-    border-top: 5px solid yellow;
+    border-top: 5px solid #d81159;
 }
+
+
 
 #ovList li {
     font-size: 14px;
