@@ -97,17 +97,17 @@ section h3 {
 .section-users .box-header,
 .section-categories .box-header,
 .section-overview .box-header {
-    background-color: #f72585;
+    background-color: #ff6f97;
     color: #fffffc;
     border-radius: 4px 4px 0 0;
 }
 
 .section-categories .box-header {
-    background-color: #7209b7;
+    background-color: #ea3788;
 }
 
 .section-overview .box-header {
-    background-color: #3a0ca3;
+    background-color: #d81159;
 }
 
 /* Registered Users and Categories */
