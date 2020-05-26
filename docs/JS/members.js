@@ -30,11 +30,11 @@ function newMember() {
     const newMember = document.getElementById('addMember').value;
     const lastName = document.getElementById('addLastName').value;
     const email = document.getElementById('addEmail').value;
-    let  imgFile = document.getElementById('addImage').dataset.image;
+    const imgFile = document.getElementById('addImage').value;
+    const imageDiv = document.getElementById('imagePrev');
   
 
-    
-    
+
     const member = {
         firstName: newMember,
         lastName: lastName,
@@ -47,12 +47,12 @@ function newMember() {
     memberList.push(member);
     window.localStorage.setItem('memberList', JSON.stringify(memberList));
     renderMemberList();
-    //console.log(memberList);
+   
     // Clear the text field after submition
     document.getElementById('addMember').value = '';
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
-    document.getElementById('addImage').value = '';
+    //document.getElementById('addImage').value = '';
     
     //console.log(member);
 
@@ -64,25 +64,30 @@ function renderMemberList() {
     // Retrives the value of the localStorage item "memberList" as a string (text)
     const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
     const list = document.getElementById('memberList');
-    const imageDiv = document.getElementById('imageDiv');
-    let imagePath = 
+    
     
     list.innerHTML = '';
 
     for (const i in memberList) {
         const li = document.createElement('li');
-
-        li.innerHTML += `
+        const src = document.createElement('src');
+        imageDiv = memberList[i].image;
+        src.append(imageDiv);
+        
+        
+    
+    
+    li.innerHTML += `
         <h4>${memberList[i].firstName}</h4> <h4>${memberList[i].lastName}</h4>
         <p>${memberList[i].email}</p> 
-        <div id="${imageDiv}"> <img src="/docs/img/img1.png"> </div>
-        <div id="${imageDiv}"> <img src="/${memberList[i].image}" </div>
+        ${memberList[i].image}
+        <img src= "/docs/img/img1.png">
+       
         
         `;
-       
-        
+    
+        console.log(memberList[i].image);
         list.appendChild(li);
-       
 
         
     }

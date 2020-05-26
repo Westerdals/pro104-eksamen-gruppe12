@@ -204,10 +204,17 @@ button {
     font-size: 14px;
     font-weight: 500;
 }
+#imagePrev{
+    height: 20px;
+    width: 20px;
+   position: relative;
+   left: 300px;
+   
+}
 img{
     height: 20px;
     width: 20px;
    position: relative;
-   background-size: 10px;
    left: 300px;
+   
 }
