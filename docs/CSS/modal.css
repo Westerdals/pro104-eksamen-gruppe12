@@ -107,8 +107,20 @@
 }
 
 /* Color picker style */
-.form-control #category-color {
-    width: 20%;
+.modal-content input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.modal-content input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.modal-content input[type="color"]::-webkit-color-swatch {
+    border: none;
 }
 
 /* Projects page */
