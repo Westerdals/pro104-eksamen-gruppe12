@@ -1,6 +1,5 @@
 * {
     font-family: 'Source Sans Pro', sans-serif;
-    background: #fffffc;
 }
 
 html,
@@ -56,7 +55,6 @@ label {
     display: none;
 }
 
-
 @media only screen and (max-width: 800px) {
     label {
         display: block;
@@ -100,4 +98,63 @@ label {
         display: block;
     }
 
+}
+
+
+/*  Navbar on calendar page */
+
+nav .calendar-nav {
+    width: 10%;
+}
+
+nav .calendar-nav .menu {
+    padding-top: 70%;
+
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+
+    .calendar-nav label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .calendar-nav .nav {
+        padding: 2%;
+        text-align: left;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .calendar-nav .menu {
+        clear: right;
+        text-decoration: none;
+        color: gray;
+        margin: 0 10px;
+        height: 50%;
+        /* width: 100%; */
+        display: none;
+    }
+
+    .calendar-nav .menu a {
+        display: block;
+        /* border-bottom: 1px solid #EAEAEB; */
+        padding: 10px;
+        margin: 0;
+
+    }
+
+    .calendar-nav .menu a span i {
+        display: inline;
+        font-size: 50px;
+        background: #494949;
+        padding-bottom: 12px;
+        text-align: center;
+    }
+
+    .calendar-nav #toggle:checked+.menu {
+        display: block;
+    }
 }
