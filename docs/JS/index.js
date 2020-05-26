@@ -3,6 +3,7 @@ const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const image = document.getElementById('img');
 nextPage = false;
 
 form.addEventListener('submit', e => {
@@ -14,8 +15,10 @@ form.addEventListener('submit', e => {
 	var lsPerson = {
 		username: username.value,
 		email: email.value,
-		password: password.value
+		password: password.value,
+		image: image.value
 	};
+	
 	localStorage.setItem('Bruker', JSON.stringify(lsPerson));
 
 

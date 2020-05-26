@@ -1,3 +1,5 @@
+
+// GLOBAL VARIABLES DECLARED
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var startYear = 2000;
 var endYear = 2020;
@@ -12,7 +14,7 @@ const taskList = JSON.parse(window.localStorage.getItem("taskList"));
 console.log(taskList);
 console.log(taskList[0].endDate);
 
-
+// LOADS THE CALENDAR MONTHS
 function loadCalendarMonths() {
     for (var i = 0; i < months.length; i++) {
         var doc = document.createElement("div");
@@ -33,6 +35,7 @@ function loadCalendarMonths() {
     }
 }
 
+// LOADS THE CALENDAR YEARS
 function loadCalendarYears() {
     document.getElementById("years").innerHTML = "";
 
@@ -55,6 +58,7 @@ function loadCalendarYears() {
     }
 }
 
+// LOADS THE CALENDAR DAYS
 function loadCalendarDays() {
     document.getElementById("calendarDays").innerHTML = "";
 

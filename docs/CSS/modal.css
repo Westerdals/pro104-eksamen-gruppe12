@@ -90,7 +90,8 @@
 .form-control select,
 .form-control select,
 .form-control #Dato1,
-.form-control #Dato {
+.form-control #Dato,
+.color-picker {
     border: 2px solid #E5E4E4;
     background-color: #E5E4E4;
     border-radius: 2px;
@@ -106,14 +107,8 @@
     border-color: #B0AFAF;
 }
 
-/* Color picker style */
-.form-control #category-color {
-    width: 20%;
-}
 
 /* Projects page */
-
-
 .dropdown-section .form-control,
 .date-picker .form-control {
     display: inline;
@@ -133,6 +128,35 @@
     float: right;
 }
 
+/* Color picker area / style */
+.color-picker {
+    display: inline;
+}
+
+.color-picker p {
+    background-color: inherit;
+    display: inline-block;
+}
+
+.color-picker input[type="color"] {
+    display: inline-block;
+}
+
+.modal-content input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 32px;
+}
+
+.modal-content input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.modal-content input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
 
 
 

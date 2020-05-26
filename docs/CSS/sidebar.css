@@ -1,6 +1,5 @@
 * {
     font-family: 'Source Sans Pro', sans-serif;
-    background: #fffffc;
 }
 
 html,
@@ -39,38 +38,102 @@ body {
 }
 
 .menu a span i:hover {
-    color: #FF5D73;
+    color: #f72585;
 }
 
 
 label {
-    margin: 0 20px 0 0;
+    margin: 0 20px 0 20px;
     font-size: 26px;
     line-height: 40px;
     display: none;
     width: 26px;
-    float: right;
+    float: left;
 }
 
 #toggle {
     display: none;
 }
 
-
 @media only screen and (max-width: 800px) {
     label {
         display: block;
         cursor: pointer;
+    
     }
 
     .nav {
         padding: 2%;
-        text-align: right;
+        text-align: left;
+        height: 50px;
+        line-height: 0;
+    }
+
+    .menu {
+        clear: right;
+        text-decoration: none;
+        color: gray;
+        margin: 40px 20px;
+        height: 70%;
+        /* width: 100%; */
+        display: none; 
+        position: absolute;
+        min-height: 500px; 
+        border-radius: 3px;
+    
+    }
+
+    .menu a {
+        display: block;
+        /* border-bottom: 1px solid #EAEAEB; */
+        padding: 30px;
+        margin: 0px;
+
+    }
+
+    .menu a span i {
+        display: inline;
+        font-size: 30px;
+        background: #494949;
+        padding-bottom: 11px;
+        text-align: center;
+    }
+
+    #toggle:checked+.menu {
+        display: block;
+    }
+
+}
+
+
+/*  Navbar on calendar page */
+
+nav .calendar-nav {
+    width: 10%;
+}
+
+nav .calendar-nav .menu {
+    padding-top: 70%;
+
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+
+    .calendar-nav label {
+        display: block;
+        cursor: pointer;
+    }
+
+    .calendar-nav .nav {
+        padding: 2%;
+        text-align: left;
         height: 40px;
         line-height: 40px;
     }
 
-    .menu {
+    .calendar-nav .menu {
         clear: right;
         text-decoration: none;
         color: gray;
@@ -80,7 +143,7 @@ label {
         display: none;
     }
 
-    .menu a {
+    .calendar-nav .menu a {
         display: block;
         /* border-bottom: 1px solid #EAEAEB; */
         padding: 10px;
@@ -88,7 +151,7 @@ label {
 
     }
 
-    .menu a span i {
+    .calendar-nav .menu a span i {
         display: inline;
         font-size: 50px;
         background: #494949;
@@ -96,8 +159,7 @@ label {
         text-align: center;
     }
 
-    #toggle:checked+.menu {
+    .calendar-nav #toggle:checked+.menu {
         display: block;
     }
-
 }

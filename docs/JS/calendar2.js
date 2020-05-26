@@ -1,6 +1,10 @@
+// ARRAY OF WEEKDAYS
 const AVAILABLE_WEEK_DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+// VARIABLE FOR LOCALSTORAGE DECLARED
 const localStorageName = 'calendar-events';
 
+// DECLARES OBJECTS WITHIN THE CLASS
 class CALENDAR {
     constructor(options) {
         this.options = options;
@@ -25,14 +29,14 @@ class CALENDAR {
         this.init();
     }
 
-// App methods
+    // APP METHODS
     init() {
         if (!this.options.id) return false;
         this.eventsTrigger();
         this.drawAll();
     }
 
-    // draw Methods
+    // DRAW METHODS
     drawAll() {
         this.drawWeekDays();
         this.drawMonths();
@@ -41,6 +45,7 @@ class CALENDAR {
         this.drawEvents();
     }
 
+    // DRAWS THE EVENT (LEFT) SIDE OF THE CALENDAR
     drawEvents() {
         let calendar = this.getCalendar();
         let eventList = this.eventList[calendar.active.formatted] || ['There is not any events'];
@@ -51,7 +56,7 @@ class CALENDAR {
 
         this.elements.eventList.innerHTML = eventTemplate;
     }
-
+    // DRAWS THE CURRENT DAY, MONTH AND YEAR
     drawYearAndCurrentDay() {
         let calendar = this.getCalendar();
         this.elements.year.innerHTML = calendar.active.year;
@@ -59,6 +64,7 @@ class CALENDAR {
         this.elements.currentWeekDay.innerHTML = AVAILABLE_WEEK_DAYS[calendar.active.week];
     }
 
+    // DRAWS THE DAYS
     drawDays() {
         let calendar = this.getCalendar();
 
@@ -71,7 +77,7 @@ class CALENDAR {
             }
         }).reverse();
 
-
+        // DRAWS AMOUNT OF DAYS IN THE ACTIVE MONTH
         let daysInActiveMonth = this.range(calendar.active.days).map((day, idx) => {
             let dayNumber = idx + 1;
             let today = new Date();
@@ -96,6 +102,7 @@ class CALENDAR {
             }
         });
 
+        // DRAWS THE LAST AND FIRST FEW DAYS IN THE PREVIOUS AND NEXT MONTH TOGETHER WITH THE ACTIVE MONTH
         let days = [...latestDaysInPrevMonth, ...daysInActiveMonth, ...daysInNextMonth];
 
         days = days.map(day => {
@@ -113,6 +120,7 @@ class CALENDAR {
         this.elements.days.innerHTML = daysTemplate;
     }
 
+    // DRAWS THE MONTHS
     drawMonths() {
         let availableMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         let monthTemplate = "";
@@ -124,6 +132,7 @@ class CALENDAR {
         this.elements.month.innerHTML = monthTemplate;
     }
 
+    // DRAW THE WEEKDAYS
     drawWeekDays() {
         let weekTemplate = "";
         AVAILABLE_WEEK_DAYS.forEach(week => {
@@ -133,7 +142,7 @@ class CALENDAR {
         this.elements.week.innerHTML = weekTemplate;
     }
 
-    // Service methods
+    // SERVICE METHODS
     eventsTrigger() {
         this.elements.prevYear.addEventListener('click', e => {
             let calendar = this.getCalendar();
@@ -168,6 +177,7 @@ class CALENDAR {
             this.drawAll()
         });
 
+        // WHEN SUBMIT BUTTON IS CLICKED - THIS HAPPENS ...
         this.elements.eventAddBtn.addEventListener('click', e => {
             let fieldValue = this.elements.eventField.value;
             if (!fieldValue) return false;
@@ -178,15 +188,13 @@ class CALENDAR {
             this.elements.eventField.value = '';
             this.drawAll()
         });
-
-
     }
-
 
     updateTime(time) {
         this.date = +new Date(time);
     }
 
+    // GETS THE FULL CALENDAR INCLUDING ALL THE ELEMENTS (DAYS, MONTHS AND YEARS)
     getCalendar() {
         let time = new Date(this.date);
 
@@ -208,6 +216,7 @@ class CALENDAR {
         }
     }
 
+    // GETS AMOUNT OF DAYS IN MONTH
     countOfDaysInMonth(time) {
         let date = this.getMonthAndYear(time);
         return new Date(date.year, date.month + 1, 0).getDate();
@@ -218,6 +227,7 @@ class CALENDAR {
         return new Date(date.year, date.month, 1).getDay();
     }
 
+    // GETS MONTH AND YEAR
     getMonthAndYear(time) {
         let date = new Date(time);
         return {
@@ -234,12 +244,13 @@ class CALENDAR {
         return new Array(number).fill().map((e, i) => i);
     }
 
+    // GETS FIRST ELEMENT INSIDE THE CLASS
     getFirstElementInsideIdByClassName(className) {
         return document.getElementById(this.options.id).getElementsByClassName(className)[0];
     }
 }
 
-
+// RUNS THE CALENDAR CLASS
 (function () {
     new CALENDAR({
         id: "calendar"
