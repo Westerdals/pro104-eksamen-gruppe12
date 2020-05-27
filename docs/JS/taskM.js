@@ -30,14 +30,14 @@ window.onclick = function (event) {
         document.getElementById('addedMembersUl').innerHTML = "";
     }
 };
-
+// adds event listeners to list and list-item 
 function addDraggableEventListers() {
     const list_items = document.querySelectorAll('.list-item');
 const lists = document.querySelectorAll('.list');
 
 
 let draggedItem = null;
-
+// for loop for every draggable item and dropzones, adds eventlistners 
 for (let i = 0; i < list_items.length; i++) {
 	const item = list_items[i];
 
@@ -83,7 +83,7 @@ for (let i = 0; i < list_items.length; i++) {
 	}
 }
 }
-
+// function to change the status of the task
 function changeTaskStatus(newStatus, taskId) {
     console.log("BYTTER STATUS");
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
@@ -93,16 +93,17 @@ function changeTaskStatus(newStatus, taskId) {
     taskList[taskId] = newTask;
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
     if (taskList[taskId].status === 'Severly Important'){
-    document.getElementById('taskId').style.borderColor = "red";
-    console.log(newTask.status);
+    const borderColor = document.getElementById(`${taskId}`);
+    borderColor.style.borderColor = "red";
+    
 }
 }
-
+// function to render the tasklist when changed and get the event target
 function onStatusChange(event, taskId) {
     changeTaskStatus(event.target.value, taskId);
     renderTaskList();
 }
-
+//builds the dropdownmenu for tasks
 function buildStatusDropdwon(taskId) {
     const statuses = ['Set status of Task','Severly Important', 'Very Important', 'Important', 'Not important', 'Almost no interest'];
     const options = statuses.map(status => `<option placeholder="hei">${status}</option>`);
@@ -112,12 +113,13 @@ function buildStatusDropdwon(taskId) {
         </select>
     `;
 }
+//gets data for category in localstorage
 function pushIntocategory(){
     const ctlist = JSON.parse(window.localStorage.getItem("ctlist")) || [];
     const categoryDropdown = document.getElementById("categoryDropDown");
 
 let ctLength = ctlist.length;
-
+// loops through all categories in array and creates a new element for each
 for(i = 0; i < ctLength; i++){
     const categoryOption = document.createElement('option');
     let categoryName = ctlist[i].category;
@@ -126,16 +128,16 @@ for(i = 0; i < ctLength; i++){
     categoryOption.innerHTML = `${categoryName}`;
     categoryDropdown.appendChild(categoryOption);
 
-    console.log(categoryColor);
+
 }
 }
 
-
+// function for getting data from members
 function pushIntoMembers(){
 const memberList = JSON.parse(window.localStorage.getItem('memberList')) || [];
    const memberDropDown = document.getElementById('membersDropDown');
 let membLength = memberList.length;
-
+// loops through members and and displays firstname
 for(i = 0; i < membLength; i++){
 const memberOption = document.createElement('option');
 let memberFirstName = memberList[i].firstName;
@@ -152,7 +154,7 @@ memberDropDown.appendChild(memberOption);
 pushIntoMembers();
 pushIntocategory();
 
-
+// adds members too task when window appears
 function addMemberTo(event) {
     event.preventDefault();
     const oldMembersList = JSON.parse(localStorage.getItem('assignedMembers')) || [];
@@ -165,7 +167,7 @@ function addMemberTo(event) {
     localStorage.setItem('assignedMembers', JSON.stringify(oldMembersList));
    
 }
-
+// saves the changes made to task and updates it
 function saveTask(event, taskId) {
     event.preventDefault();
     const newName = event.target[0].value;
@@ -190,6 +192,7 @@ function saveTask(event, taskId) {
 
     renderTaskList();
 }
+//function to deleteTask
 function deleteTask(taskId) {
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
     taskList.splice(taskId, 1);
@@ -197,7 +200,7 @@ function deleteTask(taskId) {
     renderTaskList();
 
 }
-
+// function to build taskform element
 function buildChangeTaskForm({name, startDato, status, started, message}, taskId) {
     return `
     <form onsubmit="saveTask(event, ${taskId})">
@@ -215,7 +218,7 @@ function buildChangeTaskForm({name, startDato, status, started, message}, taskId
     </form>
     `;
 }
-
+//function to open taskform 
 function openTaskForm(taskId) {
     const element = document.getElementById(taskId);
     const task = JSON.parse(window.localStorage.getItem("taskList"))[taskId] || [];
@@ -223,11 +226,10 @@ function openTaskForm(taskId) {
     element.innerHTML = buildChangeTaskForm(task, taskId);
 
 }
-
+//function to build the html element
 function buildTaskHtml(task, id) {
     return `
     <div class="list-item" id="${id}" draggable="true" ondragstart="">
-        <div>ID: ${id}</div>
         <div>Navn: ${task.name}</div>
         <div>Started: ${task.started}</div>
         <div>StartDate: ${task.startDato}</div>
@@ -241,9 +243,8 @@ function buildTaskHtml(task, id) {
         <button id="deleteTaskBtn" onclick="deleteTask(${id})" >Delete</button>
     </div>
     `;
-    console.log(`${task.cat}`)
 }
-
+// renders the task list with new data
 function renderTaskList(){
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
     const taskListUl = document.getElementById("taskList");
@@ -261,7 +262,7 @@ function renderTaskList(){
     renderTaskList();
   });
 
-
+// function to create new task
 function createNewTask(event){
    //Stops the URL to be updated
    event.preventDefault();
@@ -292,66 +293,4 @@ function createNewTask(event){
    event.target.reset();
    } 
 
-function renderEmployeeList(){
-    const employeeList = JSON.parse(window.localStorage.getItem("employeeList")) || [];
-    const employeeListUl = document.getElementById("employeeList");
-    employeeListUl.innerHTML = "";
-  
-    for (const employee of employeeList){
-        const employeeUl = document.createElement("ul");
-
-        employeeUl.innerHTML = `<li>${employee}</li>`;
-        employeeListUl.appendChild(employeeUl);
-    }
-   }
-function createNewEmployee(event){
-   //Stops the URL to be updated
-   event.preventDefault();
-
-   const employee = document.querySelector("[name='employee']").value;
-   if (employee === ""){
-       alert("You have to write something");
-   } else {
-   const employeeList = JSON.parse(window.localStorage.getItem("employeeList")) || [];
-   employeeList.push(employee);
-   window.localStorage.setItem("employeeList", JSON.stringify(employeeList));
-   
-   renderEmployeeList();
-
-   event.target.reset();
-   }
-}
-
-function renderAssignList(){
-    const assignList = JSON.parse(window.localStorage.getItem("assignList")) || [];
-    const assignListUl = document.getElementById("overviewList");
-    assignListUl.innerHTML = "";
-    
-    for (const whoAndWhat of assignList){
-        const assignUl = document.createElement("div");
-
-        assignUl.innerHTML = `<div>${whoAndWhat.who} skal gjøre ${whoAndWhat.what}</div>`;
-        assignListUl.appendChild(assignUl);
-        
-    }
-}
-
-function createNewAssign(event){
-    event.preventDefault();
-    const mellom = "skal gjøre"
-    const who = document.querySelector("[name='employee2']").value;
-    const what = document.querySelector("[name='task2']").value;
-    const whoAndWhat = {who: who, what: what};
-    if (who === "" || what === ""){
-       alert("You have to write something");
-   } else {
-    const assignList = JSON.parse(window.localStorage.getItem("assignList")) || [];
-    assignList.push(whoAndWhat);
-    window.localStorage.setItem("assignList", JSON.stringify(assignList));
-    console.log(window.localStorage.getItem(JSON.stringify(overviewList)));
-    
-    renderAssignList();
-    event.target.reset();
-   }
-}
 }

@@ -22,7 +22,11 @@ body {
         "sect3"
         "footer";
 }
-
+.list-item {
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    break-after: avoid;
+}
 header {
     grid-area: header;
     background-color: #fffffc;
