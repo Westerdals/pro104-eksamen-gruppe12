@@ -30,8 +30,7 @@ function newMember() {
     const newMember = document.getElementById('addMember').value;
     const lastName = document.getElementById('addLastName').value;
     const email = document.getElementById('addEmail').value;
-    const imgFile = document.getElementById('addImage').value;
-    const imageDiv = document.getElementById('imagePrev');
+    // const imgFile = document.getElementById('addImage').value;
 
 
 
@@ -39,7 +38,6 @@ function newMember() {
         firstName: newMember,
         lastName: lastName,
         email: email,
-        image: imgFile
     };
 
 
@@ -53,6 +51,8 @@ function newMember() {
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
     //document.getElementById('addImage').value = '';
+
+    modal.style.display = "none";
 
     //console.log(member);
 
@@ -70,19 +70,11 @@ function renderMemberList() {
 
     for (const i in memberList) {
         const li = document.createElement('li');
-        const src = document.createElement('src');
-        imageDiv = memberList[i].image;
-        src.append(imageDiv);
-
-
 
 
         li.innerHTML += `
         <h4>${memberList[i].firstName}</h4> <h4>${memberList[i].lastName}</h4>
-        <p>${memberList[i].email}</p> 
-        ${memberList[i].image}
-       
-        
+        <p>${memberList[i].email}</p>         
         `;
 
         console.log(memberList[i].image);
