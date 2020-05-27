@@ -45,7 +45,6 @@ function newCategory() {
     // Clear the text field after submition
     document.getElementById('txt').value = '';
 
-    // Legg inn en if else setning for å unngå at det sendes "tomme" kategorier til listen
     modal1.style.display = "none";
 
 }

@@ -50,11 +50,8 @@ function newMember() {
     document.getElementById('addMember').value = '';
     document.getElementById('addLastName').value = '';
     document.getElementById('addEmail').value = '';
-    //document.getElementById('addImage').value = '';
 
     modal.style.display = "none";
-
-    //console.log(member);
 
 }
 
