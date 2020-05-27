@@ -1,3 +1,201 @@
+commit 2ab59287a04ec266be9a1876f7e4c2756207814a
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Wed May 27 11:28:18 2020 +0200
+
+    Fjernet små verdier
+
+commit 278bed599774bd40ff8fa6b797a973f19e326511
+Merge: a9804c8 79e00d8
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Wed May 27 11:08:24 2020 +0200
+
+    fisket styling av knappene
+
+commit a9804c8512eb79134be040f287543306578a8fe7
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Wed May 27 11:06:55 2020 +0200
+
+    fisket styling av knappene
+
+commit 79e00d837f8e86981288c29a322f966c5e389d23
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Wed May 27 11:04:44 2020 +0200
+
+    Fikset add member bug og at boksen lukkes på submit
+
+commit 397811d57b4ed6a146dda593e385b478437ba4d7
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Wed May 27 10:34:10 2020 +0200
+
+    Gjorde om på noen kommentarer og ryddet opp litt
+
+commit 3e251c875b7983d60ba048ecf408a9976dc8d3c7
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 26 22:28:57 2020 +0200
+
+    Mindre endringer
+
+commit 328bdb9bebc0c9bb4a7a8c8e29504aad40fa8b00
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 26 22:07:41 2020 +0200
+
+    Felles oppryddning i mapper og filer
+
+commit 9100d29e549cb8f0146e96f80aaba92bc3218a79
+Merge: a5c9781 0d30cdd
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Tue May 26 21:21:46 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 0d30cdd00a816b4dc7ae3ca4a88ea89da0b1e100
+Author: Eskil Torset <eskiltorset@hotmail.com>
+Date:   Tue May 26 21:20:10 2020 +0200
+
+    kommentert kode
+
+commit a5c978175d7f82d4f98cb6783501ad8096fe72f7
+Author: sindre-git <sindre-hel@hotmail.no>
+Date:   Tue May 26 21:20:05 2020 +0200
+
+    Fikset dragndrop og noen funksjoner for Brukere.
+
+commit 5e2b914ab6a25e793a36482626e08fa9bc993bf8
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 21:06:33 2020 +0200
+
+    Update main.css
+
+commit 77d45f2356e9c0f418ae6f25ba43d463ec5a044a
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 21:00:38 2020 +0200
+
+    design
+
+commit de0065b4343afdcff8aa20b936b6441ca4f7ff7a
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 19:57:46 2020 +0200
+
+    Sidebar
+
+commit c5da173191ae0bce3d5e496b1e9622de3f512bce
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 19:28:17 2020 +0200
+
+    Småpirk på sidebar
+
+commit 82e2b2890b4e36bf3700d1d59e70e11d06e178d9
+Merge: 8b620cc 09448f0
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 26 19:14:09 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 8b620ccb1386ad6133ecf80fd85ce9363988d36e
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 26 19:14:04 2020 +0200
+
+    Fikset meny på calender siden og noe endringer i css
+    
+    Color picker delen på kategori er fortsatt ikke helt bra. Må midtstilles med tekst
+
+commit 09448f002186831fc783bca1f02467e0e57b5482
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 19:02:50 2020 +0200
+
+    Småpirk på sidebar
+
+commit 256e4e6a9e4309ff950a54202f7cef1fdbc2319e
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 18:59:57 2020 +0200
+
+    Endret på menyen i mobilskjerm-modus
+
+commit 89895820beaeafd4b3d1629a5242eb4d0210259e
+Merge: 12eaace 23454c0
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 17:34:42 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 12eaace6efe40749ed2f821d72f7af8ea78c80e3
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 17:34:39 2020 +0200
+
+    Endret farger
+
+commit 23454c0d02adf224acfb0dd72161550428df0e93
+Merge: 12956c7 be0397d
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 26 17:07:20 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 12956c7b37c98ac52424ca727fc7c49fee2bbaa2
+Author: Håvard Raknes <havard.raknes@gmail.com>
+Date:   Tue May 26 17:07:14 2020 +0200
+
+    Fikset layout colorpicker
+
+commit be0397defc2dcc1aec14a0017785536ef3dbf800
+Merge: c468f4a 8a9ee09
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Tue May 26 17:04:12 2020 +0200
+
+    merger?
+
+commit c468f4a4c57475314f25b16c5bb8ed0e939aaf45
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Tue May 26 17:03:17 2020 +0200
+
+    forsatt ikke fått fikset bilde delen
+
+commit 8a9ee0944b945f99ed610a86c8197b7ca4e86981
+Merge: 2c38ecf 4432d14
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 15:12:02 2020 +0200
+
+    Merge branch 'master' of https://github.com/Westerdals/pro104-eksamen-gruppe12
+
+commit 2c38ecff4b138be24cd2c5cc5db9c130de5dadb2
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 15:11:42 2020 +0200
+
+    Endret farger
+
+commit 4432d1406f627b138088f9751309418ef20ed07c
+Merge: 8b3ea0b 4964c07
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Tue May 26 14:52:48 2020 +0200
+
+    gjort endringer på members.js ved å få lagt inn bilde
+
+commit 8b3ea0bb50c333d45060f01b10328638c64ed156
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Tue May 26 14:43:17 2020 +0200
+
+    får ikke fikset bildet
+
+commit 4964c07c51635ff55b43c6eb3767ca9e40e1588f
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 14:19:49 2020 +0200
+
+    tekstfiler samlet i en mappe
+
+commit 8faaebc8b13b4c0de8f0164e837816d0af2e8606
+Author: Harald Sigvartsen <56087871+HaraldSigvartsen@users.noreply.github.com>
+Date:   Tue May 26 14:17:27 2020 +0200
+
+    sitter med bilde på members.js. laster opp nå så dere andre kan se på det og
+
+commit cb2901d900d2798d99ad81ca925a719b01014264
+Author: susanneton <sussi1998@hotmail.com>
+Date:   Tue May 26 14:07:47 2020 +0200
+
+    Logg av git
+    
+    Nå vet jeg hvordan vi henter ut logg i en txt-fil, så da kan jeg gjøre det før vi leverer i kveld :+1:
+
 commit 77980bf5a3ed613c8f6e86fde30a08fc8d82be75
 Author: Håvard Raknes <havard.raknes@gmail.com>
 Date:   Tue May 26 05:07:01 2020 +0200
