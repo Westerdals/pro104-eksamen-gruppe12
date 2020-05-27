@@ -214,7 +214,7 @@ function buildChangeTaskForm({name, startDato, status, started, message}, taskId
         <div>Message: <input value="${message}" name="message" type="text" /></div>
         <select name="addMoreMembers"></select>
         ${buildStatusDropdwon()}
-        <input type="submit" value="Save">
+        <input type="submit" class="buttons" value="Save">
     </form>
     `;
 }
@@ -239,8 +239,8 @@ function buildTaskHtml(task, id) {
         <div>Users: ${task.users}</div>
         <div>Catogory: ${task.cat}</div>
         ${buildStatusDropdwon(id)}
-        <button id="editTaskBtn" onclick="openTaskForm(${id})">Edit</button>
-        <button id="deleteTaskBtn" onclick="deleteTask(${id})" >Delete</button>
+        <button id="editTaskBtn" class="buttons" onclick="openTaskForm(${id})">Edit</button>
+        <button id="deleteTaskBtn" class="buttons" onclick="deleteTask(${id})" >Delete</button>
     </div>
     `;
 }
