@@ -112,6 +112,6 @@ function isEmail(email) {
 }
 		
 function newSite() {
-	window.location = '/HTML/main.html';
+	window.location = 'main.html';
 
 }
